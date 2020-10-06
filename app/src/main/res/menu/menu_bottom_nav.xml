@@ -2,15 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/action_home"
         android:title="@string/action_home"
-        android:icon="@drawable/baseline_home_black_48dp"/>
+        android:icon="@drawable/baseline_home_black_48dp" />
 
     <item android:id="@+id/action_product"
         android:title="@string/action_product"
         android:icon="@drawable/baseline_dashboard_black_48dp"/>
 
-    <item android:id="@+id/action_usergroup"
-        android:title="@string/action_usergroup"
-        android:icon="@drawable/user_group"/>
+    <item android:id="@+id/action_notification"
+        android:title="@string/action_notification"
+        android:icon="@drawable/ic_baseline_notification_important_24"/>
 
     <item android:id="@+id/action_basket"
         android:title="@string/action_basket"

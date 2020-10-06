@@ -10,14 +10,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.MenuItem;
-import android.widget.ListView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.sefvi.seamarket.Adapter.Home_ComboHot_Adapter;
 import com.sefvi.seamarket.Adapter.SliderAdapter;
 import com.sefvi.seamarket.Model.Home_ComboHot;
 import com.sefvi.seamarket.R;
-import com.smarteist.autoimageslider.SliderView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -100,8 +98,8 @@ public class Home_Activity extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
 
-                    case  R.id.action_usergroup:
-                        startActivity(new Intent(getApplicationContext(), User_group_Activity.class));
+                    case  R.id.action_notification:
+                        startActivity(new Intent(getApplicationContext(), Notification_Activity.class));
                         overridePendingTransition(0,0);
                         return true;
 

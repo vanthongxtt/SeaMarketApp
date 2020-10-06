@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.sefvi.seamarket.View.Activity.Bottom_navigation.User_group_Activity">
+    tools:context="com.sefvi.seamarket.View.Activity.Bottom_navigation.Notification_Activity">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:layout_centerInParent="true"
-        android:text="User_proup"
+        android:text="notification"
         android:textSize="60dp"
         />
 

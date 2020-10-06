@@ -15,7 +15,7 @@
         <activity android:name=".View.Activity.Login_Activity" />
         <activity android:name=".View.Activity.Bottom_navigation.Personal_Activity" />
         <activity android:name=".View.Activity.Bottom_navigation.Basket_Activity" />
-        <activity android:name=".View.Activity.Bottom_navigation.User_group_Activity" />
+        <activity android:name=".View.Activity.Bottom_navigation.Notification_Activity" />
         <activity android:name=".View.Activity.Bottom_navigation.Product_Activity" />
         <activity android:name=".View.Activity.Bottom_navigation.Home_Activity" />
         <activity android:name=".View.Activity.MainActivity" />

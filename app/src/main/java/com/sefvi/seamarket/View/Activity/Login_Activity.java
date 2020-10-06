@@ -13,22 +13,25 @@ import com.sefvi.seamarket.View.Activity.Bottom_navigation.Home_Activity;
 
 public class Login_Activity extends AppCompatActivity {
     Button Login_btn_login;
-    TextView phone,password,tvdangki;
+    TextView phone,password,forgotpassword,signup;
+
+    private void Anhxa(){
+        Login_btn_login = findViewById(R.id.Login_btn_login);
+        signup = findViewById(R.id.login_tv_dangki);
+        phone =findViewById(R.id.login_edt_phone);
+        password = findViewById(R.id.login_edt_password);
+        forgotpassword = findViewById(R.id.Login_tv_forgot_password);
+
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        Login_btn_login = findViewById(R.id.Login_btn_login);
-        tvdangki = findViewById(R.id.login_tv_dangki);
+        Anhxa();
 
-        Login_btn_login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Login_Activity.this, Home_Activity.class);
-                startActivity(intent);
-            }
-        });
-        tvdangki.setOnClickListener(new View.OnClickListener() {
+
+
+        signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Login_Activity.this,SignUp_Activity.class);
@@ -36,5 +39,13 @@ public class Login_Activity extends AppCompatActivity {
             }
         });
 
+
+
+    }
+    private  void validate(String userName, String userPassword){
+        if ((userName == "Admin") && (userPassword == "12345")){
+            Intent intent = new Intent(Login_Activity.this, Home_Activity.class);
+            startActivity(intent);
+        }
     }
 }

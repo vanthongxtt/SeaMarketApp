@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <RelativeLayout
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="15dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginLeft="10dp"
                 android:layout_width="match_parent"
@@ -36,7 +36,7 @@
 
                     <ImageView
                         android:layout_width="wrap_content"
-                        android:layout_height="30dp"
+                        android:layout_height="33dp"
                         android:layout_toRightOf="@+id/home_tv_gps"
                         android:src="@drawable/ic_baseline_expand_more_24" />
                     <TextView
@@ -44,7 +44,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Hồ Chí Minh"
-                        android:textColor="@color/ligth_black_color"
+                        android:textColor="#4C4A4A"
                         android:textSize="24sp" />
                 </RelativeLayout>
 

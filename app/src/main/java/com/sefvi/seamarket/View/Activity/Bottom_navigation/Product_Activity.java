@@ -37,8 +37,8 @@ public class Product_Activity extends AppCompatActivity {
 
                         return true;
 
-                    case  R.id.action_usergroup:
-                        startActivity(new Intent(getApplicationContext(), User_group_Activity.class));
+                    case  R.id.action_notification:
+                        startActivity(new Intent(getApplicationContext(), Notification_Activity.class));
                         overridePendingTransition(0,0);
                         return true;
 
