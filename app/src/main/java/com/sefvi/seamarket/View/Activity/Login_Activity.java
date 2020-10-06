@@ -35,8 +35,6 @@ public class Login_Activity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        //ahihi
 
-        //fkuahufkfbab
     }
 }
