@@ -26,7 +26,7 @@
         android:layout_width="220dp"
         android:layout_height="220dp"
         android:layout_marginTop="30dp"
-        android:src="@drawable/login_icon1"
+        android:src="@drawable/login_img_icon"
         app:layout_constraintEnd_toStartOf="@+id/login_guidelineleft"
         app:layout_constraintStart_toStartOf="@+id/login_guidelineright"
         app:layout_constraintTop_toTopOf="parent"
