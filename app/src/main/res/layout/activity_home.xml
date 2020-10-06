@@ -16,7 +16,9 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <RelativeLayout
-                android:padding="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -55,38 +57,35 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
+                        android:layout_marginRight="10dp"
                         android:layout_marginTop="3dp"
                         android:src="@drawable/ic_outline_shopping_cart_24" />
 
-                    <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_marginTop="3dp"
-                        android:src="@drawable/ic_baseline_notification_important_24" />
                 </LinearLayout>
             </RelativeLayout>
 <!--thanh seach            -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="20dp"
-                android:layout_marginLeft="20dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="5dp"
                 android:background="@drawable/custom_home_seach"
                 android:orientation="horizontal">
                 <ImageView
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:layout_marginLeft="8dp"
-                    android:layout_marginTop="3dp"
-                    android:layout_marginBottom="3dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
                     android:src="@drawable/ic_baseline_search_24"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Tìm kiếm trên SeaMarket"
                     android:layout_marginLeft="5dp"
-                    android:layout_marginTop="3dp"
-                    android:layout_marginBottom="3dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
                     android:textColor="@color/intro_description_color"
                     android:textSize="20sp"/>
             </LinearLayout>
