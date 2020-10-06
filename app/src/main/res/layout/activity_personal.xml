@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.sefvi.seamarket.View.Activity.Bottom_navigation.Personal_Activity">
+
+   <androidx.cardview.widget.CardView
+       android:layout_width="120dp"
+       android:layout_height="120dp"
+       android:layout_centerHorizontal="true"
+       android:layout_marginTop="30dp"
+       app:cardCornerRadius="120dp">
+
+       <ImageView
+
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:scaleType="centerCrop"
+           android:src="@drawable/sssss" />
+   </androidx.cardview.widget.CardView>
+
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:itemBackground="@color/cardview_light_background"
+        app:itemHorizontalTranslationEnabled="false"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/menu_bottom_nav" />
+
+</RelativeLayout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/action_home"
+        android:title="@string/action_home"
+        android:icon="@drawable/baseline_home_black_48dp"/>
+
+    <item android:id="@+id/action_product"
+        android:title="@string/action_product"
+        android:icon="@drawable/baseline_dashboard_black_48dp"/>
+
+    <item android:id="@+id/action_usergroup"
+        android:title="@string/action_usergroup"
+        android:icon="@drawable/user_group"/>
+
+    <item android:id="@+id/action_basket"
+        android:title="@string/action_basket"
+        android:icon="@drawable/basket"/>
+
+    <item android:id="@+id/action_personal"
+    android:title="@string/action_personal"
+    android:icon="@drawable/baseline_person_black_48dp"/>
+
+
+
+</menu>

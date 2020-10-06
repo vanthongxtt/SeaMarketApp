@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="oval">
+            <!-- set width of cricle -->
+            <stroke android:color="#3b91d7" android:width="5dp"/>
+            <!-- set height of cricle -->
+            <size android:width="250dp" android:height="250dp"/>
+        </shape>
+    </item>
+</selector>

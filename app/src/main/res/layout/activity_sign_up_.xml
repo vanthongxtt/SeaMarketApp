@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_loginn"
+    tools:context="com.sefvi.seamarket.View.Activity.SignUp_Activity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/signup_guidelineleft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="24dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/signup_guidelineright"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="24dp" />
+
+
+    <TextView
+        android:id="@+id/signup_tv_dangki"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Đăng kí tài khoản "
+        android:textColor="@color/login_form_details"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toStartOf="@+id/signup_guidelineright"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/signup_guidelineleft"
+        app:layout_constraintTop_toTopOf="@id/signup_guidelinetop"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/signup_edt_phone"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/edit_text_background_login"
+        android:hint="Số điện thoại"
+        android:inputType="number"
+        android:padding="16dp"
+        android:textColor="@color/login_form_details"
+        android:textColorHint="@color/login_form_details"
+        app:layout_constraintEnd_toStartOf="@id/signup_guidelineright"
+        app:layout_constraintStart_toStartOf="@id/signup_guidelineleft"
+        app:layout_constraintTop_toBottomOf="@+id/signup_tv_dangki" />
+
+    <EditText
+    android:id="@+id/signup_edt_password"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:background="@drawable/edit_text_background_login"
+    android:hint="Mật khẩu"
+    android:inputType="textPassword"
+    android:padding="16dp"
+    android:textColorHint="@color/login_form_details"
+    android:textColor="@color/login_form_details"
+    app:layout_constraintEnd_toStartOf="@id/signup_guidelineright"
+    app:layout_constraintStart_toStartOf="@id/signup_guidelineleft"
+    app:layout_constraintTop_toBottomOf="@+id/signup_edt_phone" />
+
+
+    <Button
+        android:id="@+id/signup_btn_dangki"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/btn_backbround_login"
+        android:text="Đăng kí"
+        android:textAllCaps="false"
+        android:textSize="24dp"
+        android:textColor="@color/login_form_details_medium"
+        app:layout_constraintEnd_toStartOf="@+id/signup_guidelineright"
+        app:layout_constraintStart_toStartOf="@id/signup_guidelineleft"
+        app:layout_constraintTop_toBottomOf="@id/signup_edt_password"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="16dp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toStartOf="@+id/signup_guidelineright"
+        app:layout_constraintStart_toStartOf="@id/signup_guidelineleft"
+        app:layout_constraintTop_toBottomOf="@+id/signup_btn_dangki"
+        tools:ignore="MissingConstraints">
+        <TextView
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Bằng việc đăng kí, bạn đồng ý với "
+            android:textColor="@color/login_form_details"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/signup_guidelineright"
+            app:layout_constraintStart_toStartOf="@id/signup_guidelineleft" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toStartOf="@+id/signup_guidelineright"
+        app:layout_constraintStart_toStartOf="@id/signup_guidelineleft"
+        app:layout_constraintTop_toBottomOf="@+id/signup_btn_dangki"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="điều khoản và chính sách "
+            android:textColor="#F44336"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/signup_guidelineright"
+            app:layout_constraintStart_toStartOf="@id/signup_guidelineleft" />
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="của SeaMarket "
+            android:textColor="@color/login_form_details"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/signup_guidelineright"
+            app:layout_constraintStart_toStartOf="@id/signup_guidelineleft" />
+
+    </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/signup_guidelinebotom"
+        app:layout_constraintEnd_toStartOf="@+id/signup_guidelineright"
+        app:layout_constraintStart_toStartOf="@id/signup_guidelineleft"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/signup_tv_chuacotk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chưa có tài khoản?"
+            android:textColor="@color/login_form_details"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/signup_tv_dangnhap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="Đăng nhập"
+            android:textColor="@color/login_form_details"
+            android:textSize="17sp"
+            tools:ignore="RtlCompat" />
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/signup_guidelinebotom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="2dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/signup_guidelinetop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="2dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
