@@ -12,11 +12,11 @@ import com.sefvi.seamarket.R;
 import com.sefvi.seamarket.View.Activity.Bottom_navigation.Home_Activity;
 
 public class Login_Activity extends AppCompatActivity {
-    Button Login_btn_login;
+    Button login_btn_login;
     TextView phone,password,forgotpassword,signup;
 
     private void Anhxa(){
-        Login_btn_login = findViewById(R.id.Login_btn_login);
+        login_btn_login = findViewById(R.id.Login_btn_login);
         signup = findViewById(R.id.login_tv_dangki);
         phone =findViewById(R.id.login_edt_phone);
         password = findViewById(R.id.login_edt_password);
@@ -35,6 +35,13 @@ public class Login_Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Login_Activity.this,SignUp_Activity.class);
+                startActivity(intent);
+            }
+        });
+        login_btn_login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Login_Activity.this,Home_Activity.class);
                 startActivity(intent);
             }
         });
