@@ -49,7 +49,7 @@ public class IntroActivity extends AppCompatActivity {
 
         if (restorePrefData()) {
 
-            Intent intent = new Intent(getApplicationContext(), Login_Activity.class );
+            Intent intent = new Intent(getApplicationContext(), Splash_Activity.class );
             startActivity(intent);
             finish();
 
