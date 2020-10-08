@@ -15,80 +15,89 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            <RelativeLayout
-                android:layout_marginTop="15dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                
-                <ImageView
-                    android:id="@+id/home_img_gps"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@drawable/ic_baseline_where_to_vote_24"/>
-                <RelativeLayout
-                    android:id="@+id/home_rl_gps"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/home_img_gps">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="33dp"
-                        android:layout_toRightOf="@+id/home_tv_gps"
-                        android:src="@drawable/ic_baseline_expand_more_24" />
-                    <TextView
-                        android:id="@+id/home_tv_gps"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Hồ Chí Minh"
-                        android:textColor="#4C4A4A"
-                        android:textSize="24sp" />
-                </RelativeLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                   android:layout_alignParentRight="true"
-                    tools:visibility="visible">
-                    <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginTop="3dp"
-                        android:src="@drawable/ic_outline_shopping_cart_24" />
-
-                </LinearLayout>
-            </RelativeLayout>
-<!--thanh seach            -->
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/custom_home_seach"
-                android:orientation="horizontal">
-                <ImageView
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:src="@drawable/ic_baseline_search_24"/>
-                <TextView
+                android:background="@drawable/custom_backgroun_home"
+                android:orientation="vertical">
+                <RelativeLayout
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Tìm kiếm trên SeaMarket"
-                    android:layout_marginLeft="5dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/home_img_gps"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ic_baseline_where_to_vote_24"/>
+                    <RelativeLayout
+                        android:id="@+id/home_rl_gps"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/home_img_gps">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="33dp"
+                            android:layout_toRightOf="@+id/home_tv_gps"
+                            android:src="@drawable/ic_baseline_expand_more_24" />
+                        <TextView
+                            android:id="@+id/home_tv_gps"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Hồ Chí Minh"
+                            android:textColor="#ffffff"
+                            android:textSize="24sp" />
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:layout_alignParentRight="true"
+                        tools:visibility="visible">
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="3dp"
+                            android:src="@drawable/ic_outline_shopping_cart_24" />
+
+                    </LinearLayout>
+                </RelativeLayout>
+                <!--thanh seach            -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginLeft="16dp"
                     android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:textColor="@color/intro_description_color"
-                    android:textSize="20sp"/>
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/custom_home_seach"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:src="@drawable/ic_baseline_search_24"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Tìm kiếm trên SeaMarket"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:textColor="@color/intro_description_color"
+                        android:textSize="20sp"/>
+                </LinearLayout>
+
             </LinearLayout>
+
 
             <androidx.cardview.widget.CardView
                 app:cardCornerRadius="6dp"
@@ -388,9 +397,39 @@
                     android:layout_marginTop="10dp"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     android:orientation="horizontal"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:text="Sale off"/>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_baseline_chevron_right_24"/>
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/home_rv_sale_off"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:layout_marginTop="10dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:orientation="horizontal"/>
 
 
             </LinearLayout>
+
+
+
+
+
 
 
 

@@ -25,7 +25,7 @@ public class Home_ComboHot_Adapter extends RecyclerView.Adapter<Home_ComboHot_Ad
         this.homecomboHots = homecomboHots;
     }
 
-    public class MyViewHolder extends  RecyclerView.ViewHolder {
+    public static class MyViewHolder extends  RecyclerView.ViewHolder {
        TextView mTen,mGia;
        ImageView mImage;
         public MyViewHolder(@NonNull View itemView) {
