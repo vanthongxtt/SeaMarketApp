@@ -28,7 +28,7 @@ public class Home_Activity extends AppCompatActivity {
 
     ViewPager viewPager;
     //add images from drawable to array
-    int images[] = {R.drawable.hom_img1, R.drawable.home_img2, R.drawable.home_img3, R.drawable.home_img4};
+    int images[] = {R.drawable.home_img1, R.drawable.home_img2, R.drawable.home_img3, R.drawable.home_img4};
     int currentPageCunter = 0;
 
     private void Anhxa (){
