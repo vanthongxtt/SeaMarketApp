@@ -8,9 +8,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.sefvi.seamarket.R;
 import com.sefvi.seamarket.Utils.Checks;
+
 
 
 public class Login_Activity extends AppCompatActivity {
@@ -43,15 +45,30 @@ public class Login_Activity extends AppCompatActivity {
         login_btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Login_Activity.this,MainActivity.class);
-                 startActivity(intent);
+//                Intent intent = new Intent(Login_Activity.this,MainActivity.class);
+//                 startActivity(intent);
+
+                validate(phone.getText().toString(), password.getText().toString());
             }
         });
 
 
 
     }
-    private  void validate(String userName, String userPassword){
+    private  void validate(String phone, String password){
+        if (!Checks.PhoneCheck(phone)){
+            Toast.makeText(this, "Bạn chưa nhập SDT hoặc nhập sai định dạng!", Toast.LENGTH_SHORT).show();
+        } else if (!Checks.CheckPassword(password)) {
+
+            Toast.makeText(this, "Password phải trên 6 kí tự!", Toast.LENGTH_SHORT).show();
+        }else{
+            // get API
+            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(intent);
+            finish();
+        }
+
+
 
     }
 }
