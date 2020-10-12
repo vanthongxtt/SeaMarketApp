@@ -39,12 +39,26 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
             android:orientation="horizontal">
             <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/icon8_map_64"/>
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_baseline_where_to_vote_24"/>
-
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="center"
+                android:textColor="#171717"
+                android:textSize="20sp"
+                android:text="Địa chỉ nhận hàng"/>
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_baseline_chevron_right_24"/>
 
         </LinearLayout>
 
