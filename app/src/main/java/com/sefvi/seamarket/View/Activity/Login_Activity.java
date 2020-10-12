@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,7 +18,8 @@ import com.sefvi.seamarket.Utils.Checks;
 
 public class Login_Activity extends AppCompatActivity {
     Button login_btn_login;
-    TextView phone,password,forgotpassword,signup;
+    TextView forgotpassword,signup;
+    EditText phone,password;
 
     private void Anhxa(){
         login_btn_login = findViewById(R.id.Login_btn_login);
