@@ -13,6 +13,9 @@
     <color name="intro_title_color">#000000</color>
     <color name="ligth_black_color">#131313</color>
     <color name="blue_color">#0573FF</color>
+    <color name="grey">#66393838</color>
+    <color name="grey_light">#f7f7f7</color>
+
 
     <color name="ligth_blue_color">#378FFF</color>
     <color name="purple_color">#5F04B4</color>
@@ -24,6 +27,7 @@
     <color name="login_form_details">#ccffffff</color>
     <color name="login_form_details_light">#1affffff</color>
     <color name="login_form_details_medium">#66ffffff</color>
+
 
 
 </resources>
