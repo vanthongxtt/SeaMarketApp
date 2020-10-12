@@ -14,8 +14,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import com.sefvi.seamarket.Adapter.Home_ComboHot_Adapter;
+import com.sefvi.seamarket.Adapter.Home_Sale_off_Adapter;
 import com.sefvi.seamarket.Adapter.SliderAdapter;
 import com.sefvi.seamarket.Model.Home_ComboHot;
+import com.sefvi.seamarket.Model.Home_SaleOff;
 import com.sefvi.seamarket.R;
 
 import java.util.ArrayList;
@@ -25,7 +27,8 @@ import java.util.TimerTask;
 
 public class HomeFragment extends Fragment {
     RecyclerView combohot,saleoff;
-    List<Home_ComboHot> comboHotList,saleofflist;
+    List<Home_ComboHot> comboHotList;
+    List<Home_SaleOff> saleofflist;
 
     ViewPager viewPager;
     //add images from drawable to array
@@ -53,11 +56,11 @@ public class HomeFragment extends Fragment {
         comboHotList.add(new Home_ComboHot("Óc vòi voi",150000,R.drawable.home_img_combo_oc));
 
         saleofflist = new ArrayList<>();
-        saleofflist.add(new Home_ComboHot("cua Cà Mau",120000,R.drawable.home_combo_hot_img_cua));
-        saleofflist.add(new Home_ComboHot("Mực nè",90000,R.drawable.home_img_combo_hot_muc));
-        saleofflist.add(new Home_ComboHot("Cá",70000,R.drawable.home_img_combo_hot_ca));
-        saleofflist.add(new Home_ComboHot("Tôm Bình Điền",150000,R.drawable.home_img_combo_hot_tom));
-        saleofflist.add(new Home_ComboHot("Óc vòi voi",150000,R.drawable.home_img_combo_oc));
+        saleofflist.add(new Home_SaleOff("cua ",120000,R.drawable.home_combo_hot_img_cua));
+        saleofflist.add(new Home_SaleOff("Mực ",90000,R.drawable.home_img_combo_hot_muc));
+        saleofflist.add(new Home_SaleOff("Cá",70000,R.drawable.home_img_combo_hot_ca));
+        saleofflist.add(new Home_SaleOff("Tôm ",150000,R.drawable.home_img_combo_hot_tom));
+        saleofflist.add(new Home_SaleOff("Óc ",150000,R.drawable.home_img_combo_oc));
 
         LinearLayoutManager manager = new LinearLayoutManager(getContext());
         manager.setOrientation(LinearLayoutManager.HORIZONTAL);
@@ -66,11 +69,13 @@ public class HomeFragment extends Fragment {
         Home_ComboHot_Adapter adapter = new Home_ComboHot_Adapter(getActivity(),comboHotList);
         combohot.setAdapter(adapter);
 
+
         LinearLayoutManager manager2 = new LinearLayoutManager(getActivity());
         manager2.setOrientation(LinearLayoutManager.HORIZONTAL);
         saleoff.setLayoutManager(manager2);
 
-        Home_ComboHot_Adapter adapter2 = new Home_ComboHot_Adapter(getActivity(),comboHotList);
+        Home_Sale_off_Adapter adapter2 = new Home_Sale_off_Adapter(getActivity(), saleofflist) {
+        };
         saleoff.setAdapter(adapter2);
 
         viewPager = v.findViewById(R.id.viewpager);
