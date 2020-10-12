@@ -4,11 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.sefvi.seamarket.R;
+import com.sefvi.seamarket.Utils.Checks;
 
 
 public class Login_Activity extends AppCompatActivity {
@@ -42,7 +44,7 @@ public class Login_Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Login_Activity.this,MainActivity.class);
-                startActivity(intent);
+                 startActivity(intent);
             }
         });
 
@@ -50,9 +52,6 @@ public class Login_Activity extends AppCompatActivity {
 
     }
     private  void validate(String userName, String userPassword){
-        if ((userName == "Admin") && (userPassword == "12345")){
-            Intent intent = new Intent(Login_Activity.this, MainActivity.class);
-            startActivity(intent);
-        }
+
     }
 }
