@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.sefvi.seamarket.R;
-import com.sefvi.seamarket.View.Activity.Bottom_navigation.Home_Activity;
+
 
 public class Login_Activity extends AppCompatActivity {
     Button login_btn_login;
@@ -41,7 +41,7 @@ public class Login_Activity extends AppCompatActivity {
         login_btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Login_Activity.this,Home_Activity.class);
+                Intent intent = new Intent(Login_Activity.this,MainActivity.class);
                 startActivity(intent);
             }
         });
@@ -51,7 +51,7 @@ public class Login_Activity extends AppCompatActivity {
     }
     private  void validate(String userName, String userPassword){
         if ((userName == "Admin") && (userPassword == "12345")){
-            Intent intent = new Intent(Login_Activity.this, Home_Activity.class);
+            Intent intent = new Intent(Login_Activity.this, MainActivity.class);
             startActivity(intent);
         }
     }
