@@ -1,7 +1,12 @@
 package com.sefvi.seamarket.Utils;
 
-public class Checks {
-    public  void  Phone(Number phone){
+import android.util.Patterns;
 
+public class Checks {
+    public static boolean PhoneCheck(String phone){
+        if (phone.isEmpty() || !Patterns.PHONE.matcher(phone).matches()){
+            return false;
+        }
+        return true;
     }
 }
