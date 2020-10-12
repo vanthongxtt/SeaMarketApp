@@ -341,12 +341,11 @@
                         android:layout_height="match_parent"
                         android:textColor="@android:color/black"
                         android:textSize="18sp"
-                        android:text="Combo HOT"/>
-
+                        android:text="Combo Hot"/>
                     <ImageView
                         android:layout_width="wrap_content"
-                        android:layout_height="13dp"
-                        android:src="@drawable/ic_baseline_chevron_right_24" />
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_baseline_chevron_right_24"/>
                 </LinearLayout>
 
                     <androidx.recyclerview.widget.RecyclerView
