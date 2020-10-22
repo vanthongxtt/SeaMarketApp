@@ -35,18 +35,34 @@ public class HomeFragment extends Fragment {
     int images[] = {R.drawable.home_img1, R.drawable.home_img2, R.drawable.home_img3, R.drawable.home_img4};
     int currentPageCunter = 0;
 
-    private void Anhxa (View v){
-        combohot = v.findViewById(R.id.home_rv_combohot);
-        saleoff = v.findViewById(R.id.home_rv_sale_off);
 
-    }
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_home,container,false);
         Anhxa(v);
+        baner(v);
+        setCombohot();
+        setSaleoff();
 
 
+//        BottomNavigationView navigationView = v.findViewById(R.id.bottom_nav);
+        // intiialize and assign variable
+//        BottomNavigationView bottomNavigationView = v.findViewById(R.id.bottom_nav);
+        //set home selected
+//        bottomNavigationView.setSelectedItemId(R.id.action_home);
+
+
+        return v;
+    }
+
+    private void Anhxa (View v){
+        combohot = v.findViewById(R.id.home_rv_combohot);
+        saleoff = v.findViewById(R.id.home_rv_sale_off);
+
+    }
+
+    private void setCombohot(){
         comboHotList = new ArrayList<>();
 
         comboHotList.add(new Home_ComboHot("cua Cà Mau",120000,R.drawable.home_combo_hot_img_cua));
@@ -55,12 +71,6 @@ public class HomeFragment extends Fragment {
         comboHotList.add(new Home_ComboHot("Tôm Bình Điền",150000,R.drawable.home_img_combo_hot_tom));
         comboHotList.add(new Home_ComboHot("Óc vòi voi",150000,R.drawable.home_img_combo_oc));
 
-        saleofflist = new ArrayList<>();
-        saleofflist.add(new Home_SaleOff("cua ",120000,R.drawable.home_combo_hot_img_cua));
-        saleofflist.add(new Home_SaleOff("Mực ",90000,R.drawable.home_img_combo_hot_muc));
-        saleofflist.add(new Home_SaleOff("Cá",70000,R.drawable.home_img_combo_hot_ca));
-        saleofflist.add(new Home_SaleOff("Tôm ",150000,R.drawable.home_img_combo_hot_tom));
-        saleofflist.add(new Home_SaleOff("Óc ",150000,R.drawable.home_img_combo_oc));
 
         LinearLayoutManager manager = new LinearLayoutManager(getContext());
         manager.setOrientation(LinearLayoutManager.HORIZONTAL);
@@ -70,6 +80,16 @@ public class HomeFragment extends Fragment {
         combohot.setAdapter(adapter);
 
 
+    }
+
+    private void setSaleoff(){
+        saleofflist = new ArrayList<>();
+        saleofflist.add(new Home_SaleOff("cua ",120000,R.drawable.home_combo_hot_img_cua));
+        saleofflist.add(new Home_SaleOff("Mực ",90000,R.drawable.home_img_combo_hot_muc));
+        saleofflist.add(new Home_SaleOff("Cá",70000,R.drawable.home_img_combo_hot_ca));
+        saleofflist.add(new Home_SaleOff("Tôm ",150000,R.drawable.home_img_combo_hot_tom));
+        saleofflist.add(new Home_SaleOff("Óc ",150000,R.drawable.home_img_combo_oc));
+
         LinearLayoutManager manager2 = new LinearLayoutManager(getActivity());
         manager2.setOrientation(LinearLayoutManager.HORIZONTAL);
         saleoff.setLayoutManager(manager2);
@@ -77,16 +97,13 @@ public class HomeFragment extends Fragment {
         Home_Sale_off_Adapter adapter2 = new Home_Sale_off_Adapter(getActivity(), saleofflist) {
         };
         saleoff.setAdapter(adapter2);
+    }
+
+    private void baner(View v){
 
         viewPager = v.findViewById(R.id.viewpager);
         //add adapter
         viewPager.setAdapter(new SliderAdapter(images, getActivity()));
-//        BottomNavigationView navigationView = v.findViewById(R.id.bottom_nav);
-        // intiialize and assign variable
-//        BottomNavigationView bottomNavigationView = v.findViewById(R.id.bottom_nav);
-        //set home selected
-//        bottomNavigationView.setSelectedItemId(R.id.action_home);
-
 
 
         final Handler handler = new Handler();
@@ -110,11 +127,8 @@ public class HomeFragment extends Fragment {
             }
         },2500,2500);
 
-
-
-
-
-        return v;
-
     }
+
+
+
 }
