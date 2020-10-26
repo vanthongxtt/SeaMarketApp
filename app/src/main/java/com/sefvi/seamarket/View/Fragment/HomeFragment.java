@@ -5,14 +5,17 @@ import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Adapter;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
+import com.sefvi.seamarket.Adapter.HomeSuggestionAdapter;
 import com.sefvi.seamarket.Adapter.Home_ComboHot_Adapter;
 import com.sefvi.seamarket.Adapter.Home_Sale_off_Adapter;
 import com.sefvi.seamarket.Adapter.SliderAdapter;
@@ -26,9 +29,13 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class HomeFragment extends Fragment {
-    RecyclerView combohot,saleoff;
+    RecyclerView combohot,saleoff,suggestion;
     List<Home_ComboHot> comboHotList;
     List<Home_SaleOff> saleofflist;
+    List<String> name;
+    List<Integer> price;
+    List<Integer> img;
+    HomeSuggestionAdapter adapter;
 
     ViewPager viewPager;
     //add images from drawable to array
@@ -44,6 +51,7 @@ public class HomeFragment extends Fragment {
         baner(v);
         setCombohot();
         setSaleoff();
+        suggestion();
 
 
 //        BottomNavigationView navigationView = v.findViewById(R.id.bottom_nav);
@@ -52,13 +60,52 @@ public class HomeFragment extends Fragment {
         //set home selected
 //        bottomNavigationView.setSelectedItemId(R.id.action_home);
 
-
         return v;
+    }
+    private void suggestion(){
+
+
+        name = new ArrayList<>();
+        price = new ArrayList<>();
+        img = new ArrayList<>();
+
+        name.add("ca");
+        name.add("ca");
+        name.add("ca");
+        name.add("ca");
+        name.add("ca");
+
+        price.add(99999);
+        price.add(99999);
+        price.add(99999);
+        price.add(99999);
+        price.add(99999);
+
+        img.add(R.drawable.home_img_combo_hot_ca);
+        img.add(R.drawable.home_img_combo_hot_ca);
+        img.add(R.drawable.home_img_combo_hot_ca);
+        img.add(R.drawable.home_img_combo_hot_ca);
+        img.add(R.drawable.home_img_combo_hot_ca);
+
+
+        adapter = (HomeSuggestionAdapter) new HomeSuggestionAdapter(name,price,img,getActivity());
+
+
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(), 2,GridLayoutManager.VERTICAL,false);
+        suggestion.setLayoutManager(gridLayoutManager);
+        suggestion.setAdapter(adapter);
+
+
+
+
+
+
     }
 
     private void Anhxa (View v){
         combohot = v.findViewById(R.id.home_rv_combohot);
         saleoff = v.findViewById(R.id.home_rv_sale_off);
+        suggestion= v.findViewById(R.id.home_rv_suggestion);
 
     }
 
