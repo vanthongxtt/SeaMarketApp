@@ -74,13 +74,23 @@ public class HomeFragment extends Fragment {
         name.add("ca");
         name.add("ca");
         name.add("ca");
+        name.add("ca");
+        name.add("ca");
+        name.add("ca");
 
         price.add(99999);
         price.add(99999);
         price.add(99999);
         price.add(99999);
         price.add(99999);
+        price.add(99999);
+        price.add(99999);
+        price.add(99999);
 
+
+        img.add(R.drawable.home_img_combo_hot_ca);
+        img.add(R.drawable.home_img_combo_hot_ca);
+        img.add(R.drawable.home_img_combo_hot_ca);
         img.add(R.drawable.home_img_combo_hot_ca);
         img.add(R.drawable.home_img_combo_hot_ca);
         img.add(R.drawable.home_img_combo_hot_ca);

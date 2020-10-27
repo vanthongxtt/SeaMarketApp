@@ -2,8 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.sefvi.seamarket">
 
-    <uses-permission android:name="android.permission.CAMERA"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -12,15 +13,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".View.Activity.Splash_Activity"></activity>
+        <activity android:name=".View.Activity.VersionActivity"></activity>
+        <activity android:name=".View.Activity.Splash_Activity" />
         <activity android:name=".View.Activity.Forgot_PassWord_Activity" />
         <activity android:name=".View.Activity.SignUp_Activity" />
+        <activity android:name=".View.Activity.RulesActivity" />
         <activity android:name=".View.Activity.Login_Activity" />
-        <activity android:name=".View.Activity.Bottom_navigation.Personal_Activity" />
-        <activity android:name=".View.Activity.Bottom_navigation.Basket_Activity" />
-        <activity android:name=".View.Activity.Bottom_navigation.Notification_Activity" />
-        <activity android:name=".View.Activity.Bottom_navigation.Product_Activity" />
-        <activity android:name=".View.Activity.Bottom_navigation.Home_Activity" />
         <activity android:name=".View.Activity.MainActivity" />
         <activity android:name=".View.Activity.IntroActivity">
             <intent-filter>

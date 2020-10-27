@@ -7,14 +7,101 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
+import com.google.android.material.badge.BadgeDrawable;
+import com.google.android.material.tabs.TabLayout;
 import com.sefvi.seamarket.R;
+import com.sefvi.seamarket.View.Fragment.TabLayoutProduc.ProducClamFragment;
+import com.sefvi.seamarket.View.Fragment.TabLayoutProduc.ProducFishFragment;
+import com.sefvi.seamarket.View.Fragment.TabLayoutProduc.ProducShrimpFragment;
+import com.sefvi.seamarket.View.Fragment.TabLayoutProduc.ProducSnailsFragment;
+import com.sefvi.seamarket.View.Fragment.TabLayoutProduc.ProductCrabFragment;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ProductFragment extends Fragment {
+
+    private Toolbar toolbar;
+    private ViewPager viewPager;
+    private TabLayout tabLayout;
+
+    private ProducFishFragment producFishFragment;
+    private ProductCrabFragment productCrabFragment;
+    private ProducShrimpFragment producShrimpFragment;
+    private ProducClamFragment producClamFragment;
+    private ProducSnailsFragment producSnailsFragment;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_product,container,false);
+         View v   =   inflater.inflate(R.layout.fragment_product,container,false);
+
+
+        viewPager = v.findViewById(R.id.product_view_pager);
+        tabLayout = v.findViewById(R.id.product_tab_layout);
+
+        producFishFragment = new ProducFishFragment();
+        productCrabFragment = new ProductCrabFragment();
+        producShrimpFragment = new ProducShrimpFragment();
+        producClamFragment = new ProducClamFragment();
+        producSnailsFragment = new ProducSnailsFragment();
+
+
+        tabLayout.setupWithViewPager(viewPager);
+
+        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getFragmentManager(), 0);
+        viewPagerAdapter.addFragment(producFishFragment, "Cá");
+        viewPagerAdapter.addFragment(productCrabFragment, "Cua");
+        viewPagerAdapter.addFragment(producShrimpFragment, "Tôm");
+        viewPagerAdapter.addFragment(producClamFragment,"Sò");
+        viewPagerAdapter.addFragment(producSnailsFragment,"Ốc");
+
+        viewPager.setAdapter(viewPagerAdapter);
+
+        tabLayout.getTabAt(0).setIcon(R.drawable.fish);
+        tabLayout.getTabAt(1).setIcon(R.drawable.crab);
+        tabLayout.getTabAt(2).setIcon(R.drawable.shrimp);
+        tabLayout.getTabAt(3).setIcon(R.drawable.clam);
+        tabLayout.getTabAt(4).setIcon(R.drawable.snail);
+        return  v;
+    }
+
+
+    private class ViewPagerAdapter extends FragmentPagerAdapter {
+
+        private List<Fragment> fragments = new ArrayList<>();
+        private List<String> fragmentTitle = new ArrayList<>();
+
+        public ViewPagerAdapter(@NonNull FragmentManager fm, int behavior) {
+            super(fm, behavior);
+        }
+
+        public void addFragment(Fragment fragment, String title) {
+            fragments.add(fragment);
+            fragmentTitle.add(title);
+        }
+
+        @NonNull
+        @Override
+        public Fragment getItem(int position) {
+            return fragments.get(position);
+        }
+
+        @Override
+        public int getCount() {
+            return fragments.size();
+        }
+
+        @Nullable
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return fragmentTitle.get(position);
+        }
     }
 }
