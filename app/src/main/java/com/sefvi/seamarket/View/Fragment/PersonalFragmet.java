@@ -1,6 +1,10 @@
 package com.sefvi.seamarket.View.Fragment;
 
+import android.Manifest;
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,9 +13,12 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import com.sefvi.seamarket.View.Activity.RulesActivity;
@@ -44,23 +51,22 @@ public class PersonalFragmet extends Fragment {
         personal_ruless = v.findViewById(R.id.personal_ruless);
         personal_version = v.findViewById(R.id.personal_version);
 
+        personal_tv_username = v.findViewById(R.id.personal_tv_username);
         personal_tv_phonenumber = v.findViewById(R.id.personal_tv_phonenumber);
+
+        personal_img_user = v.findViewById(R.id.personal_img_user);
+
 
 
     }
     private void event (){
-        personal_tv_phonenumber.setOnClickListener(new View.OnClickListener() {
-
+        personal_hotline.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View arg0) {
-                // TODO Auto-generated method stub
-                String phone_no= personal_tv_phonenumber.getText().toString().replaceAll("-", "");
-                Intent callIntent = new Intent(Intent.ACTION_CALL);
-                callIntent.setData(Uri.parse(phone_no));
-                callIntent.setData(Uri.parse("tel:"+phone_no));
-                startActivity(callIntent);
+            public void onClick(View view) {
+               xuLyGoiLuon(personal_tv_phonenumber.getText().toString(), getActivity());
             }
         });
+
 
         personal_ruless.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,6 +83,25 @@ public class PersonalFragmet extends Fragment {
                 startActivity(intent);
             }
         });
+
+    }
+    // xin quyen call
+    private static void xuLyGoiLuon(String sdt, Context context) {
+        if (ContextCompat.checkSelfPermission(context,
+                Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions((Activity) context,
+                    new String[]{Manifest.permission.CALL_PHONE}, REQUEST_CALL);
+        } else {
+            Uri uri = Uri.parse("tel:" + sdt);
+            Intent intent = new Intent(Intent.ACTION_CALL);
+            intent.setData(uri);
+            context.startActivity(intent);
+        }
+    }
+    private static final int REQUEST_CALL = 1;
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
     }
 }

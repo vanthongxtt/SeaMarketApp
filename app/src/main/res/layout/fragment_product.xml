@@ -10,8 +10,14 @@
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/product_tab_layout"
             android:layout_width="match_parent"
-            app:tabTextColor="@color/colorWhite"
-            android:layout_height="wrap_content" />
+            app:tabMinWidth="90dp"
+            app:tabTextColor="@color/login_form_details_medium"
+            app:tabMode="scrollable"
+            app:tabIconTint="@color/custom_icon_tablayout_pessonal"
+            app:tabIndicatorAnimationDuration="@android:integer/config_longAnimTime"
+            app:tabIndicatorColor="@color/colorWhite"
+            android:layout_height="wrap_content"
+            app:tabSelectedTextColor="@color/colorWhite" />
     </com.google.android.material.appbar.AppBarLayout>
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/product_view_pager"
