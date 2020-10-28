@@ -9,12 +9,12 @@ import android.widget.TextView;
 
 import com.sefvi.seamarket.R;
 
-public class RulesActivity extends AppCompatActivity {
+public class SettingActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rules);
+        setContentView(R.layout.activity_setting);
         ImageView backicon = findViewById(R.id.toolbar_back);
         TextView name = findViewById(R.id.toolbar_name);
 
@@ -24,6 +24,6 @@ public class RulesActivity extends AppCompatActivity {
                 finish();
             }
         });
-        name.setText("Điều khoản & chính sách");
+        name.setText("Cài đặt");
     }
 }

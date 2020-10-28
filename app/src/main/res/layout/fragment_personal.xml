@@ -151,7 +151,7 @@
                 android:layout_toRightOf="@id/personal_tv_hotline"
                 android:textColor="#367C04"
                 android:textSize="20sp"
-                android:text="1800 29 29 29"/>
+                android:text="1800 81 98"/>
 
             <ImageView
                 android:layout_width="30dp"

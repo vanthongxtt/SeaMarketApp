@@ -29,7 +29,6 @@ public class VersionActivity extends AppCompatActivity {
                 finish();
             }
         });
-
         name.setText("Phiên bản");
 
     }
