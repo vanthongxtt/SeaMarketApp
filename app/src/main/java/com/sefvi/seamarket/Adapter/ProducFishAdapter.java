@@ -30,15 +30,15 @@ public static  class MyViewHolder extends RecyclerView.ViewHolder{
 
     public MyViewHolder(@NonNull View itemView) {
         super(itemView);
-        mName = itemView.findViewById(R.id.product_fish_name);
-        mPrice = itemView.findViewById(R.id.product_fish_price);
-        mImg = itemView.findViewById(R.id.product_fish_img);
+        mName = itemView.findViewById(R.id.product_tablayout_item_name);
+        mPrice = itemView.findViewById(R.id.product_tablayout_item_price);
+        mImg = itemView.findViewById(R.id.product_tablayout_item_img);
     }
 }
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(context).inflate(R.layout.custom_product_tablayout_fish,parent,false);
+        View v = LayoutInflater.from(context).inflate(R.layout.custom_product_tablayout,parent,false);
         return new MyViewHolder(v) ;
     }
 

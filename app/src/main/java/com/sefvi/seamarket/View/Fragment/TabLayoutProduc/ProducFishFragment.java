@@ -79,17 +79,26 @@ public class ProducFishFragment extends Fragment {
     private void setProducfishrcv (){
         producFishModelList = new ArrayList<>();
 
+        producFishModelList.add(new ProducFishModel("ca",1222132,R.drawable.ca1));
+        producFishModelList.add(new ProducFishModel("ca",1222132,R.drawable.ca2));
+        producFishModelList.add(new ProducFishModel("ca",1222132,R.drawable.ca3));
+        producFishModelList.add(new ProducFishModel("ca",1222132,R.drawable.ca4));
+        producFishModelList.add(new ProducFishModel("ca",1222132,R.drawable.ca5));
+        producFishModelList.add(new ProducFishModel("ca",1222132,R.drawable.ca6));
         producFishModelList.add(new ProducFishModel("ca",1222132,R.drawable.home_img_combo_hot_ca));
+        producFishModelList.add(new ProducFishModel("ca",1222132,R.drawable.ca1));
+        producFishModelList.add(new ProducFishModel("ca",1222132,R.drawable.ca2));
+        producFishModelList.add(new ProducFishModel("ca",1222132,R.drawable.ca3));
+        producFishModelList.add(new ProducFishModel("ca",1222132,R.drawable.ca4));
+        producFishModelList.add(new ProducFishModel("ca",1222132,R.drawable.ca5));
+        producFishModelList.add(new ProducFishModel("ca",1222132,R.drawable.ca6));
         producFishModelList.add(new ProducFishModel("ca",1222132,R.drawable.home_img_combo_hot_ca));
-        producFishModelList.add(new ProducFishModel("ca",1222132,R.drawable.home_img_combo_hot_ca));
-        producFishModelList.add(new ProducFishModel("ca",1222132,R.drawable.home_img_combo_hot_ca));
-        producFishModelList.add(new ProducFishModel("ca",1222132,R.drawable.home_img_combo_hot_ca));
-        producFishModelList.add(new ProducFishModel("ca",1222132,R.drawable.home_img_combo_hot_ca));
-        producFishModelList.add(new ProducFishModel("ca",1222132,R.drawable.home_img_combo_hot_ca));
-        producFishModelList.add(new ProducFishModel("ca",1222132,R.drawable.home_img_combo_hot_ca));
-        producFishModelList.add(new ProducFishModel("ca",1222132,R.drawable.home_img_combo_hot_ca));
-        producFishModelList.add(new ProducFishModel("ca",1222132,R.drawable.home_img_combo_hot_ca));
-        producFishModelList.add(new ProducFishModel("ca",1222132,R.drawable.home_img_combo_hot_ca));
+        producFishModelList.add(new ProducFishModel("ca",1222132,R.drawable.ca1));
+        producFishModelList.add(new ProducFishModel("ca",1222132,R.drawable.ca2));
+        producFishModelList.add(new ProducFishModel("ca",1222132,R.drawable.ca3));
+        producFishModelList.add(new ProducFishModel("ca",1222132,R.drawable.ca4));
+        producFishModelList.add(new ProducFishModel("ca",1222132,R.drawable.ca5));
+        producFishModelList.add(new ProducFishModel("ca",1222132,R.drawable.ca6));
         producFishModelList.add(new ProducFishModel("ca",1222132,R.drawable.home_img_combo_hot_ca));
 
         LinearLayoutManager manager = new LinearLayoutManager(getContext());

@@ -6,6 +6,7 @@
     android:layout_marginRight="10dp"
     android:layout_marginLeft="10dp"
     android:padding="5dp"
+    android:elevation="2dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -26,7 +27,7 @@
               android:layout_marginLeft="5dp"
               app:cardCornerRadius="10dp">
               <ImageView
-                  android:id="@+id/product_fish_img"
+                  android:id="@+id/product_tablayout_item_img"
                   android:layout_width="100dp"
                   android:layout_height="120dp"
                   android:scaleType="centerCrop"
@@ -41,7 +42,7 @@
               android:orientation="vertical">
 
               <TextView
-                  android:id="@+id/product_fish_name"
+                  android:id="@+id/product_tablayout_item_name"
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
                   android:layout_marginTop="5dp"
@@ -51,10 +52,11 @@
               <RelativeLayout
                   android:layout_width="match_parent"
                   android:layout_height="wrap_content"
+                  android:layout_marginBottom="5dp"
                   android:orientation="horizontal">
 
                   <TextView
-                      android:id="@+id/product_fish_price"
+                      android:id="@+id/product_tablayout_item_price"
                       android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
                       android:layout_alignParentBottom="true"

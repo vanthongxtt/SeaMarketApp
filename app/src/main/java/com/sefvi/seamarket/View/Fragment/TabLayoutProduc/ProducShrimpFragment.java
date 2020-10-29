@@ -6,10 +6,25 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+
+import com.sefvi.seamarket.Adapter.ProducFishAdapter;
+import com.sefvi.seamarket.Adapter.ProducShrimpAdapter;
+import com.sefvi.seamarket.Model.ProducFishModel;
+import com.sefvi.seamarket.Model.ProducShrimpModel;
 import com.sefvi.seamarket.R;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ProducShrimpFragment extends Fragment {
+    RecyclerView producshrimprcv;
+    List<ProducShrimpModel> producShrimpModelList;
+    List<String> name;
+    List<Integer> price;
+    List<Integer> img;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -55,6 +70,44 @@ public class ProducShrimpFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_product_shrimp, container, false);
+        View v =  inflater.inflate(R.layout.fragment_product_shrimp, container, false);
+        anhxa(v);
+        setProducshrimp();
+
+        return v;
+
     }
+    private void anhxa(View v){
+        producshrimprcv = v.findViewById(R.id.product_shrimp_rcv);
+    }
+    private void setProducshrimp (){
+        producShrimpModelList = new ArrayList<>();
+
+        producShrimpModelList.add(new ProducShrimpModel("Tôm",600000,R.drawable.tom1));
+        producShrimpModelList.add(new ProducShrimpModel("Tôm",1222132,R.drawable.tom2));
+        producShrimpModelList.add(new ProducShrimpModel("Tôm",1222132,R.drawable.tom3));
+        producShrimpModelList.add(new ProducShrimpModel("Tôm",1222132,R.drawable.tom4));
+        producShrimpModelList.add(new ProducShrimpModel("Tôm",1222132,R.drawable.tom5));
+        producShrimpModelList.add(new ProducShrimpModel("Tôm",600000,R.drawable.tom1));
+        producShrimpModelList.add(new ProducShrimpModel("Tôm",1222132,R.drawable.tom2));
+        producShrimpModelList.add(new ProducShrimpModel("Tôm",1222132,R.drawable.tom3));
+        producShrimpModelList.add(new ProducShrimpModel("Tôm",1222132,R.drawable.tom4));
+        producShrimpModelList.add(new ProducShrimpModel("Tôm",1222132,R.drawable.tom5));
+        producShrimpModelList.add(new ProducShrimpModel("Tôm",600000,R.drawable.tom1));
+        producShrimpModelList.add(new ProducShrimpModel("Tôm",1222132,R.drawable.tom2));
+        producShrimpModelList.add(new ProducShrimpModel("Tôm",1222132,R.drawable.tom3));
+        producShrimpModelList.add(new ProducShrimpModel("Tôm",1222132,R.drawable.tom4));
+        producShrimpModelList.add(new ProducShrimpModel("Tôm",1222132,R.drawable.tom5));
+
+
+
+        LinearLayoutManager manager = new LinearLayoutManager(getContext());
+        manager.setOrientation(LinearLayoutManager.VERTICAL);
+        producshrimprcv.setLayoutManager(manager);
+
+        ProducShrimpAdapter adapter = new ProducShrimpAdapter(getActivity(),producShrimpModelList);
+        producshrimprcv.setAdapter(adapter);
+
+    }
+
 }

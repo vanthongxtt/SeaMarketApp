@@ -6,10 +6,26 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.sefvi.seamarket.Adapter.ProducCrabAdapter;
+import com.sefvi.seamarket.Adapter.ProducFishAdapter;
+import com.sefvi.seamarket.Model.ProducClamModel;
+import com.sefvi.seamarket.Model.ProducCrabModel;
+import com.sefvi.seamarket.Model.ProducFishModel;
 import com.sefvi.seamarket.R;
 
-public class ProductCrabFragment extends Fragment {
+import java.util.ArrayList;
+import java.util.List;
+
+public class
+ProductCrabFragment extends Fragment {
+    RecyclerView produccrabrcv;
+    List<ProducCrabModel> producCrabModelList;
+    List<String> name;
+    List<Integer> price;
+    List<Integer> img;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -55,7 +71,41 @@ public class ProductCrabFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_product_crab, container, false);
-    }
+        View v = inflater.inflate(R.layout.fragment_product_crab, container, false);
+        anhxa(v);
+        setProducfishrcv();
 
+        return v;
+    }
+    private void anhxa(View v){
+        produccrabrcv = v.findViewById(R.id.product_crab_rcv);
+    }
+    private void setProducfishrcv (){
+        producCrabModelList = new ArrayList<>();
+
+        producCrabModelList.add(new ProducCrabModel("cua",53423,R.drawable.cua1));
+        producCrabModelList.add(new ProducCrabModel("cua",122132,R.drawable.cua2));
+        producCrabModelList.add(new ProducCrabModel("cua",1222132,R.drawable.cua3));
+        producCrabModelList.add(new ProducCrabModel("cua",1222132,R.drawable.cua4));
+        producCrabModelList.add(new ProducCrabModel("cua",1222132,R.drawable.cua5));
+        producCrabModelList.add(new ProducCrabModel("cua",53423,R.drawable.cua1));
+        producCrabModelList.add(new ProducCrabModel("cua",122132,R.drawable.cua2));
+        producCrabModelList.add(new ProducCrabModel("cua",1222132,R.drawable.cua3));
+        producCrabModelList.add(new ProducCrabModel("cua",1222132,R.drawable.cua4));
+        producCrabModelList.add(new ProducCrabModel("cua",1222132,R.drawable.cua5));
+        producCrabModelList.add(new ProducCrabModel("cua",53423,R.drawable.cua1));
+        producCrabModelList.add(new ProducCrabModel("cua",122132,R.drawable.cua2));
+        producCrabModelList.add(new ProducCrabModel("cua",1222132,R.drawable.cua3));
+        producCrabModelList.add(new ProducCrabModel("cua",1222132,R.drawable.cua4));
+        producCrabModelList.add(new ProducCrabModel("cua",1222132,R.drawable.cua5));
+
+
+        LinearLayoutManager manager = new LinearLayoutManager(getContext());
+        manager.setOrientation(LinearLayoutManager.VERTICAL);
+        produccrabrcv.setLayoutManager(manager);
+
+        ProducCrabAdapter adapter = new ProducCrabAdapter(getActivity(),producCrabModelList);
+        produccrabrcv.setAdapter(adapter);
+
+    }
 }

@@ -5,12 +5,11 @@
     android:layout_height="match_parent">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/product_clam_rcv"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="32dp"
-        android:gravity="center"
-        android:layout_gravity="center"
-        android:text="clam Fragment" />
+        android:layout_height="wrap_content">
+    </androidx.recyclerview.widget.RecyclerView>
+
 
 </FrameLayout>
