@@ -39,7 +39,7 @@ public class HomeFragment extends Fragment {
 
     ViewPager viewPager;
     //add images from drawable to array
-    int images[] = {R.drawable.home_img1, R.drawable.home_img2, R.drawable.home_img3, R.drawable.home_img4};
+    int images[] = {R.drawable.home_img0,R.drawable.home_img1, R.drawable.home_img2, R.drawable.home_img3, R.drawable.home_img4};
     int currentPageCunter = 0;
 
 
@@ -77,6 +77,8 @@ public class HomeFragment extends Fragment {
         name.add("ca");
         name.add("ca");
         name.add("ca");
+        name.add("ca");
+        name.add("ca");
 
         price.add(99999);
         price.add(99999);
@@ -86,8 +88,12 @@ public class HomeFragment extends Fragment {
         price.add(99999);
         price.add(99999);
         price.add(99999);
+        price.add(99999);
+        price.add(99999);
 
 
+        img.add(R.drawable.home_img_combo_hot_ca);
+        img.add(R.drawable.home_img_combo_hot_ca);
         img.add(R.drawable.home_img_combo_hot_ca);
         img.add(R.drawable.home_img_combo_hot_ca);
         img.add(R.drawable.home_img_combo_hot_ca);
@@ -127,6 +133,12 @@ public class HomeFragment extends Fragment {
         comboHotList.add(new Home_ComboHot("Cá",70000,R.drawable.home_img_combo_hot_ca));
         comboHotList.add(new Home_ComboHot("Tôm Bình Điền",150000,R.drawable.home_img_combo_hot_tom));
         comboHotList.add(new Home_ComboHot("Óc vòi voi",150000,R.drawable.home_img_combo_oc));
+        comboHotList.add(new Home_ComboHot("cua Cà Mau",120000,R.drawable.home_combo_hot_img_cua));
+        comboHotList.add(new Home_ComboHot("Mực nè",90000,R.drawable.home_img_combo_hot_muc));
+        comboHotList.add(new Home_ComboHot("Cá",70000,R.drawable.home_img_combo_hot_ca));
+        comboHotList.add(new Home_ComboHot("Tôm Bình Điền",150000,R.drawable.home_img_combo_hot_tom));
+        comboHotList.add(new Home_ComboHot("Óc vòi voi",150000,R.drawable.home_img_combo_oc));
+        
 
 
         LinearLayoutManager manager = new LinearLayoutManager(getContext());
@@ -146,6 +158,12 @@ public class HomeFragment extends Fragment {
         saleofflist.add(new Home_SaleOff("Cá",70000,R.drawable.home_img_combo_hot_ca));
         saleofflist.add(new Home_SaleOff("Tôm ",150000,R.drawable.home_img_combo_hot_tom));
         saleofflist.add(new Home_SaleOff("Óc ",150000,R.drawable.home_img_combo_oc));
+        saleofflist.add(new Home_SaleOff("cua ",120000,R.drawable.home_combo_hot_img_cua));
+        saleofflist.add(new Home_SaleOff("Mực ",90000,R.drawable.home_img_combo_hot_muc));
+        saleofflist.add(new Home_SaleOff("Cá",70000,R.drawable.home_img_combo_hot_ca));
+        saleofflist.add(new Home_SaleOff("Tôm ",150000,R.drawable.home_img_combo_hot_tom));
+        saleofflist.add(new Home_SaleOff("Óc ",150000,R.drawable.home_img_combo_oc));
+
 
         LinearLayoutManager manager2 = new LinearLayoutManager(getActivity());
         manager2.setOrientation(LinearLayoutManager.HORIZONTAL);

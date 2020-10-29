@@ -4,17 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ffffff"
     tools:context=".View.Activity.RulesActivity">
     <include layout="@layout/toolbar"/>
 
-
-
-    <TextView
-        android:id="@+id/textView"
+    <WebView
+        android:id="@+id/rules_webview"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:text="dkvscs" />
+        android:layout_height="match_parent">
+
+    </WebView>
+
+
+
+
+
 </LinearLayout>

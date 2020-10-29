@@ -40,7 +40,7 @@ public class ProductFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-         View v   =   inflater.inflate(R.layout.fragment_product,container,false);
+         View v   =   inflater.inflate(R.layout.fragment_product,null);
 
 
         viewPager = v.findViewById(R.id.product_view_pager);
@@ -52,56 +52,96 @@ public class ProductFragment extends Fragment {
         producClamFragment = new ProducClamFragment();
         producSnailsFragment = new ProducSnailsFragment();
 
+        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getChildFragmentManager());
+        viewPager.setAdapter(viewPagerAdapter);
 
         tabLayout.setupWithViewPager(viewPager);
 
-        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getFragmentManager(), 0);
-        viewPagerAdapter.addFragment(producFishFragment, "Cá");
-        viewPagerAdapter.addFragment(productCrabFragment, "Cua");
-        viewPagerAdapter.addFragment(producShrimpFragment, "Tôm");
-        viewPagerAdapter.addFragment(producClamFragment,"Sò");
-        viewPagerAdapter.addFragment(producSnailsFragment,"Ốc");
-
-        viewPager.setAdapter(viewPagerAdapter);
 
         tabLayout.getTabAt(0).setIcon(R.drawable.fish);
         tabLayout.getTabAt(1).setIcon(R.drawable.crab);
         tabLayout.getTabAt(2).setIcon(R.drawable.shrimp);
         tabLayout.getTabAt(3).setIcon(R.drawable.clam);
         tabLayout.getTabAt(4).setIcon(R.drawable.snail);
+
+        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+        tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(viewPager));
         return  v;
     }
 
-
-    private class ViewPagerAdapter extends FragmentPagerAdapter {
-
-        private List<Fragment> fragments = new ArrayList<>();
-        private List<String> fragmentTitle = new ArrayList<>();
-
-        public ViewPagerAdapter(@NonNull FragmentManager fm, int behavior) {
-            super(fm, behavior);
+    public class ViewPagerAdapter extends FragmentPagerAdapter {
+        public ViewPagerAdapter(FragmentManager fm) {
+            super(fm);
         }
-
-        public void addFragment(Fragment fragment, String title) {
-            fragments.add(fragment);
-            fragmentTitle.add(title);
-        }
-
-        @NonNull
         @Override
         public Fragment getItem(int position) {
-            return fragments.get(position);
+            switch (position) {
+                case 0:
+                    return  new ProducFishFragment();
+                case 1:
+                    return new ProductCrabFragment();
+                case 2:
+                    return new  ProducShrimpFragment();
+                case  3:
+                    return new ProducClamFragment();
+                case  4:
+                    return new ProducSnailsFragment();
+                default:
+                    return null;
+            }
         }
 
         @Override
         public int getCount() {
-            return fragments.size();
+            return 5;
         }
-
-        @Nullable
         @Override
         public CharSequence getPageTitle(int position) {
-            return fragmentTitle.get(position);
+            switch (position) {
+                case 0:
+                    return "Cá";
+                case 1:
+                    return "Cua";
+                case 2:
+                    return "Tôm";
+                case 3:
+                    return "Sò";
+                case 4:
+                    return "Ốc";
+                default:
+                    return null;
+            }
         }
     }
+//    private class ViewPagerAdapter extends FragmentPagerAdapter {
+//
+//        private List<Fragment> fragments = new ArrayList<>();
+//        private List<String> fragmentTitle = new ArrayList<>();
+//
+//        public ViewPagerAdapter(@NonNull FragmentManager fm, int behavior) {
+//            super(fm, behavior);
+//        }
+//
+//        public void addFragment(Fragment fragment, String title) {
+//            fragments.add(fragment);
+//            fragmentTitle.add(title);
+//        }
+//
+//        @NonNull
+//        @Override
+//        public Fragment getItem(int position) {
+//            return fragments.get(position);
+//        }
+//
+//        @Override
+//        public int getCount() {
+//            return 5;
+//        }
+//
+//        @Nullable
+//        @Override
+//        public CharSequence getPageTitle(int position) {
+//            return fragmentTitle.get(position);
+//        }
+//    }
 }

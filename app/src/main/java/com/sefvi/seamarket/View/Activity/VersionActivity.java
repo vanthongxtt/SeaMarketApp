@@ -19,10 +19,11 @@ public class VersionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_version);
+        anhxa();
+        event();
 
         ImageView backicon = findViewById(R.id.toolbar_back);
         TextView name = findViewById(R.id.toolbar_name);
-
         backicon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -30,6 +31,14 @@ public class VersionActivity extends AppCompatActivity {
             }
         });
         name.setText("Phiên bản");
+
+    }
+
+    private void event(){
+
+    }
+    private void anhxa (){
+
 
     }
 

@@ -6,10 +6,23 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.sefvi.seamarket.Adapter.Home_ComboHot_Adapter;
+import com.sefvi.seamarket.Adapter.ProducFishAdapter;
+import com.sefvi.seamarket.Model.ProducFishModel;
 import com.sefvi.seamarket.R;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ProducFishFragment extends Fragment {
+    RecyclerView producfishrcv;
+    List<ProducFishModel> producFishModelList;
+    List<String> name;
+    List<Integer> price;
+    List<Integer> img;
 
     // TODO: Rename parameter arguments, choose names that match
     private static final String ARG_PARAM1 = "param1";
@@ -54,9 +67,37 @@ public class ProducFishFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_product_fish, container, false);
+        View v =  inflater.inflate(R.layout.fragment_product_fish, container, false);
+        anhxa(v);
+        setProducfishrcv();
 
+        return v;
+    }
+    private void anhxa(View v){
+        producfishrcv = v.findViewById(R.id.product_fish_rcv);
+    }
+    private void setProducfishrcv (){
+        producFishModelList = new ArrayList<>();
 
+        producFishModelList.add(new ProducFishModel("ca",1222132,R.drawable.home_img_combo_hot_ca));
+        producFishModelList.add(new ProducFishModel("ca",1222132,R.drawable.home_img_combo_hot_ca));
+        producFishModelList.add(new ProducFishModel("ca",1222132,R.drawable.home_img_combo_hot_ca));
+        producFishModelList.add(new ProducFishModel("ca",1222132,R.drawable.home_img_combo_hot_ca));
+        producFishModelList.add(new ProducFishModel("ca",1222132,R.drawable.home_img_combo_hot_ca));
+        producFishModelList.add(new ProducFishModel("ca",1222132,R.drawable.home_img_combo_hot_ca));
+        producFishModelList.add(new ProducFishModel("ca",1222132,R.drawable.home_img_combo_hot_ca));
+        producFishModelList.add(new ProducFishModel("ca",1222132,R.drawable.home_img_combo_hot_ca));
+        producFishModelList.add(new ProducFishModel("ca",1222132,R.drawable.home_img_combo_hot_ca));
+        producFishModelList.add(new ProducFishModel("ca",1222132,R.drawable.home_img_combo_hot_ca));
+        producFishModelList.add(new ProducFishModel("ca",1222132,R.drawable.home_img_combo_hot_ca));
+        producFishModelList.add(new ProducFishModel("ca",1222132,R.drawable.home_img_combo_hot_ca));
+
+        LinearLayoutManager manager = new LinearLayoutManager(getContext());
+        manager.setOrientation(LinearLayoutManager.VERTICAL);
+        producfishrcv.setLayoutManager(manager);
+
+        ProducFishAdapter adapter = new ProducFishAdapter(getActivity(),producFishModelList);
+        producfishrcv.setAdapter(adapter);
 
     }
 }
