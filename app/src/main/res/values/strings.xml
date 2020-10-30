@@ -6,5 +6,16 @@
     <string name="action_notification">Thông báo</string>
     <string name="action_basket">Giỏ hàng</string>
     <string name="action_personal">Cá Nhân</string>
+<!-- activity đăng kí-->
+    <string name="text_sodienthoai">Số điện thoại</string>
+
+<!--    activity người dùng-->
+    <string name="personal_text_diachinhanhang">Địa chỉ nhận hàng</string>
+    <string name="personal_text_caidat">Cài đặt</string>
+    <string name="personal_text_dieukhoanvachinhsach">Điều khoản &#xFF06; Chính sách</string>
+    <string name="personal_text_phienbanungdung">Phiên bản ứng dụng</string>
+
+
+
 
 </resources>

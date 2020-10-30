@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SeaMarket</string>
+    <string name="text_sodienthoai">Phone</string>
+    <string name="action_home">Home</string>
+    <string name="action_product">Product</string>
+    <string name="action_notification">Notidication</string>
+    <string name="action_basket">Basket</string>
+    <string name="action_personal">Personal</string>
+    <string name="personal_text_diachinhanhang">Delivery address</string>
+    <string name="personal_text_caidat">Setting</string>
+    <string name="personal_text_dieukhoanvachinhsach">Regulations</string>
+    <string name="personal_text_phienbanungdung">Version</string>
+</resources>

@@ -54,7 +54,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
                 android:background="@drawable/custom_edt_signup"
-                android:hint="Số điện thoại"
+                android:hint="@string/text_sodienthoai"
                 android:inputType="number"
                 android:padding="16dp"
                 android:textColor="@color/login_form_details"
