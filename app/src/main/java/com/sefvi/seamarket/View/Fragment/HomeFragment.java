@@ -1,11 +1,13 @@
 package com.sefvi.seamarket.View.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Adapter;
+import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -22,6 +24,8 @@ import com.sefvi.seamarket.Adapter.SliderAdapter;
 import com.sefvi.seamarket.Model.Home_ComboHot;
 import com.sefvi.seamarket.Model.Home_SaleOff;
 import com.sefvi.seamarket.R;
+import com.sefvi.seamarket.View.Activity.HotActivity;
+import com.sefvi.seamarket.View.Activity.VersionActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +34,7 @@ import java.util.TimerTask;
 
 public class HomeFragment extends Fragment {
     RecyclerView combohot,saleoff,suggestion;
+    LinearLayout homelnlhot,homelnldiscount,homelnlimport,homelnlsellalot,homelnlbuygroup;
     List<Home_ComboHot> comboHotList;
     List<Home_SaleOff> saleofflist;
     List<String> name;
@@ -48,6 +53,7 @@ public class HomeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_home,container,false);
         Anhxa(v);
+        event();
         baner(v);
         setCombohot();
         setSaleoff();
@@ -122,6 +128,21 @@ public class HomeFragment extends Fragment {
         combohot = v.findViewById(R.id.home_rv_combohot);
         saleoff = v.findViewById(R.id.home_rv_sale_off);
         suggestion= v.findViewById(R.id.home_rv_suggestion);
+        homelnlhot = v.findViewById(R.id.home_lnl_hot);
+        homelnldiscount = v.findViewById(R.id.home_lnl_discount);
+        homelnlimport = v.findViewById(R.id.home_lnl_import);
+        homelnlsellalot = v.findViewById(R.id.home_lnl_sellalot);
+        homelnlbuygroup = v.findViewById(R.id.home_lnl_buygroup);
+
+    }
+    private void event (){
+        homelnlhot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), HotActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 

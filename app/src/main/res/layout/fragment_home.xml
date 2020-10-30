@@ -192,6 +192,7 @@
                     android:layout_height="120dp"
                     android:layout_marginTop="10dp">
                     <LinearLayout
+                        android:id="@+id/home_lnl_hot"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -219,6 +220,7 @@
 
                     </LinearLayout>
                     <LinearLayout
+                        android:id="@+id/home_lnl_discount"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -245,6 +247,7 @@
 
                     </LinearLayout>
                     <LinearLayout
+                        android:id="@+id/home_lnl_import"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -272,6 +275,7 @@
 
                     </LinearLayout>
                     <LinearLayout
+                        android:id="@+id/home_lnl_sellalot"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -282,9 +286,7 @@
                             android:layout_gravity="center"
                             android:layout_marginTop="10dp"
                             app:cardCornerRadius="120dp">
-
                             <ImageView
-
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:scaleType="centerCrop"
@@ -298,6 +300,7 @@
                             android:text="bán chạy"/>
                     </LinearLayout>
                     <LinearLayout
+                        android:id="@+id/home_lnl_buygroup"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
