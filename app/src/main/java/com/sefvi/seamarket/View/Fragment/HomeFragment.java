@@ -25,6 +25,8 @@ import com.sefvi.seamarket.Model.Home_ComboHot;
 import com.sefvi.seamarket.Model.Home_SaleOff;
 import com.sefvi.seamarket.R;
 import com.sefvi.seamarket.View.Activity.HotActivity;
+import com.sefvi.seamarket.View.Activity.ImportActivity;
+import com.sefvi.seamarket.View.Activity.SellALotActivity;
 import com.sefvi.seamarket.View.Activity.VersionActivity;
 
 import java.util.ArrayList;
@@ -140,6 +142,22 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), HotActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        homelnlimport.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), ImportActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        homelnlsellalot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), SellALotActivity.class);
                 startActivity(intent);
             }
         });
