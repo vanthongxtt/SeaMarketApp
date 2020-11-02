@@ -90,7 +90,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Tìm kiếm trên SeaMarket"
+                        android:text="@string/Home_text_timkiemtrenseamarket"
                         android:layout_marginLeft="5dp"
                         android:layout_marginTop="5dp"
                         android:layout_marginBottom="5dp"
@@ -143,7 +143,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Đảm bảo chất lượng"
+                            android:text="@string/home_text_dambaochatluong"
                             android:textSize="12sp" />
                     </LinearLayout>
 
@@ -162,7 +162,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Giao hàng trong 24h"
+                            android:text="@string/home_text_giaohangtrong24h"
                             android:textSize="12sp" />
                     </LinearLayout>
 
@@ -181,7 +181,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Thanh toán COD"
+                            android:text="@string/home_text_thanhtoancod"
                             android:textSize="12sp" />
                     </LinearLayout>
 

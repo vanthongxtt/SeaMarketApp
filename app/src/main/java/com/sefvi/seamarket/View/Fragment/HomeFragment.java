@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Adapter;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -26,6 +27,7 @@ import com.sefvi.seamarket.Model.Home_SaleOff;
 import com.sefvi.seamarket.R;
 import com.sefvi.seamarket.View.Activity.HotActivity;
 import com.sefvi.seamarket.View.Activity.ImportActivity;
+import com.sefvi.seamarket.View.Activity.PurchaseAreaActivity;
 import com.sefvi.seamarket.View.Activity.SellALotActivity;
 import com.sefvi.seamarket.View.Activity.VersionActivity;
 
@@ -37,6 +39,7 @@ import java.util.TimerTask;
 public class HomeFragment extends Fragment {
     RecyclerView combohot,saleoff,suggestion;
     LinearLayout homelnlhot,homelnldiscount,homelnlimport,homelnlsellalot,homelnlbuygroup;
+    RelativeLayout home_rl_gps;
     List<Home_ComboHot> comboHotList;
     List<Home_SaleOff> saleofflist;
     List<String> name;
@@ -135,6 +138,7 @@ public class HomeFragment extends Fragment {
         homelnlimport = v.findViewById(R.id.home_lnl_import);
         homelnlsellalot = v.findViewById(R.id.home_lnl_sellalot);
         homelnlbuygroup = v.findViewById(R.id.home_lnl_buygroup);
+        home_rl_gps = v.findViewById(R.id.home_rl_gps);
 
     }
     private void event (){
@@ -158,6 +162,13 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), SellALotActivity.class);
+                startActivity(intent);
+            }
+        });
+        home_rl_gps.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), PurchaseAreaActivity.class);
                 startActivity(intent);
             }
         });

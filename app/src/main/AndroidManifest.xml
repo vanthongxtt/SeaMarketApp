@@ -14,9 +14,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".View.Activity.HotActivity"/>
-        <activity android:name=".View.Activity.SellALotActivity"/>
-        <activity android:name=".View.Activity.ImportActivity"/>
+        <activity android:name=".View.Activity.PurchaseAreaActivity"/>
+        <activity android:name=".View.Activity.HotActivity" />
+        <activity android:name=".View.Activity.SellALotActivity" />
+        <activity android:name=".View.Activity.ImportActivity" />
         <activity android:name=".View.Activity.VersionActivity" />
         <activity android:name=".View.Activity.Splash_Activity" />
         <activity android:name=".View.Activity.Forgot_PassWord_Activity" />

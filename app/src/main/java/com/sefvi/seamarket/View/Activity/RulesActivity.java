@@ -40,6 +40,7 @@ public class RulesActivity extends AppCompatActivity {
         activity = this;
         progDailog = ProgressDialog.show(activity, "Đang tải","Vui lòng đợi...", true);
         progDailog.setCancelable(false);
+
         webView = (WebView) findViewById(R.id.rules_webview);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.getSettings().setLoadWithOverviewMode(true);

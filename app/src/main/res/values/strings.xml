@@ -1,21 +1,23 @@
 <resources>
     <string name="app_name">SeaMarket</string>
-
     <string name="action_home">Trang chủ</string>
     <string name="action_product">Sản phẩm</string>
     <string name="action_notification">Thông báo</string>
     <string name="action_basket">Giỏ hàng</string>
     <string name="action_personal">Cá Nhân</string>
-<!-- activity đăng kí-->
+    <!-- activity đăng kí-->
     <string name="text_sodienthoai">Số điện thoại</string>
-
-<!--    activity người dùng-->
+    <!--    activity người dùng-->
     <string name="personal_text_diachinhanhang">Địa chỉ nhận hàng</string>
     <string name="personal_text_caidat">Cài đặt</string>
     <string name="personal_text_dieukhoanvachinhsach">Điều khoản &#xFF06; Chính sách</string>
     <string name="personal_text_phienbanungdung">Phiên bản ứng dụng</string>
 
-
+    <!--    activity home-->
+    <string name="home_text_dambaochatluong">Đảm bảo chất lượng</string>
+    <string name="home_text_giaohangtrong24h">Giao hàng trong 24h</string>
+    <string name="home_text_thanhtoancod">Thanh toán COD</string>
+    <string name="Home_text_timkiemtrenseamarket">Tìm kiếm trên Seamarket</string>
 
 
 </resources>
