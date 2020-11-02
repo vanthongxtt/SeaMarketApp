@@ -1,3 +1,4 @@
+
 package com.sefvi.seamarket.Adapter;
 
 
@@ -16,8 +17,8 @@ import com.sefvi.seamarket.R;
 import java.util.ArrayList;
 
 public class PurchaseAreaAdapter extends RecyclerView.Adapter<PurchaseAreaAdapter.ViewHolder>{
-   ArrayList<PurchaseAreaModel> purchaseAreaModels;
-   Context context;
+    ArrayList<PurchaseAreaModel> purchaseAreaModels;
+    Context context;
 
     public PurchaseAreaAdapter(ArrayList<PurchaseAreaModel> purchaseAreaModels, Context context) {
         this.purchaseAreaModels = purchaseAreaModels;
@@ -34,7 +35,7 @@ public class PurchaseAreaAdapter extends RecyclerView.Adapter<PurchaseAreaAdapte
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-holder.txtaddress.setText(purchaseAreaModels.get(position).getAddress());
+        holder.txtaddress.setText(purchaseAreaModels.get(position).getAddress());
     }
 
     @Override

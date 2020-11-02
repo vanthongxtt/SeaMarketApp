@@ -4,6 +4,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.sefvi.seamarket.Adapter.ProducFishAdapter;
 import com.sefvi.seamarket.Adapter.PurchaseAreaAdapter;
@@ -24,6 +27,15 @@ public class PurchaseAreaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_purchase_area);
         initView();
+        ImageView backicon = findViewById(R.id.toolbar_back);
+        TextView name = findViewById(R.id.toolbar_name);
+        backicon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+        name.setText("Khu vực mua hàng");
 
     }
     public  void initView (){
@@ -32,8 +44,8 @@ public class PurchaseAreaActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(linearLayoutManager);
         ArrayList<PurchaseAreaModel> areaModelArrayList = new ArrayList<>();
 
-        areaModelArrayList.add(new PurchaseAreaModel("Ho chi minh"));
-        areaModelArrayList.add(new PurchaseAreaModel("Ho noi"));
+        areaModelArrayList.add(new PurchaseAreaModel("Hồ Chí Minh"));
+        areaModelArrayList.add(new PurchaseAreaModel("Hà Nội"));
         PurchaseAreaAdapter purchaseAreaAdapter = new PurchaseAreaAdapter(areaModelArrayList,getApplicationContext());
         recyclerView.setAdapter(purchaseAreaAdapter);
     }

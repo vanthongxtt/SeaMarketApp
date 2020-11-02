@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".View.Activity.Home.SellALotActivity">
-    <include layout="@layout/toolbar"/>
+    tools:context=".View.Activity.SearchActivity">
 
 </androidx.constraintlayout.widget.ConstraintLayout>

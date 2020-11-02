@@ -1,4 +1,4 @@
-package com.sefvi.seamarket.View.Activity;
+package com.sefvi.seamarket.View.Activity.Personal;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,12 +9,13 @@ import android.widget.TextView;
 
 import com.sefvi.seamarket.R;
 
-public class SellALotActivity extends AppCompatActivity {
+public class SettingActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sell_a_lot);
+        setContentView(R.layout.activity_setting);
+
         ImageView backicon = findViewById(R.id.toolbar_back);
         TextView name = findViewById(R.id.toolbar_name);
         backicon.setOnClickListener(new View.OnClickListener() {
@@ -23,7 +24,6 @@ public class SellALotActivity extends AppCompatActivity {
                 finish();
             }
         });
-        name.setText("Sản phẩm bán chạy");
+        name.setText(getText(R.string.personal_text_caidat));
     }
-
 }

@@ -6,7 +6,6 @@ import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
@@ -26,10 +25,10 @@ import com.sefvi.seamarket.Model.Home_ComboHot;
 import com.sefvi.seamarket.Model.Home_SaleOff;
 import com.sefvi.seamarket.R;
 import com.sefvi.seamarket.View.Activity.HotActivity;
-import com.sefvi.seamarket.View.Activity.ImportActivity;
+import com.sefvi.seamarket.View.Activity.Home.ImportActivity;
 import com.sefvi.seamarket.View.Activity.PurchaseAreaActivity;
-import com.sefvi.seamarket.View.Activity.SellALotActivity;
-import com.sefvi.seamarket.View.Activity.VersionActivity;
+import com.sefvi.seamarket.View.Activity.Home.SellALotActivity;
+import com.sefvi.seamarket.View.Activity.SearchActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,7 +37,7 @@ import java.util.TimerTask;
 
 public class HomeFragment extends Fragment {
     RecyclerView combohot,saleoff,suggestion;
-    LinearLayout homelnlhot,homelnldiscount,homelnlimport,homelnlsellalot,homelnlbuygroup;
+    LinearLayout homelnlhot,homelnldiscount,homelnlimport,homelnlsellalot,homelnlbuygroup,home_lnl_search;
     RelativeLayout home_rl_gps;
     List<Home_ComboHot> comboHotList;
     List<Home_SaleOff> saleofflist;
@@ -139,6 +138,7 @@ public class HomeFragment extends Fragment {
         homelnlsellalot = v.findViewById(R.id.home_lnl_sellalot);
         homelnlbuygroup = v.findViewById(R.id.home_lnl_buygroup);
         home_rl_gps = v.findViewById(R.id.home_rl_gps);
+        home_lnl_search = v.findViewById(R.id.home_lnl_search);
 
     }
     private void event (){
@@ -169,6 +169,13 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), PurchaseAreaActivity.class);
+                startActivity(intent);
+            }
+        });
+        home_lnl_search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), SearchActivity.class);
                 startActivity(intent);
             }
         });

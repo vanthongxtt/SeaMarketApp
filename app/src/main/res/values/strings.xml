@@ -12,11 +12,13 @@
     <string name="personal_text_caidat">Cài đặt</string>
     <string name="personal_text_dieukhoanvachinhsach">Điều khoản &#xFF06; Chính sách</string>
     <string name="personal_text_phienbanungdung">Phiên bản ứng dụng</string>
+    <string name="personal_text_donhang">Đơn hàng</string>
 
     <!--    activity home-->
     <string name="home_text_dambaochatluong">Đảm bảo chất lượng</string>
     <string name="home_text_giaohangtrong24h">Giao hàng trong 24h</string>
     <string name="home_text_thanhtoancod">Thanh toán COD</string>
+
     <string name="Home_text_timkiemtrenseamarket">Tìm kiếm trên Seamarket</string>
 
 

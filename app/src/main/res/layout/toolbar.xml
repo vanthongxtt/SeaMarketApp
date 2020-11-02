@@ -6,18 +6,20 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="13dp">
+        android:orientation="horizontal">
         <ImageView
             android:id="@+id/toolbar_back"
             android:src="@drawable/arrow_back_24"
             android:layout_width="wrap_content"
+            android:padding="10dp"
+            android:background="@drawable/custom_click_view"
             android:layout_height="wrap_content"/>
         <TextView
             android:id="@+id/toolbar_name"
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="18sp"
+            android:textSize="20sp"
             android:textColor="@color/colorWhite"
             android:text="My App"/>
     </RelativeLayout>

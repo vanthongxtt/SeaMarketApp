@@ -1,4 +1,4 @@
-package com.sefvi.seamarket.View.Activity;
+package com.sefvi.seamarket.View.Activity.Home;
 
 import androidx.appcompat.app.AppCompatActivity;
 
