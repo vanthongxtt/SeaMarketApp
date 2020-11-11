@@ -1,13 +1,28 @@
 package com.sefvi.seamarket.Model;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 import java.io.Serializable;
 
 public class CreateAccountModel implements Serializable {
+    @SerializedName("uuid")
+    @Expose
     private int uuid;
+    @SerializedName("fullname")
+    @Expose
     private String fullname;
+    @SerializedName("dateOfBirth")
+    @Expose
     private String dateOfBirth;
+    @SerializedName("gender")
+    @Expose
     private String gender;
+    @SerializedName("avatar")
+    @Expose
     private String avatar;
+    @SerializedName("address")
+    @Expose
     private String address;
 
     public CreateAccountModel(){}
