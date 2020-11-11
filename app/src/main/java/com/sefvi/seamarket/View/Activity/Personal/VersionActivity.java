@@ -30,8 +30,7 @@ public class VersionActivity extends AppCompatActivity {
                 finish();
             }
         });
-        name.setText("Phiên bản");
-
+        name.setText("Giới thiệu");
     }
 
     private void event(){

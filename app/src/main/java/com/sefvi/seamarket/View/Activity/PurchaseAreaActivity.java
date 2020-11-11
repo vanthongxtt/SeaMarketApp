@@ -2,20 +2,15 @@ package com.sefvi.seamarket.View.Activity;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.sefvi.seamarket.Adapter.ProducFishAdapter;
 import com.sefvi.seamarket.Adapter.PurchaseAreaAdapter;
-import com.sefvi.seamarket.Model.ProducFishModel;
 import com.sefvi.seamarket.Model.PurchaseAreaModel;
 import com.sefvi.seamarket.R;
 
 import java.util.ArrayList;
-import java.util.List;
 
 
 public class PurchaseAreaActivity extends AppCompatActivity {
