@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
-public class CreateAccountModel implements Serializable {
+public class AccountModel implements Serializable {
     @SerializedName("uuid")
     @Expose
     private int uuid;
@@ -24,15 +24,31 @@ public class CreateAccountModel implements Serializable {
     @SerializedName("address")
     @Expose
     private String address;
+    @SerializedName("isAdmin")
+    @Expose
+    private int isAdmin;
+    @SerializedName("isActive")
+    @Expose
+    private int isActive;
+    @SerializedName("createAt")
+    @Expose
+    private String createAt;
+    @SerializedName("updateAt")
+    @Expose
+    private String updateAt;
 
-    public CreateAccountModel(){}
+    public AccountModel(){}
 
-    public CreateAccountModel(int uuid, String fullname, String dateOfBirth, String gender, String avatar, String address){
+    public AccountModel(int uuid, String fullname, String dateOfBirth, String gender, String avatar, String address, int isAdmin, int isActive, String careateAt, String updateAt){
         this.fullname = fullname;
         this.dateOfBirth = dateOfBirth;
         this.gender = gender;
         this.avatar = avatar;
         this.address = address;
+        this.isAdmin = isAdmin;
+        this.isActive = isActive;
+        this.createAt = careateAt;
+        this.updateAt = updateAt;
     }
 
     public int getUuid() {
@@ -81,5 +97,37 @@ public class CreateAccountModel implements Serializable {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public int getIsAdmin() {
+        return isAdmin;
+    }
+
+    public void setIsAdmin(int isAdmin) {
+        this.isAdmin = isAdmin;
+    }
+
+    public int getIsActive() {
+        return isActive;
+    }
+
+    public void setIsActive(int isActive) {
+        this.isActive = isActive;
+    }
+
+    public String getCreateAt() {
+        return createAt;
+    }
+
+    public void setCreateAt(String createAt) {
+        this.createAt = createAt;
+    }
+
+    public String getUpdateAt() {
+        return updateAt;
+    }
+
+    public void setUpdateAt(String updateAt) {
+        this.updateAt = updateAt;
     }
 }
