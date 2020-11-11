@@ -14,7 +14,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".View.Activity.SearchActivity"/>
+
+        <activity android:name=".View.Activity.Home.BuygroupActivity" />
+        <activity android:name=".View.Activity.Home.DiscountActivity" />
+        <activity android:name=".View.Activity.SearchActivity" />
         <activity android:name=".View.Activity.Personal.OrderActivity" />
         <activity android:name=".View.Activity.PurchaseAreaActivity" />
         <activity android:name=".View.Activity.Personal.SettingActivity" />

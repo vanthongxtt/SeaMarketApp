@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -29,7 +30,6 @@
                     android:layout_marginTop="15dp"
                     android:layout_marginRight="10dp"
                     android:orientation="horizontal">
-
 
                     <RelativeLayout
                         android:id="@+id/home_rl_gps"
@@ -97,7 +97,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/Home_text_timkiemtrenseamarket"
+                        android:hint="@string/Home_text_timkiemtrenseamarket"
                         android:layout_marginLeft="5dp"
                         android:layout_marginTop="5dp"
                         android:layout_marginBottom="5dp"
@@ -231,6 +231,7 @@
                         android:id="@+id/home_lnl_discount"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:background="@drawable/custom_click_view"
                         android:layout_weight="1"
                         android:orientation="vertical">
                         <androidx.cardview.widget.CardView
@@ -239,9 +240,7 @@
                             android:layout_gravity="center"
                             android:layout_marginTop="10dp"
                             app:cardCornerRadius="120dp">
-
                             <ImageView
-
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
                                 android:src="@drawable/home_img_hagia" />
@@ -252,7 +251,6 @@
                             android:layout_gravity="center"
                             android:textSize="16sp"
                             android:text="Hạ giá"/>
-
                     </LinearLayout>
                     <LinearLayout
                         android:id="@+id/home_lnl_import"
@@ -267,9 +265,7 @@
                             android:layout_gravity="center"
                             android:layout_marginTop="10dp"
                             app:cardCornerRadius="120dp">
-
                             <ImageView
-
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:scaleType="centerCrop"
@@ -281,13 +277,13 @@
                             android:layout_gravity="center"
                             android:textSize="16sp"
                             android:text="Nhập khẩu"/>
-
                     </LinearLayout>
                     <LinearLayout
                         android:id="@+id/home_lnl_sellalot"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:background="@drawable/custom_click_view"
                         android:orientation="vertical">
                         <androidx.cardview.widget.CardView
                             android:layout_width="50dp"
@@ -312,6 +308,7 @@
                         android:id="@+id/home_lnl_buygroup"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:background="@drawable/custom_click_view"
                         android:layout_weight="1"
                         android:layout_marginRight="10dp"
                         android:orientation="vertical">

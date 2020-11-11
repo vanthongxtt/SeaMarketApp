@@ -24,6 +24,8 @@ import com.sefvi.seamarket.Adapter.SliderAdapter;
 import com.sefvi.seamarket.Model.Home_ComboHot;
 import com.sefvi.seamarket.Model.Home_SaleOff;
 import com.sefvi.seamarket.R;
+import com.sefvi.seamarket.View.Activity.Home.BuygroupActivity;
+import com.sefvi.seamarket.View.Activity.Home.DiscountActivity;
 import com.sefvi.seamarket.View.Activity.HotActivity;
 import com.sefvi.seamarket.View.Activity.Home.ImportActivity;
 import com.sefvi.seamarket.View.Activity.PurchaseAreaActivity;
@@ -149,7 +151,6 @@ public class HomeFragment extends Fragment {
                 startActivity(intent);
             }
         });
-
         homelnlimport.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -157,7 +158,6 @@ public class HomeFragment extends Fragment {
                 startActivity(intent);
             }
         });
-
         homelnlsellalot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -176,6 +176,20 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), SearchActivity.class);
+                startActivity(intent);
+            }
+        });
+        homelnlbuygroup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), BuygroupActivity.class);
+                startActivity(intent);
+            }
+        });
+        homelnldiscount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), DiscountActivity.class);
                 startActivity(intent);
             }
         });
