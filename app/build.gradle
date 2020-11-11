@@ -13,6 +13,11 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
 
     buildTypes {
         release {
@@ -39,6 +44,7 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'com.squareup.okhttp:okhttp:2.7.2'
     implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'com.squareup.okhttp3:okhttp:4.9.0'
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.0.0")
 //    testRuntime("org.junit.jupiter:junit-jupiter-engine:5.0.0")
 //    testRuntime("org.junit.vintage:junit-vintage-engine:4.12.0")

@@ -73,7 +73,6 @@
                             android:layout_marginTop="3dp"
                             android:layout_marginRight="10dp"
                             android:src="@drawable/ic_outline_shopping_cart_24" />
-
                     </LinearLayout>
                 </RelativeLayout>
                 <!--thanh seach            -->
@@ -85,6 +84,7 @@
                     android:layout_marginLeft="16dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="15dp"
+                    android:clickable="true"
                     android:background="@drawable/custom_home_seach"
                     android:orientation="horizontal">
                     <ImageView
