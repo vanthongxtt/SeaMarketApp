@@ -1,10 +1,10 @@
 package com.sefvi.seamarket.Interface;
 
-import com.sefvi.seamarket.Model.CreateAccountModel;
+import com.sefvi.seamarket.Model.AccountModel;
 
 public interface CreateAccountListenner {
-    void getDataSuccess(CreateAccountModel createAccountModel);
+    void getDataSuccess(AccountModel accountModel);
     void getMessageError(Exception e);
     void getDataArraySuccess();
-    void getDataError(CreateAccountModel createAccountModel);
+    void getDataError(AccountModel accountModel);
 }
