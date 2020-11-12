@@ -20,9 +20,6 @@
             android:orientation="vertical"
             android:layout_marginLeft="24dp"
             android:layout_marginRight="24dp">
-
-
-
             <TextView
                 android:id="@+id/signup_tv_dangki"
                 android:layout_width="wrap_content"
@@ -33,20 +30,6 @@
                 android:textSize="28sp"
                 app:layout_constraintHorizontal_bias="0.0"
                 tools:ignore="MissingConstraints" />
-            <androidx.cardview.widget.CardView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="30dp"
-                app:cardCornerRadius="120dp">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/camera_icon_design" />
-            </androidx.cardview.widget.CardView>
-
 
             <EditText
                 android:id="@+id/signup_edt_phone"

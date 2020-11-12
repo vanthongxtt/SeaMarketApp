@@ -52,13 +52,11 @@ public class SliderAdapter extends PagerAdapter {
         }
 
         container.addView(myImageLayout);
-
         return myImageLayout;
     }
 
     @Override
     public boolean isViewFromObject(@NonNull View view, @NonNull Object object) {
-
         return view.equals(object);
     }
 }

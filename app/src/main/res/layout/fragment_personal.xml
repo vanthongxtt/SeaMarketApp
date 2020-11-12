@@ -41,233 +41,250 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:orientation="vertical">
-        <RelativeLayout
-            android:id="@+id/personal_map"
+
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:background="@drawable/custom_click_view"
-            android:orientation="horizontal">
-            <ImageView
-                android:id="@+id/personal_icon_map"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/icon8_map_64"/>
-            <TextView
-                android:layout_width="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            app:cardCornerRadius="10dp">
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-               android:layout_toRightOf="@id/personal_icon_map"
-                android:layout_marginLeft="10dp"
-                android:layout_gravity="center"
-                android:textColor="#1E1E1E"
-                android:textSize="20sp"
-                android:text="@string/personal_text_diachinhanhang"/>
+                android:orientation="vertical">
+                <RelativeLayout
+                    android:id="@+id/personal_map"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:background="@drawable/custom_click_view"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:id="@+id/personal_icon_map"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/icon8_map_64"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/personal_icon_map"
+                        android:layout_marginLeft="10dp"
+                        android:layout_gravity="center"
+                        android:textColor="#1E1E1E"
+                        android:textSize="20sp"
+                        android:text="@string/personal_text_diachinhanhang"/>
 
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_gravity="right"
-                android:layout_alignParentRight="true"
-                android:src="@drawable/ic_baseline_chevron_right_24" />
-        </RelativeLayout>
-        <View
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/grey"/>
-        <RelativeLayout
-            android:id="@+id/personal_order"
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="right"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/ic_baseline_chevron_right_24" />
+                </RelativeLayout>
+                <View
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grey"/>
+                <RelativeLayout
+                    android:id="@+id/personal_order"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:background="@drawable/custom_click_view"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:id="@+id/personal_img_bag"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/shopping_bag"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/personal_img_bag"
+                        android:layout_marginLeft="10dp"
+                        android:layout_gravity="center"
+                        android:textColor="#1E1E1E"
+                        android:textSize="20sp"
+                        android:text="@string/personal_text_donhang"/>
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="right"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/ic_baseline_chevron_right_24" />
+                </RelativeLayout>
+                <View
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grey"/>
+                <RelativeLayout
+                    android:id="@+id/personal_setting"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/custom_click_view"
+                    android:padding="10dp"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:id="@+id/personal_icon_setting"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ic_outline_settings_24"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@id/personal_icon_setting"
+                        android:text="@string/personal_text_caidat"
+                        android:textColor="#1E1E1E"
+                        android:textSize="20sp" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="right"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/ic_baseline_chevron_right_24" />
+                </RelativeLayout>
+                <View
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grey"/>
+                <RelativeLayout
+                    android:id="@+id/personal_hotline"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:background="@drawable/custom_click_view"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:id="@+id/personal_icon_hotline"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ic_outline_phone_in_talk_24"/>
+                    <TextView
+                        android:id="@+id/personal_tv_hotline"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/personal_icon_hotline"
+                        android:layout_marginLeft="10dp"
+                        android:layout_gravity="center"
+                        android:textColor="#1E1E1E"
+                        android:textSize="20sp"
+                        android:text="Hotline:"/>
+                    <TextView
+                        android:id="@+id/personal_tv_phonenumber"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:clickable="true"
+                        android:autoLink="phone"
+                        android:layout_marginLeft="5dp"
+                        android:layout_toRightOf="@id/personal_tv_hotline"
+                        android:textColor="#367C04"
+                        android:textSize="20sp"
+                        android:text="1800 81 98"/>
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="right"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/ic_baseline_chevron_right_24" />
+                </RelativeLayout>
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:background="@drawable/custom_click_view"
-            android:orientation="horizontal">
-            <ImageView
-                android:id="@+id/personal_img_bag"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/shopping_bag"/>
-            <TextView
-                android:layout_width="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            app:cardCornerRadius="10dp">
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/personal_img_bag"
-                android:layout_marginLeft="10dp"
-                android:layout_gravity="center"
-                android:textColor="#1E1E1E"
-                android:textSize="20sp"
-                android:text="@string/personal_text_donhang"/>
+                android:orientation="vertical">
+                <RelativeLayout
+                    android:id="@+id/personal_ruless"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/custom_click_view"
+                    android:padding="10dp"
+                    android:orientation="horizontal">
 
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_gravity="right"
-                android:layout_alignParentRight="true"
-                android:src="@drawable/ic_baseline_chevron_right_24" />
-        </RelativeLayout>
+                    <TextView
+                        android:id="@+id/personal_tv_rules"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_gravity="center"
+                        android:textColor="#1E1E1E"
+                        android:textSize="20sp"
+                        android:text="@string/personal_text_dieukhoanvachinhsach"/>
 
-        <View
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/grey"/>
-        <RelativeLayout
-            android:id="@+id/personal_setting"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/custom_click_view"
-            android:padding="10dp"
-            android:orientation="horizontal">
-            <ImageView
-                android:id="@+id/personal_icon_setting"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/ic_outline_settings_24"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginLeft="10dp"
-                android:layout_toRightOf="@id/personal_icon_setting"
-                android:text="@string/personal_text_caidat"
-                android:textColor="#1E1E1E"
-                android:textSize="20sp" />
-
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_gravity="right"
-                android:layout_alignParentRight="true"
-                android:src="@drawable/ic_baseline_chevron_right_24" />
-        </RelativeLayout>
-        <View
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/grey"/>
-
-        <RelativeLayout
-            android:id="@+id/personal_hotline"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:background="@drawable/custom_click_view"
-            android:orientation="horizontal">
-            <ImageView
-                android:id="@+id/personal_icon_hotline"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/ic_outline_phone_in_talk_24"/>
-            <TextView
-                android:id="@+id/personal_tv_hotline"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/personal_icon_hotline"
-                android:layout_marginLeft="10dp"
-                android:layout_gravity="center"
-                android:textColor="#1E1E1E"
-                android:textSize="20sp"
-                android:text="Hotline:"/>
-            <TextView
-                android:id="@+id/personal_tv_phonenumber"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:clickable="true"
-                android:autoLink="phone"
-                android:layout_marginLeft="5dp"
-                android:layout_toRightOf="@id/personal_tv_hotline"
-                android:textColor="#367C04"
-                android:textSize="20sp"
-                android:text="1800 81 98"/>
-
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_gravity="right"
-                android:layout_alignParentRight="true"
-                android:src="@drawable/ic_baseline_chevron_right_24" />
-        </RelativeLayout>
-        <View
-
-            android:layout_width="match_parent"
-            android:layout_height="10dp"
-            android:background="@color/grey_light"/>
-        <RelativeLayout
-            android:id="@+id/personal_ruless"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/custom_click_view"
-            android:padding="10dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/personal_tv_rules"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_gravity="center"
-                android:textColor="#1E1E1E"
-                android:textSize="20sp"
-                android:text="@string/personal_text_dieukhoanvachinhsach"/>
-
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_gravity="right"
-                android:layout_alignParentRight="true"
-                android:src="@drawable/ic_baseline_chevron_right_24" />
-        </RelativeLayout>
-        <View
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/grey"/>
-
-        <RelativeLayout
-            android:id="@+id/personal_version"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:background="@drawable/custom_click_view"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_gravity="center"
-                android:textColor="#1E1E1E"
-                android:textSize="20sp"
-                android:text="@string/personal_text_phienbanungdung"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-               android:layout_centerInParent="true"
-                android:textSize="18sp"
-                android:textColor="@color/green"
-                android:layout_toLeftOf="@id/personal_img_iconbackright"
-                android:text="1.0"/>
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="right"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/ic_baseline_chevron_right_24" />
+                </RelativeLayout>
+                <View
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grey"/>
+                <RelativeLayout
+                    android:id="@+id/personal_version"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:background="@drawable/custom_click_view"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_gravity="center"
+                        android:textColor="#1E1E1E"
+                        android:textSize="20sp"
+                        android:text="@string/personal_text_phienbanungdung"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                       android:layout_centerInParent="true"
+                        android:textSize="18sp"
+                        android:textColor="@color/green"
+                        android:layout_toLeftOf="@id/personal_img_iconbackright"
+                        android:text="1.0"/>
 
 
-            <ImageView
-                android:id="@+id/personal_img_iconbackright"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_gravity="right"
-                android:layout_alignParentRight="true"
-                android:src="@drawable/ic_baseline_chevron_right_24" />
-        </RelativeLayout>
+                    <ImageView
+                        android:id="@+id/personal_img_iconbackright"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="right"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/ic_baseline_chevron_right_24" />
+                </RelativeLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
 
     </LinearLayout>
-
-
-
-
-
 
 </LinearLayout>
