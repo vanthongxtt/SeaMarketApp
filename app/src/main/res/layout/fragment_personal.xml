@@ -5,37 +5,39 @@
     android:background="#ffffff"
     android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/custom_backgroun_fragment_personal"
-        android:orientation="vertical"
-        android:gravity="center">
-        <androidx.cardview.widget.CardView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="25dp"
-            android:layout_marginBottom="10dp"
-            app:cardCornerRadius="120dp">
-            <ImageView
-                android:id="@+id/personal_img_user"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center_horizontal"
-                android:scaleType="centerCrop"
-                android:src="@drawable/sssss" />
-        </androidx.cardview.widget.CardView>
-        <TextView
-            android:id="@+id/personal_tv_username"
-            android:layout_width="wrap_content"
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:gravity="center"
-            android:textSize="24sp"
-            android:textColor="#ffffff"
-            android:text="SeaMarket"/>
-    </LinearLayout>
+            android:background="@drawable/custom_backgroun_fragment_personal"
+            android:orientation="vertical"
+            android:gravity="center">
+            <androidx.cardview.widget.CardView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="10dp"
+                app:cardCornerRadius="120dp">
+                <ImageView
+                    android:id="@+id/personal_img_user"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/sssss" />
+            </androidx.cardview.widget.CardView>
+            <TextView
+                android:id="@+id/personal_tv_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:gravity="center"
+                android:textSize="24sp"
+                android:textColor="#ffffff"
+                android:text="SeaMarket"/>
+        </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

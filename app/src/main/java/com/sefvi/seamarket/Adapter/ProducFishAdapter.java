@@ -38,7 +38,7 @@ public static  class MyViewHolder extends RecyclerView.ViewHolder{
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(context).inflate(R.layout.custom_product_tablayout,parent,false);
+        View v = LayoutInflater.from(context).inflate(R.layout.custom_item_product_tablayout,parent,false);
         return new MyViewHolder(v) ;
     }
 

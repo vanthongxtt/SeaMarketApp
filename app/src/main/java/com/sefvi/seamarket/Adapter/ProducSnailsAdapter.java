@@ -10,7 +10,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.sefvi.seamarket.Model.ProducFishModel;
 import com.sefvi.seamarket.Model.ProducSnailsModel;
 import com.sefvi.seamarket.R;
 
@@ -39,7 +38,7 @@ public class ProducSnailsAdapter extends RecyclerView.Adapter<ProducSnailsAdapte
     @NonNull
     @Override
     public ProducSnailsAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(context).inflate(R.layout.custom_product_tablayout,parent,false);
+        View v = LayoutInflater.from(context).inflate(R.layout.custom_item_product_tablayout,parent,false);
         return new ProducSnailsAdapter.MyViewHolder(v) ;
     }
 

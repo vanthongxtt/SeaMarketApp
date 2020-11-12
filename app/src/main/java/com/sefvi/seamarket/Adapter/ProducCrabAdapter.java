@@ -11,7 +11,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.sefvi.seamarket.Model.ProducCrabModel;
-import com.sefvi.seamarket.Model.ProducFishModel;
 import com.sefvi.seamarket.R;
 
 import java.util.List;
@@ -39,7 +38,7 @@ public class ProducCrabAdapter extends RecyclerView.Adapter<ProducCrabAdapter.My
     @NonNull
     @Override
     public ProducCrabAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(context).inflate(R.layout.custom_product_tablayout,parent,false);
+        View v = LayoutInflater.from(context).inflate(R.layout.custom_item_product_tablayout,parent,false);
         return new ProducCrabAdapter.MyViewHolder(v) ;
     }
 

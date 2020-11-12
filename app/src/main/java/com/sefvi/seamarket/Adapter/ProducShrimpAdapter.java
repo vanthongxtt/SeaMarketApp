@@ -38,7 +38,7 @@ public class ProducShrimpAdapter extends RecyclerView.Adapter<ProducShrimpAdapte
     @NonNull
     @Override
     public ProducShrimpAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(context).inflate(R.layout.custom_product_tablayout,parent,false);
+        View v = LayoutInflater.from(context).inflate(R.layout.custom_item_product_tablayout,parent,false);
         return new ProducShrimpAdapter.MyViewHolder(v) ;
     }
 
