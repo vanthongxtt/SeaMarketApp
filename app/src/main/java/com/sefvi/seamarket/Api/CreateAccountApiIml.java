@@ -1,7 +1,7 @@
 package com.sefvi.seamarket.Api;
 
 import com.sefvi.seamarket.Interface.CreateAccountListenner;
-import com.sefvi.seamarket.Model.AccountModel;
+import com.sefvi.seamarket.Model.AccountModell;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -28,7 +28,7 @@ public class CreateAccountApiIml extends BaseRetrofitIml {
                         JSONObject jsonObject = new JSONObject(response.body().string());
                         int status = jsonObject.getInt("success");
                         if (status == 200){
-                            AccountModel accountModel = new AccountModel();
+                            AccountModell accountModel = new AccountModell();
                             accountModel.setUuid(jsonObject.getInt("uuid"));
                             accountModel.setFullname(jsonObject.getString("fullname"));
                             accountModel.setDateOfBirth(jsonObject.getString("dateOfBirth"));
