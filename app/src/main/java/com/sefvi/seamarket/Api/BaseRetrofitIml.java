@@ -10,7 +10,7 @@ public class BaseRetrofitIml {
     protected Retrofit getRetrofit(){
         if(retrofit == null){
             retrofit = new Retrofit.Builder()
-                    .baseUrl(Constant.URL_BASE_AUTH)
+                    .baseUrl(Constant.URL_BASE)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
         }
