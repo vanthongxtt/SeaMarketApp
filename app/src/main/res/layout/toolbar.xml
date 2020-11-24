@@ -12,7 +12,6 @@
             android:src="@drawable/arrow_back_24"
             android:layout_width="wrap_content"
             android:padding="10dp"
-
             android:background="@drawable/custom_click_view"
             android:layout_height="wrap_content"/>
         <TextView

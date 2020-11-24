@@ -25,7 +25,7 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center_horizontal"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/sssss" />
+                    android:src="@drawable/avatar" />
             </androidx.cardview.widget.CardView>
             <TextView
                 android:id="@+id/personal_tv_username"

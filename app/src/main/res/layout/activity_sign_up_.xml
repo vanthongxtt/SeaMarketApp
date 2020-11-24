@@ -1,153 +1,152 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     tools:context="com.sefvi.seamarket.View.Activity.SignUp_Activity">
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:background="@drawable/background_loginn"
-        tools:ignore="MissingConstraints">
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginLeft="24dp"
-            android:layout_marginRight="24dp">
+            android:background="@drawable/background_loginn">
             <TextView
                 android:id="@+id/signup_tv_dangki"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
+                android:layout_marginLeft="5dp"
+                android:textStyle="bold"
+                android:layout_gravity="center"
                 android:text="Đăng kí tài khoản "
-                android:textColor="@color/login_form_details"
-                android:textSize="28sp"
+                android:textColor="@color/colorWhite"
+                android:textSize="32sp"
                 app:layout_constraintHorizontal_bias="0.0"
                 tools:ignore="MissingConstraints" />
-
-            <EditText
-                android:id="@+id/signup_edt_phone"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/signup_card"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
-                android:background="@drawable/custom_edt_signup"
-                android:hint="@string/text_sodienthoai"
-                android:inputType="number"
-                android:padding="16dp"
-                android:textColor="@color/login_form_details"
-                android:textColorHint="@color/login_form_details"/>
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                app:cardCornerRadius="15dp"
+                android:layout_marginTop="100dp"
+                android:background="@color/colorWhite">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginRight="24dp">
 
-            <EditText
-                android:id="@+id/signup_edt_password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/custom_edt_signup"
-                android:hint="Mật khẩu"
-                android:inputType="textPassword"
-                android:padding="16dp"
-                android:textColorHint="@color/login_form_details"
-                android:textColor="@color/login_form_details" />
+                    <EditText
+                        android:id="@+id/signup_edt_phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="40dp"
+                        android:hint="@string/text_sodienthoai"
+                        android:drawableLeft="@drawable/custom_phone"
+                        android:drawablePadding="10dp"
+                        android:inputType="number"
+                        android:padding="16dp"/>
 
-            <EditText
-                android:id="@+id/signup_edt_repassword"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/custom_edt_signup"
-                android:hint="Nhập lại mật khẩu"
-                android:inputType="textPassword"
-                android:padding="16dp"
-                android:textColorHint="@color/login_form_details"
-                android:textColor="@color/login_form_details" />
-            <EditText
-                android:id="@+id/signup_edt_fullname"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/custom_edt_signup"
-                android:hint="Họ và tên"
-                android:inputType="text"
-                android:padding="16dp"
-                android:textColorHint="@color/login_form_details"
-                android:textColor="@color/login_form_details"
-                />
-            <EditText
-                android:id="@+id/signup_edt_year_of_birth"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/custom_edt_signup"
-                android:hint="Năm sinh"
-                android:inputType="datetime"
-                android:padding="16dp"
-                android:textColorHint="@color/login_form_details"
-                android:textColor="@color/login_form_details"
-                app:layout_constraintTop_toBottomOf="@+id/signup_edt_fullname" />
-            <RadioGroup
-                android:id="@+id/signup_radio_gr"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:orientation="horizontal"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/custom_edt_signup"
-                app:layout_constraintTop_toBottomOf="@+id/signup_edt_year_of_birth">
+                    <EditText
+                        android:id="@+id/signup_edt_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:hint="Mật khẩu"
+                        android:drawablePadding="10dp"
+                        android:drawableLeft="@drawable/custom_lock_login"
+                        android:inputType="textPassword"
+                        android:padding="16dp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Giới tính :"
-                    android:textSize="20sp"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="10dp"
-                    android:textColor="@color/login_form_details"
-                    android:textColorHint="@color/login_form_details" />
+                    <EditText
+                        android:id="@+id/signup_edt_repassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:hint="Nhập lại mật khẩu"
+                        android:drawablePadding="10dp"
+                        android:drawableLeft="@drawable/custom_lock_login"
+                        android:inputType="textPassword"
+                        android:padding="16dp" />
+                    <EditText
+                        android:id="@+id/signup_edt_fullname"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:hint="Họ và tên"
+                        android:drawablePadding="10dp"
+                        android:drawableLeft="@drawable/custom_person_login"
+                        android:inputType="text"
+                        android:padding="16dp" />
+                    <EditText
+                        android:id="@+id/signup_edt_year_of_birth"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:hint="Năm sinh"
+                        android:drawablePadding="10dp"
+                        android:inputType="datetime"
+                        android:padding="16dp"
+                        app:layout_constraintTop_toBottomOf="@+id/signup_edt_fullname" />
+                    <RadioGroup
+                        android:id="@+id/signup_radio_gr"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="16dp"
+                        app:layout_constraintTop_toBottomOf="@+id/signup_edt_year_of_birth">
 
-                <RadioButton
-                    android:id="@+id/signup_rdo_btn_nam"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Nam"
-                    android:layout_marginLeft="5dp"
-                    android:layout_gravity="center"
-                    android:textSize="16sp"
-                    android:textColor="@color/login_form_details"
-                    android:textColorHint="@color/login_form_details" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Giới tính :"
+                            android:textSize="20sp"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="10dp" />
 
-                <RadioButton
-                    android:id="@+id/signup_rdo_btn_nu"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Nữ"
-                    android:layout_marginLeft="5dp"
-                    android:layout_gravity="center"
-                    android:textColor="@color/login_form_details"
-                    android:textColorHint="@color/login_form_details"
-                    android:textSize="16sp" />
-            </RadioGroup>
-            <Button
-                android:id="@+id/signup_btn_dangki"
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/custom_btn_login_signup"
-                android:text="Đăng kí"
-                android:textAllCaps="false"
-                android:textSize="24dp"
-                android:textColor="@color/login_form_details" />
+                        <RadioButton
+                            android:id="@+id/signup_rdo_btn_nam"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Nam"
+                            android:layout_marginLeft="5dp"
+                            android:layout_gravity="center"
+                            android:textSize="16sp" />
+
+                        <RadioButton
+                            android:id="@+id/signup_rdo_btn_nu"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Nữ"
+                            android:layout_marginLeft="5dp"
+                            android:layout_gravity="center"
+                            android:textSize="16sp" />
+                    </RadioGroup>
+                    <Button
+                        android:id="@+id/signup_btn_dangki"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="40dp"
+                        android:background="@drawable/custom_btn_login_signup"
+                        android:text="Đăng kí"
+                        android:textAllCaps="false"
+                        android:textSize="24dp"
+                        android:textColor="@color/colorWhite" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/signup_card"
                 android:layout_marginTop="10dp"
                 android:gravity="center"
-                android:layout_gravity="center"
-                android:orientation="vertical">
+                android:layout_marginBottom="50dp"
+                android:orientation="vertical"
+                android:layout_gravity="center">
                 <TextView
                     android:layout_gravity="center"
                     android:layout_width="wrap_content"
@@ -160,12 +159,11 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     tools:ignore="MissingConstraints">
-
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:text="điều khoản và chính sách "
-                        android:textColor="#F44336"
+                        android:textColor="@color/oran_color"
                         android:textSize="16sp" />
                     <TextView
                         android:layout_width="wrap_content"
@@ -175,24 +173,21 @@
                         android:textSize="16sp" />
                 </LinearLayout>
             </LinearLayout>
-
             <LinearLayout
                 android:id="@+id/linearLayout"
                 android:layout_gravity="center"
-                android:layout_marginTop="100dp"
+                android:layout_alignParentBottom="true"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:ignore="MissingConstraints">
-
+                android:layout_centerHorizontal="true"
+                android:layout_height="wrap_content">
                 <TextView
                     android:id="@+id/signup_tv_chuacotk"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:text="Đã có tài khoản?"
                     android:textColor="@color/login_form_details"
                     android:textSize="16sp"
                     app:layout_constraintStart_toStartOf="parent" />
-
                 <TextView
                     android:id="@+id/signup_tv_dangnhap"
                     android:layout_width="wrap_content"
@@ -202,11 +197,6 @@
                     android:textColor="@color/login_form_details"
                     android:textSize="17sp"
                     tools:ignore="RtlCompat" />
-
             </LinearLayout>
-
-        </LinearLayout>
-
-    </ScrollView>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+        </RelativeLayout>
+</RelativeLayout>
