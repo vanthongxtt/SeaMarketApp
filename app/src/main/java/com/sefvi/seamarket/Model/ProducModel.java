@@ -1,11 +1,11 @@
 package com.sefvi.seamarket.Model;
 
-public class ProducFishModel {
+public class ProducModel {
     public  String Name;
     public  Integer Price;
     public Integer Img;
 
-    public ProducFishModel(String name, Integer price, Integer img) {
+    public ProducModel(String name, Integer price, Integer img) {
         Name = name;
         Price = price;
         Img = img;

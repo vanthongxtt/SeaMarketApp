@@ -4,23 +4,19 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.sefvi.seamarket.Adapter.ProducClamAdapter;
-import com.sefvi.seamarket.Adapter.ProducFishAdapter;
-import com.sefvi.seamarket.Model.ProducClamModel;
-import com.sefvi.seamarket.Model.ProducFishModel;
+import com.sefvi.seamarket.Adapter.ProducAdapter;
+import com.sefvi.seamarket.Model.ProducModel;
 import com.sefvi.seamarket.R;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class ProducClamFragment extends Fragment {
     RecyclerView producclamrcv;
-    List<ProducClamModel> producClamModelList;
+    List<ProducModel> producModelList;
     List<String> name;
     List<Integer> price;
     List<Integer> img;
@@ -79,30 +75,30 @@ public class ProducClamFragment extends Fragment {
         producclamrcv = v.findViewById(R.id.product_clam_rcv);
     }
     private void setProducfishrcv (){
-        producClamModelList = new ArrayList<>();
+        producModelList = new ArrayList<>();
 
-        producClamModelList.add(new ProducClamModel("sò",1222132,R.drawable.xo1));
-        producClamModelList.add(new ProducClamModel("sò",1222132,R.drawable.xo2));
-        producClamModelList.add(new ProducClamModel("sò",1222132,R.drawable.xo3));
-        producClamModelList.add(new ProducClamModel("sò",1222132,R.drawable.xo4));
-        producClamModelList.add(new ProducClamModel("sò",1222132,R.drawable.xo5));
-        producClamModelList.add(new ProducClamModel("sò",1222132,R.drawable.xo1));
-        producClamModelList.add(new ProducClamModel("sò",1222132,R.drawable.xo2));
-        producClamModelList.add(new ProducClamModel("sò",1222132,R.drawable.xo3));
-        producClamModelList.add(new ProducClamModel("sò",1222132,R.drawable.xo4));
-        producClamModelList.add(new ProducClamModel("sò",1222132,R.drawable.xo5));
-        producClamModelList.add(new ProducClamModel("sò",1222132,R.drawable.xo1));
-        producClamModelList.add(new ProducClamModel("sò",1222132,R.drawable.xo2));
-        producClamModelList.add(new ProducClamModel("sò",1222132,R.drawable.xo3));
-        producClamModelList.add(new ProducClamModel("sò",1222132,R.drawable.xo4));
-        producClamModelList.add(new ProducClamModel("sò",1222132,R.drawable.xo5));
+        producModelList.add(new ProducModel("sò",1222132,R.drawable.xo1));
+        producModelList.add(new ProducModel("sò",1222132,R.drawable.xo2));
+        producModelList.add(new ProducModel("sò",1222132,R.drawable.xo3));
+        producModelList.add(new ProducModel("sò",1222132,R.drawable.xo4));
+        producModelList.add(new ProducModel("sò",1222132,R.drawable.xo5));
+        producModelList.add(new ProducModel("sò",1222132,R.drawable.xo1));
+        producModelList.add(new ProducModel("sò",1222132,R.drawable.xo2));
+        producModelList.add(new ProducModel("sò",1222132,R.drawable.xo3));
+        producModelList.add(new ProducModel("sò",1222132,R.drawable.xo4));
+        producModelList.add(new ProducModel("sò",1222132,R.drawable.xo5));
+        producModelList.add(new ProducModel("sò",1222132,R.drawable.xo1));
+        producModelList.add(new ProducModel("sò",1222132,R.drawable.xo2));
+        producModelList.add(new ProducModel("sò",1222132,R.drawable.xo3));
+        producModelList.add(new ProducModel("sò",1222132,R.drawable.xo4));
+        producModelList.add(new ProducModel("sò",1222132,R.drawable.xo5));
 
 
         LinearLayoutManager manager = new LinearLayoutManager(getContext());
         manager.setOrientation(LinearLayoutManager.VERTICAL);
         producclamrcv.setLayoutManager(manager);
 
-        ProducClamAdapter adapter = new ProducClamAdapter(getActivity(),producClamModelList);
+        ProducAdapter adapter = new ProducAdapter(getActivity(), producModelList);
         producclamrcv.setAdapter(adapter);
 
     }

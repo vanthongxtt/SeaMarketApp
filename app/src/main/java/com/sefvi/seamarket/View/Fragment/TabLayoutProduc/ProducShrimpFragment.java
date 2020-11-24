@@ -10,18 +10,15 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 
-import com.sefvi.seamarket.Adapter.ProducFishAdapter;
-import com.sefvi.seamarket.Adapter.ProducShrimpAdapter;
-import com.sefvi.seamarket.Model.ProducFishModel;
-import com.sefvi.seamarket.Model.ProducShrimpModel;
+import com.sefvi.seamarket.Adapter.ProducAdapter;
+import com.sefvi.seamarket.Model.ProducModel;
 import com.sefvi.seamarket.R;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class ProducShrimpFragment extends Fragment {
     RecyclerView producshrimprcv;
-    List<ProducShrimpModel> producShrimpModelList;
+    List<ProducModel> producModelList;
     List<String> name;
     List<Integer> price;
     List<Integer> img;
@@ -81,23 +78,23 @@ public class ProducShrimpFragment extends Fragment {
         producshrimprcv = v.findViewById(R.id.product_shrimp_rcv);
     }
     private void setProducshrimp (){
-        producShrimpModelList = new ArrayList<>();
+        producModelList = new ArrayList<>();
 
-        producShrimpModelList.add(new ProducShrimpModel("Tôm",600000,R.drawable.tom1));
-        producShrimpModelList.add(new ProducShrimpModel("Tôm",1222132,R.drawable.tom2));
-        producShrimpModelList.add(new ProducShrimpModel("Tôm",1222132,R.drawable.tom3));
-        producShrimpModelList.add(new ProducShrimpModel("Tôm",1222132,R.drawable.tom4));
-        producShrimpModelList.add(new ProducShrimpModel("Tôm",1222132,R.drawable.tom5));
-        producShrimpModelList.add(new ProducShrimpModel("Tôm",600000,R.drawable.tom1));
-        producShrimpModelList.add(new ProducShrimpModel("Tôm",1222132,R.drawable.tom2));
-        producShrimpModelList.add(new ProducShrimpModel("Tôm",1222132,R.drawable.tom3));
-        producShrimpModelList.add(new ProducShrimpModel("Tôm",1222132,R.drawable.tom4));
-        producShrimpModelList.add(new ProducShrimpModel("Tôm",1222132,R.drawable.tom5));
-        producShrimpModelList.add(new ProducShrimpModel("Tôm",600000,R.drawable.tom1));
-        producShrimpModelList.add(new ProducShrimpModel("Tôm",1222132,R.drawable.tom2));
-        producShrimpModelList.add(new ProducShrimpModel("Tôm",1222132,R.drawable.tom3));
-        producShrimpModelList.add(new ProducShrimpModel("Tôm",1222132,R.drawable.tom4));
-        producShrimpModelList.add(new ProducShrimpModel("Tôm",1222132,R.drawable.tom5));
+        producModelList.add(new ProducModel("Tôm",600000,R.drawable.tom1));
+        producModelList.add(new ProducModel("Tôm",1222132,R.drawable.tom2));
+        producModelList.add(new ProducModel("Tôm",1222132,R.drawable.tom3));
+        producModelList.add(new ProducModel("Tôm",1222132,R.drawable.tom4));
+        producModelList.add(new ProducModel("Tôm",1222132,R.drawable.tom5));
+        producModelList.add(new ProducModel("Tôm",600000,R.drawable.tom1));
+        producModelList.add(new ProducModel("Tôm",1222132,R.drawable.tom2));
+        producModelList.add(new ProducModel("Tôm",1222132,R.drawable.tom3));
+        producModelList.add(new ProducModel("Tôm",1222132,R.drawable.tom4));
+        producModelList.add(new ProducModel("Tôm",1222132,R.drawable.tom5));
+        producModelList.add(new ProducModel("Tôm",600000,R.drawable.tom1));
+        producModelList.add(new ProducModel("Tôm",1222132,R.drawable.tom2));
+        producModelList.add(new ProducModel("Tôm",1222132,R.drawable.tom3));
+        producModelList.add(new ProducModel("Tôm",1222132,R.drawable.tom4));
+        producModelList.add(new ProducModel("Tôm",1222132,R.drawable.tom5));
 
 
 
@@ -105,7 +102,7 @@ public class ProducShrimpFragment extends Fragment {
         manager.setOrientation(LinearLayoutManager.VERTICAL);
         producshrimprcv.setLayoutManager(manager);
 
-        ProducShrimpAdapter adapter = new ProducShrimpAdapter(getActivity(),producShrimpModelList);
+        ProducAdapter adapter = new ProducAdapter(getActivity(),producModelList);
         producshrimprcv.setAdapter(adapter);
 
     }

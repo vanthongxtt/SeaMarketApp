@@ -9,11 +9,8 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.sefvi.seamarket.Adapter.ProducCrabAdapter;
-import com.sefvi.seamarket.Adapter.ProducFishAdapter;
-import com.sefvi.seamarket.Model.ProducClamModel;
-import com.sefvi.seamarket.Model.ProducCrabModel;
-import com.sefvi.seamarket.Model.ProducFishModel;
+import com.sefvi.seamarket.Adapter.ProducAdapter;
+import com.sefvi.seamarket.Model.ProducModel;
 import com.sefvi.seamarket.R;
 
 import java.util.ArrayList;
@@ -22,7 +19,7 @@ import java.util.List;
 public class
 ProductCrabFragment extends Fragment {
     RecyclerView produccrabrcv;
-    List<ProducCrabModel> producCrabModelList;
+    List<ProducModel> producModelList;
     List<String> name;
     List<Integer> price;
     List<Integer> img;
@@ -81,30 +78,30 @@ ProductCrabFragment extends Fragment {
         produccrabrcv = v.findViewById(R.id.product_crab_rcv);
     }
     private void setProducfishrcv (){
-        producCrabModelList = new ArrayList<>();
+        producModelList = new ArrayList<>();
 
-        producCrabModelList.add(new ProducCrabModel("cua",53423,R.drawable.cua1));
-        producCrabModelList.add(new ProducCrabModel("cua",122132,R.drawable.cua2));
-        producCrabModelList.add(new ProducCrabModel("cua",1222132,R.drawable.cua3));
-        producCrabModelList.add(new ProducCrabModel("cua",1222132,R.drawable.cua4));
-        producCrabModelList.add(new ProducCrabModel("cua",1222132,R.drawable.cua5));
-        producCrabModelList.add(new ProducCrabModel("cua",53423,R.drawable.cua1));
-        producCrabModelList.add(new ProducCrabModel("cua",122132,R.drawable.cua2));
-        producCrabModelList.add(new ProducCrabModel("cua",1222132,R.drawable.cua3));
-        producCrabModelList.add(new ProducCrabModel("cua",1222132,R.drawable.cua4));
-        producCrabModelList.add(new ProducCrabModel("cua",1222132,R.drawable.cua5));
-        producCrabModelList.add(new ProducCrabModel("cua",53423,R.drawable.cua1));
-        producCrabModelList.add(new ProducCrabModel("cua",122132,R.drawable.cua2));
-        producCrabModelList.add(new ProducCrabModel("cua",1222132,R.drawable.cua3));
-        producCrabModelList.add(new ProducCrabModel("cua",1222132,R.drawable.cua4));
-        producCrabModelList.add(new ProducCrabModel("cua",1222132,R.drawable.cua5));
+        producModelList.add(new ProducModel("cua",53423,R.drawable.cua1));
+        producModelList.add(new ProducModel("cua",122132,R.drawable.cua2));
+        producModelList.add(new ProducModel("cua",1222132,R.drawable.cua3));
+        producModelList.add(new ProducModel("cua",1222132,R.drawable.cua4));
+        producModelList.add(new ProducModel("cua",1222132,R.drawable.cua5));
+        producModelList.add(new ProducModel("cua",53423,R.drawable.cua1));
+        producModelList.add(new ProducModel("cua",122132,R.drawable.cua2));
+        producModelList.add(new ProducModel("cua",1222132,R.drawable.cua3));
+        producModelList.add(new ProducModel("cua",1222132,R.drawable.cua4));
+        producModelList.add(new ProducModel("cua",1222132,R.drawable.cua5));
+        producModelList.add(new ProducModel("cua",53423,R.drawable.cua1));
+        producModelList.add(new ProducModel("cua",122132,R.drawable.cua2));
+        producModelList.add(new ProducModel("cua",1222132,R.drawable.cua3));
+        producModelList.add(new ProducModel("cua",1222132,R.drawable.cua4));
+        producModelList.add(new ProducModel("cua",1222132,R.drawable.cua5));
 
 
         LinearLayoutManager manager = new LinearLayoutManager(getContext());
         manager.setOrientation(LinearLayoutManager.VERTICAL);
         produccrabrcv.setLayoutManager(manager);
 
-        ProducCrabAdapter adapter = new ProducCrabAdapter(getActivity(),producCrabModelList);
+        ProducAdapter adapter = new ProducAdapter(getActivity(),producModelList);
         produccrabrcv.setAdapter(adapter);
 
     }

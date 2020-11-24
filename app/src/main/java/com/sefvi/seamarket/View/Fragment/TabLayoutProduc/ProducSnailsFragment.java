@@ -9,10 +9,8 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.sefvi.seamarket.Adapter.ProducFishAdapter;
-import com.sefvi.seamarket.Adapter.ProducSnailsAdapter;
-import com.sefvi.seamarket.Model.ProducFishModel;
-import com.sefvi.seamarket.Model.ProducSnailsModel;
+import com.sefvi.seamarket.Adapter.ProducAdapter;
+import com.sefvi.seamarket.Model.ProducModel;
 import com.sefvi.seamarket.R;
 
 import java.util.ArrayList;
@@ -20,7 +18,7 @@ import java.util.List;
 
 public class ProducSnailsFragment extends Fragment {
     RecyclerView producsnailsrcv;
-    List<ProducSnailsModel> producSnailsModelList;
+    List<ProducModel> producModelList;
     List<String> name;
     List<Integer> price;
     List<Integer> img;
@@ -72,37 +70,36 @@ public class ProducSnailsFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_product_snails, container, false);
         anhxa(v);
         setProducfishrcv();
-
         return v;
     }
     private void anhxa(View v){
         producsnailsrcv = v.findViewById(R.id.product_snails_rcv);
     }
     private void setProducfishrcv (){
-        producSnailsModelList = new ArrayList<>();
+        producModelList = new ArrayList<>();
 
-        producSnailsModelList.add(new ProducSnailsModel("ốc",1222132,R.drawable.oc1));
-        producSnailsModelList.add(new ProducSnailsModel("ốc",1222132,R.drawable.oc2));
-        producSnailsModelList.add(new ProducSnailsModel("ốc",1222132,R.drawable.oc3));
-        producSnailsModelList.add(new ProducSnailsModel("ốc",1222132,R.drawable.oc4));
-        producSnailsModelList.add(new ProducSnailsModel("ốc",1222132,R.drawable.oc5));
-        producSnailsModelList.add(new ProducSnailsModel("ốc",1222132,R.drawable.oc1));
-        producSnailsModelList.add(new ProducSnailsModel("ốc",1222132,R.drawable.oc2));
-        producSnailsModelList.add(new ProducSnailsModel("ốc",1222132,R.drawable.oc3));
-        producSnailsModelList.add(new ProducSnailsModel("ốc",1222132,R.drawable.oc4));
-        producSnailsModelList.add(new ProducSnailsModel("ốc",1222132,R.drawable.oc5));
-        producSnailsModelList.add(new ProducSnailsModel("ốc",1222132,R.drawable.oc1));
-        producSnailsModelList.add(new ProducSnailsModel("ốc",1222132,R.drawable.oc2));
-        producSnailsModelList.add(new ProducSnailsModel("ốc",1222132,R.drawable.oc3));
-        producSnailsModelList.add(new ProducSnailsModel("ốc",1222132,R.drawable.oc4));
-        producSnailsModelList.add(new ProducSnailsModel("ốc",1222132,R.drawable.oc5));
+        producModelList.add(new ProducModel("ốc",1222132,R.drawable.oc1));
+        producModelList.add(new ProducModel("ốc",1222132,R.drawable.oc2));
+        producModelList.add(new ProducModel("ốc",1222132,R.drawable.oc3));
+        producModelList.add(new ProducModel("ốc",1222132,R.drawable.oc4));
+        producModelList.add(new ProducModel("ốc",1222132,R.drawable.oc5));
+        producModelList.add(new ProducModel("ốc",1222132,R.drawable.oc1));
+        producModelList.add(new ProducModel("ốc",1222132,R.drawable.oc2));
+        producModelList.add(new ProducModel("ốc",1222132,R.drawable.oc3));
+        producModelList.add(new ProducModel("ốc",1222132,R.drawable.oc4));
+        producModelList.add(new ProducModel("ốc",1222132,R.drawable.oc5));
+        producModelList.add(new ProducModel("ốc",1222132,R.drawable.oc1));
+        producModelList.add(new ProducModel("ốc",1222132,R.drawable.oc2));
+        producModelList.add(new ProducModel("ốc",1222132,R.drawable.oc3));
+        producModelList.add(new ProducModel("ốc",1222132,R.drawable.oc4));
+        producModelList.add(new ProducModel("ốc",1222132,R.drawable.oc5));
 
 
         LinearLayoutManager manager = new LinearLayoutManager(getContext());
         manager.setOrientation(LinearLayoutManager.VERTICAL);
         producsnailsrcv.setLayoutManager(manager);
 
-        ProducSnailsAdapter adapter = new ProducSnailsAdapter(getActivity(),producSnailsModelList);
+        ProducAdapter adapter = new ProducAdapter(getActivity(),producModelList);
         producsnailsrcv.setAdapter(adapter);
 
     }

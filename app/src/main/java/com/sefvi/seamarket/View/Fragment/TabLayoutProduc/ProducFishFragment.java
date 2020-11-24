@@ -9,9 +9,8 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.sefvi.seamarket.Adapter.Home_ComboHot_Adapter;
-import com.sefvi.seamarket.Adapter.ProducFishAdapter;
-import com.sefvi.seamarket.Model.ProducFishModel;
+import com.sefvi.seamarket.Adapter.ProducAdapter;
+import com.sefvi.seamarket.Model.ProducModel;
 import com.sefvi.seamarket.R;
 
 import java.util.ArrayList;
@@ -19,7 +18,7 @@ import java.util.List;
 
 public class ProducFishFragment extends Fragment {
     RecyclerView producfishrcv;
-    List<ProducFishModel> producFishModelList;
+    List<ProducModel> producFishModelList;
     List<String> name;
     List<Integer> price;
     List<Integer> img;
@@ -79,33 +78,33 @@ public class ProducFishFragment extends Fragment {
     private void setProducfishrcv (){
         producFishModelList = new ArrayList<>();
 
-        producFishModelList.add(new ProducFishModel("ca",1222132,R.drawable.ca1));
-        producFishModelList.add(new ProducFishModel("ca",1222132,R.drawable.ca2));
-        producFishModelList.add(new ProducFishModel("ca",1222132,R.drawable.ca3));
-        producFishModelList.add(new ProducFishModel("ca",1222132,R.drawable.ca4));
-        producFishModelList.add(new ProducFishModel("ca",1222132,R.drawable.ca5));
-        producFishModelList.add(new ProducFishModel("ca",1222132,R.drawable.ca6));
-        producFishModelList.add(new ProducFishModel("ca",1222132,R.drawable.home_img_combo_hot_ca));
-        producFishModelList.add(new ProducFishModel("ca",1222132,R.drawable.ca1));
-        producFishModelList.add(new ProducFishModel("ca",1222132,R.drawable.ca2));
-        producFishModelList.add(new ProducFishModel("ca",1222132,R.drawable.ca3));
-        producFishModelList.add(new ProducFishModel("ca",1222132,R.drawable.ca4));
-        producFishModelList.add(new ProducFishModel("ca",1222132,R.drawable.ca5));
-        producFishModelList.add(new ProducFishModel("ca",1222132,R.drawable.ca6));
-        producFishModelList.add(new ProducFishModel("ca",1222132,R.drawable.home_img_combo_hot_ca));
-        producFishModelList.add(new ProducFishModel("ca",1222132,R.drawable.ca1));
-        producFishModelList.add(new ProducFishModel("ca",1222132,R.drawable.ca2));
-        producFishModelList.add(new ProducFishModel("ca",1222132,R.drawable.ca3));
-        producFishModelList.add(new ProducFishModel("ca",1222132,R.drawable.ca4));
-        producFishModelList.add(new ProducFishModel("ca",1222132,R.drawable.ca5));
-        producFishModelList.add(new ProducFishModel("ca",1222132,R.drawable.ca6));
-        producFishModelList.add(new ProducFishModel("ca",1222132,R.drawable.home_img_combo_hot_ca));
+        producFishModelList.add(new ProducModel("ca",1222132,R.drawable.ca1));
+        producFishModelList.add(new ProducModel("ca",1222132,R.drawable.ca2));
+        producFishModelList.add(new ProducModel("ca",1222132,R.drawable.ca3));
+        producFishModelList.add(new ProducModel("ca",1222132,R.drawable.ca4));
+        producFishModelList.add(new ProducModel("ca",1222132,R.drawable.ca5));
+        producFishModelList.add(new ProducModel("ca",1222132,R.drawable.ca6));
+        producFishModelList.add(new ProducModel("ca",1222132,R.drawable.home_img_combo_hot_ca));
+        producFishModelList.add(new ProducModel("ca",1222132,R.drawable.ca1));
+        producFishModelList.add(new ProducModel("ca",1222132,R.drawable.ca2));
+        producFishModelList.add(new ProducModel("ca",1222132,R.drawable.ca3));
+        producFishModelList.add(new ProducModel("ca",1222132,R.drawable.ca4));
+        producFishModelList.add(new ProducModel("ca",1222132,R.drawable.ca5));
+        producFishModelList.add(new ProducModel("ca",1222132,R.drawable.ca6));
+        producFishModelList.add(new ProducModel("ca",1222132,R.drawable.home_img_combo_hot_ca));
+        producFishModelList.add(new ProducModel("ca",1222132,R.drawable.ca1));
+        producFishModelList.add(new ProducModel("ca",1222132,R.drawable.ca2));
+        producFishModelList.add(new ProducModel("ca",1222132,R.drawable.ca3));
+        producFishModelList.add(new ProducModel("ca",1222132,R.drawable.ca4));
+        producFishModelList.add(new ProducModel("ca",1222132,R.drawable.ca5));
+        producFishModelList.add(new ProducModel("ca",1222132,R.drawable.ca6));
+        producFishModelList.add(new ProducModel("ca",1222132,R.drawable.home_img_combo_hot_ca));
 
         LinearLayoutManager manager = new LinearLayoutManager(getContext());
         manager.setOrientation(LinearLayoutManager.VERTICAL);
         producfishrcv.setLayoutManager(manager);
 
-        ProducFishAdapter adapter = new ProducFishAdapter(getActivity(),producFishModelList);
+        ProducAdapter adapter = new ProducAdapter(getActivity(),producFishModelList);
         producfishrcv.setAdapter(adapter);
 
     }

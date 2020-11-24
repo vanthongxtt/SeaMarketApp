@@ -6,22 +6,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.sefvi.seamarket.Model.ProducClamModel;
+import com.sefvi.seamarket.Model.ProducModel;
 import com.sefvi.seamarket.R;
-
 import java.util.List;
 
-public class ProducClamAdapter extends RecyclerView.Adapter<ProducClamAdapter.MyViewHolder> {
+public class ProducAdapter extends RecyclerView.Adapter<ProducAdapter.MyViewHolder> {
     private Context context;
-    private List<ProducClamModel> producClamModels;
+    private List<ProducModel> producModels;
 
-    public ProducClamAdapter (Context context, List<ProducClamModel> producClamModels){
+    public ProducAdapter(Context context, List<ProducModel> producSnailsModels){
         this.context = context;
-        this.producClamModels = producClamModels;
+        this.producModels = producSnailsModels;
     }
 
     public static  class MyViewHolder extends RecyclerView.ViewHolder{
@@ -37,24 +35,24 @@ public class ProducClamAdapter extends RecyclerView.Adapter<ProducClamAdapter.My
     }
     @NonNull
     @Override
-    public ProducClamAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ProducAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(context).inflate(R.layout.custom_item_product_tablayout,parent,false);
-        return new ProducClamAdapter.MyViewHolder(v) ;
+        return new ProducAdapter.MyViewHolder(v) ;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ProducClamAdapter.MyViewHolder holder, int position) {
-        ProducClamModel producClamModel = producClamModels.get(position);
+    public void onBindViewHolder(@NonNull ProducAdapter.MyViewHolder holder, int position) {
+        ProducModel producModel = producModels.get(position);
 
-        holder.mName.setText(producClamModel.getName());
-        holder.mPrice.setText(producClamModel.getPrice() + "/kg");
-        holder.mImg.setImageResource(producClamModel.getImg());
+        holder.mName.setText(producModel.getName());
+        holder.mPrice.setText(producModel.getPrice() + "/kg");
+        holder.mImg.setImageResource(producModel.getImg());
 
     }
 
     @Override
     public int getItemCount() {
-        return producClamModels.size();
+        return producModels.size();
     }
 
 
