@@ -30,7 +30,7 @@ import com.sefvi.seamarket.View.Activity.HotActivity;
 import com.sefvi.seamarket.View.Activity.Home.ImportActivity;
 import com.sefvi.seamarket.View.Activity.PurchaseAreaActivity;
 import com.sefvi.seamarket.View.Activity.Home.SellALotActivity;
-import com.sefvi.seamarket.View.Activity.SearchActivity;
+import com.sefvi.seamarket.View.Activity.Home.SearchActivity;
 
 import java.util.ArrayList;
 import java.util.List;
