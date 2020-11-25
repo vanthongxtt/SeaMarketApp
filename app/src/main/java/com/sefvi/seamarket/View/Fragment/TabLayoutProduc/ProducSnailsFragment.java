@@ -78,21 +78,21 @@ public class ProducSnailsFragment extends Fragment {
     private void setProducfishrcv (){
         producModelList = new ArrayList<>();
 
-        producModelList.add(new ProducModel("ốc",1222132,R.drawable.oc1));
-        producModelList.add(new ProducModel("ốc",1222132,R.drawable.oc2));
-        producModelList.add(new ProducModel("ốc",1222132,R.drawable.oc3));
-        producModelList.add(new ProducModel("ốc",1222132,R.drawable.oc4));
-        producModelList.add(new ProducModel("ốc",1222132,R.drawable.oc5));
-        producModelList.add(new ProducModel("ốc",1222132,R.drawable.oc1));
-        producModelList.add(new ProducModel("ốc",1222132,R.drawable.oc2));
-        producModelList.add(new ProducModel("ốc",1222132,R.drawable.oc3));
-        producModelList.add(new ProducModel("ốc",1222132,R.drawable.oc4));
-        producModelList.add(new ProducModel("ốc",1222132,R.drawable.oc5));
-        producModelList.add(new ProducModel("ốc",1222132,R.drawable.oc1));
-        producModelList.add(new ProducModel("ốc",1222132,R.drawable.oc2));
-        producModelList.add(new ProducModel("ốc",1222132,R.drawable.oc3));
-        producModelList.add(new ProducModel("ốc",1222132,R.drawable.oc4));
-        producModelList.add(new ProducModel("ốc",1222132,R.drawable.oc5));
+        producModelList.add(new ProducModel("ốc",1222132,"mua thi mua khong mua thi mua", R.drawable.oc1));
+        producModelList.add(new ProducModel("ốc",1222132,"mua thi mua khong mua thi mua",R.drawable.oc2));
+        producModelList.add(new ProducModel("ốc",1222132,"mua thi mua khong mua thi mua",R.drawable.oc3));
+        producModelList.add(new ProducModel("ốc",1222132,"mua thi mua khong mua thi mua",R.drawable.oc4));
+        producModelList.add(new ProducModel("ốc",1222132,"mua thi mua khong mua thi mua",R.drawable.oc5));
+        producModelList.add(new ProducModel("ốc",1222132,"mua thi mua khong mua thi mua",R.drawable.oc1));
+        producModelList.add(new ProducModel("ốc",1222132,"mua thi mua khong mua thi mua",R.drawable.oc2));
+        producModelList.add(new ProducModel("ốc",1222132,"mua thi mua khong mua thi mua",R.drawable.oc3));
+        producModelList.add(new ProducModel("ốc",1222132,"mua thi mua khong mua thi mua",R.drawable.oc4));
+        producModelList.add(new ProducModel("ốc",1222132,"mua thi mua khong mua thi mua",R.drawable.oc5));
+        producModelList.add(new ProducModel("ốc",1222132,"mua thi mua khong mua thi mua",R.drawable.oc1));
+        producModelList.add(new ProducModel("ốc",1222132,"mua thi mua khong mua thi mua",R.drawable.oc2));
+        producModelList.add(new ProducModel("ốc",1222132,"mua thi mua khong mua thi mua",R.drawable.oc3));
+        producModelList.add(new ProducModel("ốc",1222132,"mua thi mua khong mua thi mua",R.drawable.oc4));
+        producModelList.add(new ProducModel("ốc",1222132,"mua thi mua khong mua thi mua",R.drawable.oc5));
 
 
         LinearLayoutManager manager = new LinearLayoutManager(getContext());

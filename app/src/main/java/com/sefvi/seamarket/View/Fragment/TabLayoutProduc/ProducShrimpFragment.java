@@ -80,21 +80,21 @@ public class ProducShrimpFragment extends Fragment {
     private void setProducshrimp (){
         producModelList = new ArrayList<>();
 
-        producModelList.add(new ProducModel("Tôm",600000,R.drawable.tom1));
-        producModelList.add(new ProducModel("Tôm",1222132,R.drawable.tom2));
-        producModelList.add(new ProducModel("Tôm",1222132,R.drawable.tom3));
-        producModelList.add(new ProducModel("Tôm",1222132,R.drawable.tom4));
-        producModelList.add(new ProducModel("Tôm",1222132,R.drawable.tom5));
-        producModelList.add(new ProducModel("Tôm",600000,R.drawable.tom1));
-        producModelList.add(new ProducModel("Tôm",1222132,R.drawable.tom2));
-        producModelList.add(new ProducModel("Tôm",1222132,R.drawable.tom3));
-        producModelList.add(new ProducModel("Tôm",1222132,R.drawable.tom4));
-        producModelList.add(new ProducModel("Tôm",1222132,R.drawable.tom5));
-        producModelList.add(new ProducModel("Tôm",600000,R.drawable.tom1));
-        producModelList.add(new ProducModel("Tôm",1222132,R.drawable.tom2));
-        producModelList.add(new ProducModel("Tôm",1222132,R.drawable.tom3));
-        producModelList.add(new ProducModel("Tôm",1222132,R.drawable.tom4));
-        producModelList.add(new ProducModel("Tôm",1222132,R.drawable.tom5));
+        producModelList.add(new ProducModel("Tôm",600000,"mota mota mota mota mota mota ",R.drawable.tom1));
+        producModelList.add(new ProducModel("Tôm",1222132,"mota mota mota mota mota mota ",R.drawable.tom2));
+        producModelList.add(new ProducModel("Tôm",1222132,"mota mota mota mota mota mota ",R.drawable.tom3));
+        producModelList.add(new ProducModel("Tôm",1222132,"mota mota mota mota mota mota ",R.drawable.tom4));
+        producModelList.add(new ProducModel("Tôm",1222132,"mota mota mota mota mota mota ",R.drawable.tom5));
+        producModelList.add(new ProducModel("Tôm",600000,"mota mota mota mota mota mota ",R.drawable.tom1));
+        producModelList.add(new ProducModel("Tôm",1222132,"mota mota mota mota mota mota ",R.drawable.tom2));
+        producModelList.add(new ProducModel("Tôm",1222132,"mota mota mota mota mota mota ",R.drawable.tom3));
+        producModelList.add(new ProducModel("Tôm",1222132,"mota mota mota mota mota mota ",R.drawable.tom4));
+        producModelList.add(new ProducModel("Tôm",1222132,"mota mota mota mota mota mota ",R.drawable.tom5));
+        producModelList.add(new ProducModel("Tôm",600000,"mota mota mota mota mota mota ",R.drawable.tom1));
+        producModelList.add(new ProducModel("Tôm",1222132,"mota mota mota mota mota mota ",R.drawable.tom2));
+        producModelList.add(new ProducModel("Tôm",1222132,"mota mota mota mota mota mota ",R.drawable.tom3));
+        producModelList.add(new ProducModel("Tôm",1222132,"mota mota mota mota mota mota ",R.drawable.tom4));
+        producModelList.add(new ProducModel("Tôm",1222132,"mota mota mota mota mota mota ",R.drawable.tom5));
 
 
 

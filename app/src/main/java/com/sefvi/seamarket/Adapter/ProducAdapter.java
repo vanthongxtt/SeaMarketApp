@@ -8,7 +8,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.sefvi.seamarket.Model.ProducModel;
 import com.sefvi.seamarket.R;
 import java.util.List;
@@ -17,13 +16,13 @@ public class ProducAdapter extends RecyclerView.Adapter<ProducAdapter.MyViewHold
     private Context context;
     private List<ProducModel> producModels;
 
-    public ProducAdapter(Context context, List<ProducModel> producSnailsModels){
+    public ProducAdapter(Context context, List<ProducModel> producModels){
         this.context = context;
-        this.producModels = producSnailsModels;
+        this.producModels = producModels;
     }
 
     public static  class MyViewHolder extends RecyclerView.ViewHolder{
-        TextView mName,mPrice;
+        TextView mName,mPrice,mDescribe;
         ImageView mImg;
 
         public MyViewHolder(@NonNull View itemView) {
@@ -31,6 +30,7 @@ public class ProducAdapter extends RecyclerView.Adapter<ProducAdapter.MyViewHold
             mName = itemView.findViewById(R.id.product_tablayout_item_name);
             mPrice = itemView.findViewById(R.id.product_tablayout_item_price);
             mImg = itemView.findViewById(R.id.product_tablayout_item_img);
+            mDescribe = itemView.findViewById(R.id.product_tablayout_describe);
         }
     }
     @NonNull
@@ -45,6 +45,7 @@ public class ProducAdapter extends RecyclerView.Adapter<ProducAdapter.MyViewHold
         ProducModel producModel = producModels.get(position);
 
         holder.mName.setText(producModel.getName());
+        holder.mDescribe.setText(producModel.getDescribe());
         holder.mPrice.setText(producModel.getPrice() + "/kg");
         holder.mImg.setImageResource(producModel.getImg());
 

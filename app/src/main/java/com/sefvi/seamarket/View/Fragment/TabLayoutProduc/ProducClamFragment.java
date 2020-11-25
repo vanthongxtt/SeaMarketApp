@@ -77,21 +77,21 @@ public class ProducClamFragment extends Fragment {
     private void setProducfishrcv (){
         producModelList = new ArrayList<>();
 
-        producModelList.add(new ProducModel("sò",1222132,R.drawable.xo1));
-        producModelList.add(new ProducModel("sò",1222132,R.drawable.xo2));
-        producModelList.add(new ProducModel("sò",1222132,R.drawable.xo3));
-        producModelList.add(new ProducModel("sò",1222132,R.drawable.xo4));
-        producModelList.add(new ProducModel("sò",1222132,R.drawable.xo5));
-        producModelList.add(new ProducModel("sò",1222132,R.drawable.xo1));
-        producModelList.add(new ProducModel("sò",1222132,R.drawable.xo2));
-        producModelList.add(new ProducModel("sò",1222132,R.drawable.xo3));
-        producModelList.add(new ProducModel("sò",1222132,R.drawable.xo4));
-        producModelList.add(new ProducModel("sò",1222132,R.drawable.xo5));
-        producModelList.add(new ProducModel("sò",1222132,R.drawable.xo1));
-        producModelList.add(new ProducModel("sò",1222132,R.drawable.xo2));
-        producModelList.add(new ProducModel("sò",1222132,R.drawable.xo3));
-        producModelList.add(new ProducModel("sò",1222132,R.drawable.xo4));
-        producModelList.add(new ProducModel("sò",1222132,R.drawable.xo5));
+        producModelList.add(new ProducModel("sò", 1222132,"mota mota mota mota mota " ,R.drawable.xo1));
+        producModelList.add(new ProducModel("sò",1222132,"mota" ,R.drawable.xo2));
+        producModelList.add(new ProducModel("sò",1222132,"mota" ,R.drawable.xo3));
+        producModelList.add(new ProducModel("sò",1222132,"mota mota mota mota mota ", R.drawable.xo4));
+        producModelList.add(new ProducModel("sò",1222132,"mota mota mota mota mota " ,R.drawable.xo5));
+        producModelList.add(new ProducModel("sò",1222132,"mota mota mota mota mota " ,R.drawable.xo1));
+        producModelList.add(new ProducModel("sò",1222132,"mota mota mota mota mota " ,R.drawable.xo2));
+        producModelList.add(new ProducModel("sò",1222132,"mota mota mota mota mota " ,R.drawable.xo3));
+        producModelList.add(new ProducModel("sò",1222132,"mota mota mota mota mota " ,R.drawable.xo4));
+        producModelList.add(new ProducModel("sò",1222132,"mota mota mota mota mota " ,R.drawable.xo5));
+        producModelList.add(new ProducModel("sò",1222132,"mota mota mota mota mota " ,R.drawable.xo1));
+        producModelList.add(new ProducModel("sò",1222132,"mota mota mota mota mota " ,R.drawable.xo2));
+        producModelList.add(new ProducModel("sò",1222132,"mota mota mota mota mota " ,R.drawable.xo3));
+        producModelList.add(new ProducModel("sò",1222132,"mota mota mota mota mota ", R.drawable.xo4));
+        producModelList.add(new ProducModel("sò",1222132,"mota mota mota mota mota ", R.drawable.xo5));
 
 
         LinearLayoutManager manager = new LinearLayoutManager(getContext());
