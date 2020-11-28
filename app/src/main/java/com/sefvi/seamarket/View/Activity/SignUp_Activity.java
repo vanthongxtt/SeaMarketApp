@@ -2,10 +2,12 @@ package com.sefvi.seamarket.View.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -13,16 +15,19 @@ import android.widget.Toast;
 import com.sefvi.seamarket.R;
 import com.sefvi.seamarket.Utils.Checks;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 public class SignUp_Activity extends AppCompatActivity {
 TextView tvdangnhap;
 Button btnDangKi;
-EditText signupPhone, signupPass, signupRePass, signupHoTen, signupNamSinh;
+EditText signupPhone, signupPass, signupRePass, signupHoTen, signupcalender;
     private void anhXa(){
     signupPhone = findViewById(R.id.signup_edt_phone);
     signupPass = findViewById(R.id.signup_edt_password);
     signupRePass = findViewById(R.id.signup_edt_repassword);
     signupHoTen = findViewById(R.id.signup_edt_fullname);
-    signupNamSinh = findViewById(R.id.signup_edt_year_of_birth);
+    signupcalender = findViewById(R.id.signup_edt_calender);
     btnDangKi = findViewById(R.id.signup_btn_dangki);
 }
     @Override
@@ -42,9 +47,31 @@ EditText signupPhone, signupPass, signupRePass, signupHoTen, signupNamSinh;
         btnDangKi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                lavigate(signupPhone.getText().toString(), signupPass.getText().toString(), signupRePass.getText().toString(), signupHoTen.getText().toString(), signupNamSinh.getText().toString());
+                lavigate(signupPhone.getText().toString(), signupPass.getText().toString(), signupRePass.getText().toString(), signupHoTen.getText().toString(), signupcalender.getText().toString());
             }
         });
+
+        signupcalender.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+            chonngay();
+            }
+        });
+    }
+    private  void chonngay(){
+        Calendar calendar = Calendar.getInstance();
+        int ngay = calendar.get(calendar.DATE);
+        int thang = calendar.get(calendar.MONTH);
+        int nam = calendar.get(calendar.YEAR);
+
+        DatePickerDialog datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
+                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/mm/yyyy");
+                signupcalender.setText(simpleDateFormat.format(calendar.getTime()));
+            }
+        },nam,thang,ngay);
+        datePickerDialog.show();
     }
     private void lavigate(String phone, String pass, String rePass, String hoTen, String yearOfBirth){
         if(!Checks.PhoneCheck(phone)){
