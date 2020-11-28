@@ -9,44 +9,60 @@ public class AccountModell implements Serializable{
 
         @SerializedName("uuid")
         @Expose
-        private int uuid;
+        private String uuid;
+
         @SerializedName("fullname")
         @Expose
         private String fullname;
+
         @SerializedName("dateOfBirth")
         @Expose
         private String dateOfBirth;
+
         @SerializedName("gender")
         @Expose
         private String gender;
+
         @SerializedName("avatar")
         @Expose
         private String avatar;
+
         @SerializedName("address")
         @Expose
         private String address;
+
         @SerializedName("isAdmin")
         @Expose
         private int isAdmin;
+
         @SerializedName("isActive")
         @Expose
         private int isActive;
+
         @SerializedName("createAt")
         @Expose
         private String createAt;
+
         @SerializedName("updateAt")
         @Expose
         private String updateAt;
+
         @SerializedName("phone")
         @Expose
         private String phone;
+
         @SerializedName("password")
         @Expose
         private String password;
 
+        @SerializedName("token")
+        @Expose
+        private  String token;
+
         public AccountModell(){}
 
-        public AccountModell(int uuid, String fullname, String dateOfBirth, String gender, String avatar, String address, int isAdmin, int isActive, String careateAt, String updateAt, String phone, String password){
+        public AccountModell(String uuid, String fullname, String dateOfBirth, String gender, String avatar, String address, int isAdmin, int isActive, String careateAt, String updateAt, String phone, String password){
+            this.uuid = uuid;
             this.fullname = fullname;
             this.dateOfBirth = dateOfBirth;
             this.gender = gender;
@@ -60,11 +76,11 @@ public class AccountModell implements Serializable{
             this.password = password;
         }
 
-        public int getUuid() {
+        public String getUuid() {
             return uuid;
         }
 
-        public void setUuid(int uuid) {
+        public void setUuid(String uuid) {
             this.uuid = uuid;
         }
 
@@ -155,6 +171,8 @@ public class AccountModell implements Serializable{
     public void setPassword(String password) {
         this.password = password;
     }
+    public  String getToken(){return  token;}
+    public  void setToken(String token){this.token = token;}
 }
 
 
