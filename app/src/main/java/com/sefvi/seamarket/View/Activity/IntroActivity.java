@@ -73,13 +73,13 @@ public class IntroActivity extends AppCompatActivity {
 
         final List<ScreenItem> mList = new ArrayList<>();
         mList.add(new ScreenItem("SeaMarket",
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, consectetur  consectetur adipiscing elit",
+                "SeaMarket là sàn thương mại thủy sản do Sefvi chủ quản, chịu trách nhiệm và thực hiện các giao dịch liên quan mua sắm sản phẩm hàng hoá tiêu dùng thiết yếu. Đối tượng phục vụ là tất cả khách hàng trên 63 tỉnh thành Việt Nam có nhu cầu mua hàng online và nhận hàng hóa tại nhà. Sản phẩm tại SeaMarket cam kết rõ ràng về nguồn gốc và an toàn về sinh thực phẩm.",
                 R.drawable.intro_img1));
         mList.add(new ScreenItem("Fast Delivery",
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, consectetur  consectetur adipiscing elit",
+                "SeaMarket có chính sách giao hàng tận tay trên toàn quốc áp dụng cho khách hàng đặt mua sản phẩm trên App SeaMarket. Đơn hàng sẽ đảm bảo về độ tươi sống và an toàn thực phẩm như mô tả sản phẩm.",
                 R.drawable.intro_img2));
         mList.add(new ScreenItem("Sell Products",
-                "Lorem ipsum dolor sit amet, consectetur adipiscing get elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, consectetur  consectetur adipiscing elit",
+                "Sản phẩm do SeaMarket bán ra luôn cam kết đảm bao chất lượng tốt nhất, cam kết bồi thường 100% nếu có lỗi phát sinh do quá trình chế biến và vận chuyển hải sản của Công ty trước khi đến tay khách hàng.",
                 R.drawable.intro_img3));
 
         // setup viewpager

@@ -38,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
                 android:hint="Số điện thoại"
-                android:text="0399407693"
+                android:text="0393169324"
                 android:inputType="number"
                 android:padding="16dp"
                 android:drawableLeft="@drawable/custom_person_login"
@@ -52,7 +52,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:hint="Mật khẩu"
-                android:text="123456"
+                android:text="7121321"
                 android:inputType="textPassword"
                 android:padding="16dp"
                 android:drawablePadding="10dp"
@@ -96,7 +96,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Chưa có tài khoản?"
-            android:textColor="@color/login_form_details"
+            android:textColor="#E6E6E6"
             android:textSize="16sp"
             android:layout_gravity="bottom"
             app:layout_constraintStart_toStartOf="parent" />
@@ -107,8 +107,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:text="Đăng kí"
+            style="@style/gachChan"
             android:layout_gravity="bottom"
-            android:textColor="@color/login_form_details"
+            android:textColor="@color/colorWhite"
             android:textSize="17sp"
             tools:ignore="RtlCompat" />
 
