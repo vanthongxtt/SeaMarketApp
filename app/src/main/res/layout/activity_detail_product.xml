@@ -175,14 +175,14 @@
                         android:layout_width="120dp"
                         android:layout_height="wrap_content"
                         android:textSize="16sp"
-                        android:text="Loại sản phẩm"/>
+                        android:text="Loại sản phẩm :"/>
 
                     <TextView
                         android:id="@+id/detail_product_tv_type_product"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="10dp"
-                        android:text="cá"
+                        android:text="cá."
                         android:textSize="16sp" />
                 </LinearLayout>
                 <LinearLayout
@@ -196,12 +196,12 @@
                         android:layout_width="120dp"
                         android:textSize="16sp"
                         android:layout_height="wrap_content"
-                        android:text="Xuất xứ "/>
+                        android:text="Xuất xứ : "/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
-                        android:text="Việt Nam"/>
+                        android:text="Việt Nam."/>
                 </LinearLayout>
 
             </LinearLayout>

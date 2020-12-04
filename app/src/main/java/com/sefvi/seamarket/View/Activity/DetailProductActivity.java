@@ -5,10 +5,15 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.sefvi.seamarket.Adapter.SliderAdapter;
 import com.sefvi.seamarket.R;
 
@@ -18,6 +23,7 @@ import java.util.TimerTask;
 public class DetailProductActivity extends AppCompatActivity {
     ImageView backicon;
     TextView title;
+    Button addproduct;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,16 +60,43 @@ public class DetailProductActivity extends AppCompatActivity {
     private void  initEvents(){
         backicon = findViewById(R.id.detail_product_back);
         title = findViewById(R.id.detail_product_title_product);
+        addproduct = findViewById(R.id.detail_product_btn_add_basket);
+
     }
 
     private void initControls(){
 
-        title.setText(getText(R.string.personal_text_caidat));
+        title.setText("Tên sản phẩm");
 
         backicon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();
+            }
+        });
+
+        addproduct.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(
+                        DetailProductActivity.this,R.style.BottomSheetDialogTheme
+                );
+                View bottomSheetView = LayoutInflater.from(getApplicationContext())
+                        .inflate(
+                                R.layout.bottom_dialog_detail_product,
+                                        (LinearLayout)findViewById(R.id.bottomSheetContainer)
+                        );
+                bottomSheetView.findViewById(R.id.bottomSheet_btn_add_basket).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Toast.makeText(DetailProductActivity.this, "chưa thêm vào giỏ hàng được đâu", Toast.LENGTH_SHORT).show();
+
+                    }
+                });
+                bottomSheetDialog.setContentView(bottomSheetView);
+                bottomSheetDialog.show();
+
+
             }
         });
     }
