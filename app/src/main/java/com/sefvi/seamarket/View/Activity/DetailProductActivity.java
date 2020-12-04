@@ -16,20 +16,16 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class DetailProductActivity extends AppCompatActivity {
-
+    ImageView backicon;
+    TextView title;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_product);
-        ImageView backicon = findViewById(R.id.detail_product_back);
-        TextView title = findViewById(R.id.detail_product_title_product);
-        backicon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
-        title.setText(getText(R.string.personal_text_caidat));
+
+        initEvents();
+
+        initControls();
 
 
         ViewPager viewPager;
@@ -53,7 +49,23 @@ public class DetailProductActivity extends AppCompatActivity {
                 viewPager.setCurrentItem(currentPageCunter[0]++,true);
             }
         };
+    }
 
+    private void  initEvents(){
+        backicon = findViewById(R.id.detail_product_back);
+        title = findViewById(R.id.detail_product_title_product);
+    }
+
+    private void initControls(){
+
+        title.setText(getText(R.string.personal_text_caidat));
+
+        backicon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
 
 

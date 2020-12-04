@@ -1,6 +1,7 @@
 package com.sefvi.seamarket.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.sefvi.seamarket.Model.ProducModel;
 import com.sefvi.seamarket.Model.ProductModel;
 import com.sefvi.seamarket.R;
+import com.sefvi.seamarket.View.Activity.DetailProductActivity;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -56,6 +58,15 @@ public class ProducAdapter extends RecyclerView.Adapter<ProducAdapter.MyViewHold
                 .placeholder(R.mipmap.ic_launcher_round)
                 .error(R.drawable.home_combo_hot_img_cua)
                 .into(holder.mImg);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, DetailProductActivity.class);
+                intent.putExtra("idProduct", producModel.getId());
+                context.startActivity(intent);
+            }
+        });
 
     }
 

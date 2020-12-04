@@ -264,7 +264,6 @@ public class HomeFragment extends Fragment {
 
             @Override
             public void getDataSuccess(JSONArray list) {
-                comboHotList = new ArrayList<>();
                 for (int i = 0; i <= list.length(); i++) {
                     try {
                         JSONObject jsonObject = new JSONObject(list.get(i).toString());
@@ -282,16 +281,16 @@ public class HomeFragment extends Fragment {
                         e.printStackTrace();
                     }
                 }
+
+                LinearLayoutManager manager2 = new LinearLayoutManager(getContext());
+                manager2.setOrientation(LinearLayoutManager.HORIZONTAL);
+                saleoff.setLayoutManager(manager2);
+
+                Home_Sale_off_Adapter adapter2 = new Home_Sale_off_Adapter(getContext(), saleofflist);
+                saleoff.setAdapter(adapter2);
             }
         });
 
-        LinearLayoutManager manager2 = new LinearLayoutManager(getActivity());
-        manager2.setOrientation(LinearLayoutManager.HORIZONTAL);
-        saleoff.setLayoutManager(manager2);
-
-        Home_Sale_off_Adapter adapter2 = new Home_Sale_off_Adapter(getActivity(), saleofflist) {
-        };
-        saleoff.setAdapter(adapter2);
     }
 
     private void baner(View v){
