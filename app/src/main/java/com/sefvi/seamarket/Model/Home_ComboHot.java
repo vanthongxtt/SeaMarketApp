@@ -5,6 +5,10 @@ public class Home_ComboHot {
     public  Integer Gia;
     public Integer Hinh;
 
+    public Home_ComboHot() {
+
+    }
+
     public String getTen() {
         return Ten;
     }

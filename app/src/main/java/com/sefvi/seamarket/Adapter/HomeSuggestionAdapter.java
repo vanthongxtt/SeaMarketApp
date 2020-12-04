@@ -11,28 +11,22 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.sefvi.seamarket.Model.ProductModel;
 import com.sefvi.seamarket.R;
+import com.squareup.picasso.Picasso;
 
 
 import java.util.List;
 
 public class HomeSuggestionAdapter extends RecyclerView.Adapter<HomeSuggestionAdapter.ViewHolder> {
-
-    List<String> name;
-    List<Integer> price;
-    List<Integer> img;
+    private final List<ProductModel> productModelList;
     LayoutInflater inflater;
 
-    public HomeSuggestionAdapter(List<String> name, List<Integer> price, List<Integer> img, Context context) {
-        this.name = name;
-        this.price = price;
-        this.img = img;
+    public HomeSuggestionAdapter(List<ProductModel> productModels, Context context) {
+        this.productModelList = productModels;
         this.inflater = LayoutInflater.from(context);
 
     }
-
-    Context context;
-
 
     @NonNull
     @Override
@@ -44,14 +38,21 @@ public class HomeSuggestionAdapter extends RecyclerView.Adapter<HomeSuggestionAd
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.name.setText(name.get(position));
-        holder.price.setText(price.get(position) +"/kg");
-        holder.img.setImageResource(img.get(position));
+        ProductModel productModel = productModelList.get(position);
+
+        holder.name.setText(productModel.getName());
+        holder.price.setText(productModel.getPrice() + "/kg");
+        String url = "https://api.sefvi.com/SeaMarketApi/V1/uploads/" + productModel.getImage();
+        Picasso.get()
+                .load(url)
+                .placeholder(R.mipmap.ic_launcher_round)
+                .error(R.drawable.home_combo_hot_img_cua)
+                .into(holder.img);
     }
 
     @Override
     public int getItemCount() {
-        return name.size();
+        return productModelList.size();
     }
 
     public  class ViewHolder extends RecyclerView.ViewHolder{

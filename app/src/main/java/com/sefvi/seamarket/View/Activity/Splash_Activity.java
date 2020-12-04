@@ -12,6 +12,7 @@ import android.util.Log;
 import android.widget.ProgressBar;
 
 import com.sefvi.seamarket.R;
+import com.sefvi.seamarket.Utils.ShPref;
 
 public class Splash_Activity extends Activity {
 
@@ -20,8 +21,10 @@ public class Splash_Activity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-        SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Splash_Activity.this);
-        String token = myPreferences.getString("TOKEN", "");
+//        SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Splash_Activity.this);
+//        String token = myPreferences.getString("TOKEN", "");
+        SharedPreferences prefs = getSharedPreferences("Sea",MODE_PRIVATE);
+        String token = prefs.getString("TOKEN", "");
         Log.d("token_s", token);
 
         if (isEmpty(token)){

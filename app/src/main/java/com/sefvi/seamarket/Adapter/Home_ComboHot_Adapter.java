@@ -11,15 +11,17 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.sefvi.seamarket.Model.Home_ComboHot;
+import com.sefvi.seamarket.Model.ProductModel;
 import com.sefvi.seamarket.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
 public class Home_ComboHot_Adapter extends RecyclerView.Adapter<Home_ComboHot_Adapter.MyViewHolder> {
-    private  Context context;
-    private List<Home_ComboHot> homecomboHots;
+    private final Context context;
+    private final List<ProductModel> homecomboHots;
 
-    public Home_ComboHot_Adapter(Context context, List<Home_ComboHot> homecomboHots) {
+    public Home_ComboHot_Adapter(Context context, List<ProductModel> homecomboHots) {
         this.context = context;
         this.homecomboHots = homecomboHots;
     }
@@ -44,11 +46,16 @@ public class Home_ComboHot_Adapter extends RecyclerView.Adapter<Home_ComboHot_Ad
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        Home_ComboHot home_comboHot = homecomboHots.get(position);
+        ProductModel productModel = homecomboHots.get(position);
 
-        holder.mTen.setText(home_comboHot.getTen());
-        holder.mGia.setText(home_comboHot.getGia()+ "/kg");
-        holder.mImage.setImageResource(home_comboHot.getHinh());
+        holder.mTen.setText(productModel.getName());
+        holder.mGia.setText(productModel.getPrice()+ "/kg");
+        String url = "https://api.sefvi.com/SeaMarketApi/V1/uploads/" + productModel.getImage();
+        Picasso.get()
+                .load(url)
+                .placeholder(R.mipmap.ic_launcher_round)
+                .error(R.drawable.home_combo_hot_img_cua)
+                .into(holder.mImage);
     }
 
 

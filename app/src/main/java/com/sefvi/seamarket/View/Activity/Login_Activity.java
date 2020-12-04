@@ -18,7 +18,7 @@ import com.sefvi.seamarket.Interface.AuthInterface;
 import com.sefvi.seamarket.Model.AccountModell;
 import com.sefvi.seamarket.R;
 import com.sefvi.seamarket.Utils.Checks;
-
+import com.sefvi.seamarket.Utils.ShPref;
 
 
 public class Login_Activity extends AppCompatActivity {
@@ -75,10 +75,15 @@ public class Login_Activity extends AppCompatActivity {
                 @Override
                 public void getDataSuccess(AccountModell accountModell) {
                     Log.d("login", accountModell.getUuid() + " - " + accountModell.getToken());
-                    SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Login_Activity.this);
-                    SharedPreferences.Editor myEditor = myPreferences.edit();
-                    myEditor.putString("TOKEN", accountModell.getToken());
-                    myEditor.commit();
+//                    SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Login_Activity.this);
+//                    SharedPreferences.Editor myEditor = myPreferences.edit();
+//                    myEditor.putString("TOKEN", accountModell.getToken());
+//                    myEditor.commit();
+
+                    SharedPreferences.Editor editor = getSharedPreferences("Sea",MODE_PRIVATE).edit();
+                    editor.putString("TOKEN", accountModell.getToken());
+                    editor.apply();
+
 
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     startActivity(intent);

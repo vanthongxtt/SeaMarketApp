@@ -1,8 +1,10 @@
 package com.sefvi.seamarket.View.Fragment;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,12 +19,19 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.SharedPreferences;
+
+import com.google.gson.JsonObject;
 import com.sefvi.seamarket.Adapter.HomeSuggestionAdapter;
 import com.sefvi.seamarket.Adapter.Home_ComboHot_Adapter;
 import com.sefvi.seamarket.Adapter.Home_Sale_off_Adapter;
 import com.sefvi.seamarket.Adapter.SliderAdapter;
+import com.sefvi.seamarket.Api.GetProductHome.GetProductHomeApiLml;
+import com.sefvi.seamarket.Api.GetProductRandom.GetProductRandomLml;
+import com.sefvi.seamarket.Interface.ProductRandom;
 import com.sefvi.seamarket.Model.Home_ComboHot;
 import com.sefvi.seamarket.Model.Home_SaleOff;
+import com.sefvi.seamarket.Model.ProductModel;
 import com.sefvi.seamarket.R;
 import com.sefvi.seamarket.View.Activity.Home.BuygroupActivity;
 import com.sefvi.seamarket.View.Activity.Home.DiscountActivity;
@@ -32,32 +41,39 @@ import com.sefvi.seamarket.View.Activity.PurchaseAreaActivity;
 import com.sefvi.seamarket.View.Activity.Home.SellALotActivity;
 import com.sefvi.seamarket.View.Activity.Home.SearchActivity;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import static android.content.Context.MODE_PRIVATE;
+
 public class HomeFragment extends Fragment {
     RecyclerView combohot,saleoff,suggestion;
     LinearLayout homelnlhot,homelnldiscount,homelnlimport,homelnlsellalot,homelnlbuygroup,home_lnl_search;
     RelativeLayout home_rl_gps;
-    List<Home_ComboHot> comboHotList;
-    List<Home_SaleOff> saleofflist;
-    List<String> name;
-    List<Integer> price;
-    List<Integer> img;
+    List<ProductModel> comboHotList;
+    List<ProductModel> saleofflist;
+    List<ProductModel> homeListProducts;
     HomeSuggestionAdapter adapter;
 
     ViewPager viewPager;
     //add images from drawable to array
-    int images[] = {R.drawable.home_img0,R.drawable.home_img1, R.drawable.home_img2, R.drawable.home_img3, R.drawable.home_img4};
+    int[] images = {R.drawable.home_img0,R.drawable.home_img1, R.drawable.home_img2, R.drawable.home_img3, R.drawable.home_img4};
     int currentPageCunter = 0;
 
-
+    String token;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_home,container,false);
+        SharedPreferences prefs = getContext().getSharedPreferences("Sea",MODE_PRIVATE);
+        token = prefs.getString("TOKEN", "");
+
         Anhxa(v);
         event();
         baner(v);
@@ -65,69 +81,49 @@ public class HomeFragment extends Fragment {
         setSaleoff();
         suggestion();
 
-
-//        BottomNavigationView navigationView = v.findViewById(R.id.bottom_nav);
-        // intiialize and assign variable
-//        BottomNavigationView bottomNavigationView = v.findViewById(R.id.bottom_nav);
-        //set home selected
-//        bottomNavigationView.setSelectedItemId(R.id.action_home);
-
         return v;
     }
     private void suggestion(){
 
+        homeListProducts = new ArrayList<>();
 
-        name = new ArrayList<>();
-        price = new ArrayList<>();
-        img = new ArrayList<>();
+        GetProductHomeApiLml getProductHomeApiLml = new GetProductHomeApiLml();
+        getProductHomeApiLml.GetProductHomeApi(token, 26, new ProductRandom() {
+            @Override
+            public void getDataSuccess(ProductModel productModel) {
 
-        name.add("ca");
-        name.add("ca");
-        name.add("ca");
-        name.add("ca");
-        name.add("ca");
-        name.add("ca");
-        name.add("ca");
-        name.add("ca");
-        name.add("ca");
-        name.add("ca");
+            }
 
-        price.add(99999);
-        price.add(99999);
-        price.add(99999);
-        price.add(99999);
-        price.add(99999);
-        price.add(99999);
-        price.add(99999);
-        price.add(99999);
-        price.add(99999);
-        price.add(99999);
+            @Override
+            public void getDataError(String err) {
 
+            }
 
-        img.add(R.drawable.home_img_combo_hot_ca);
-        img.add(R.drawable.home_img_combo_hot_ca);
-        img.add(R.drawable.home_img_combo_hot_ca);
-        img.add(R.drawable.home_img_combo_hot_ca);
-        img.add(R.drawable.home_img_combo_hot_ca);
-        img.add(R.drawable.home_img_combo_hot_ca);
-        img.add(R.drawable.home_img_combo_hot_ca);
-        img.add(R.drawable.home_img_combo_hot_ca);
-        img.add(R.drawable.home_img_combo_hot_ca);
-        img.add(R.drawable.home_img_combo_hot_ca);
-
-
-        adapter = (HomeSuggestionAdapter) new HomeSuggestionAdapter(name,price,img,getActivity());
-
-
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(), 2,GridLayoutManager.VERTICAL,false);
-        suggestion.setLayoutManager(gridLayoutManager);
-        suggestion.setAdapter(adapter);
-
-
-
-
-
-
+            @Override
+            public void getDataSuccess(JSONArray list) {
+                for (int i = 0; i <= list.length(); i++){
+                    try {
+                        JSONObject jsonObject = new JSONObject(list.get(i).toString());
+                        Log.d("ahihihi-", jsonObject.getString("name"));
+                        ProductModel productModel = new ProductModel();
+                        productModel.setId(jsonObject.getInt("id"));
+                        productModel.setIdType(jsonObject.getInt("idType"));
+                        productModel.setName(jsonObject.getString("name"));
+                        productModel.setDescription(jsonObject.getString("description"));
+                        productModel.setPrice(jsonObject.getInt("price"));
+                        productModel.setUnit(jsonObject.getString("unit"));
+                        productModel.setImage(jsonObject.getString("image"));
+                        homeListProducts.add(productModel);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+                adapter = (HomeSuggestionAdapter) new HomeSuggestionAdapter(homeListProducts,getActivity());
+                GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(), 2,GridLayoutManager.VERTICAL,false);
+                suggestion.setLayoutManager(gridLayoutManager);
+                suggestion.setAdapter(adapter);
+            }
+        });
     }
 
     private void Anhxa (View v){
@@ -197,44 +193,86 @@ public class HomeFragment extends Fragment {
     }
 
     private void setCombohot(){
-        comboHotList = new ArrayList<>();
 
-        comboHotList.add(new Home_ComboHot("cua Cà Mau",120000,R.drawable.home_combo_hot_img_cua));
-        comboHotList.add(new Home_ComboHot("Mực nè",90000,R.drawable.home_img_combo_hot_muc));
-        comboHotList.add(new Home_ComboHot("Cá",70000,R.drawable.home_img_combo_hot_ca));
-        comboHotList.add(new Home_ComboHot("Tôm Bình Điền",150000,R.drawable.home_img_combo_hot_tom));
-        comboHotList.add(new Home_ComboHot("Óc vòi voi",150000,R.drawable.home_img_combo_oc));
-        comboHotList.add(new Home_ComboHot("cua Cà Mau",120000,R.drawable.home_combo_hot_img_cua));
-        comboHotList.add(new Home_ComboHot("Mực nè",90000,R.drawable.home_img_combo_hot_muc));
-        comboHotList.add(new Home_ComboHot("Cá",70000,R.drawable.home_img_combo_hot_ca));
-        comboHotList.add(new Home_ComboHot("Tôm Bình Điền",150000,R.drawable.home_img_combo_hot_tom));
-        comboHotList.add(new Home_ComboHot("Óc vòi voi",150000,R.drawable.home_img_combo_oc));
-        
+        GetProductRandomLml getProductRandomLml = new GetProductRandomLml();
+        getProductRandomLml.GetProductRandomApi(token, new ProductRandom() {
+            @Override
+            public void getDataSuccess(ProductModel productModel) {
 
+            }
 
-        LinearLayoutManager manager = new LinearLayoutManager(getContext());
-        manager.setOrientation(LinearLayoutManager.HORIZONTAL);
-        combohot.setLayoutManager(manager);
+            @Override
+            public void getDataError(String err) {
 
-        Home_ComboHot_Adapter adapter = new Home_ComboHot_Adapter(getActivity(),comboHotList);
-        combohot.setAdapter(adapter);
+            }
 
+            @Override
+            public void getDataSuccess(JSONArray list) {
+                comboHotList = new ArrayList<>();
+                for (int i = 0; i <= list.length(); i++){
+                    try {
+                        JSONObject jsonObject = new JSONObject(list.get(i).toString());
+                        Log.d("ahihihi-c", jsonObject.getString("name"));
+                        ProductModel productModel = new ProductModel();
+                        productModel.setId(jsonObject.getInt("id"));
+                        productModel.setIdType(jsonObject.getInt("idType"));
+                        productModel.setName(jsonObject.getString("name"));
+                        productModel.setDescription(jsonObject.getString("description"));
+                        productModel.setPrice(jsonObject.getInt("price"));
+                        productModel.setUnit(jsonObject.getString("unit"));
+                        productModel.setImage(jsonObject.getString("image"));
+                        comboHotList.add(productModel);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+                LinearLayoutManager manager = new LinearLayoutManager(getContext());
+                manager.setOrientation(LinearLayoutManager.HORIZONTAL);
+                combohot.setLayoutManager(manager);
 
+                Home_ComboHot_Adapter adapter = new Home_ComboHot_Adapter(getActivity(),comboHotList);
+                combohot.setAdapter(adapter);
+
+            }
+        });
     }
 
     private void setSaleoff(){
         saleofflist = new ArrayList<>();
-        saleofflist.add(new Home_SaleOff("cua ",120000,R.drawable.home_combo_hot_img_cua));
-        saleofflist.add(new Home_SaleOff("Mực ",90000,R.drawable.home_img_combo_hot_muc));
-        saleofflist.add(new Home_SaleOff("Cá",70000,R.drawable.home_img_combo_hot_ca));
-        saleofflist.add(new Home_SaleOff("Tôm ",150000,R.drawable.home_img_combo_hot_tom));
-        saleofflist.add(new Home_SaleOff("Óc ",150000,R.drawable.home_img_combo_oc));
-        saleofflist.add(new Home_SaleOff("cua ",120000,R.drawable.home_combo_hot_img_cua));
-        saleofflist.add(new Home_SaleOff("Mực ",90000,R.drawable.home_img_combo_hot_muc));
-        saleofflist.add(new Home_SaleOff("Cá",70000,R.drawable.home_img_combo_hot_ca));
-        saleofflist.add(new Home_SaleOff("Tôm ",150000,R.drawable.home_img_combo_hot_tom));
-        saleofflist.add(new Home_SaleOff("Óc ",150000,R.drawable.home_img_combo_oc));
+        GetProductRandomLml getProductRandomLml = new GetProductRandomLml();
+        getProductRandomLml.GetProductRandomApi(token, new ProductRandom() {
+            @Override
+            public void getDataSuccess(ProductModel productModel) {
 
+            }
+
+            @Override
+            public void getDataError(String err) {
+
+            }
+
+            @Override
+            public void getDataSuccess(JSONArray list) {
+                comboHotList = new ArrayList<>();
+                for (int i = 0; i <= list.length(); i++) {
+                    try {
+                        JSONObject jsonObject = new JSONObject(list.get(i).toString());
+                        Log.d("ahihihi-", jsonObject.getString("name"));
+                        ProductModel productModel = new ProductModel();
+                        productModel.setId(jsonObject.getInt("id"));
+                        productModel.setIdType(jsonObject.getInt("idType"));
+                        productModel.setName(jsonObject.getString("name"));
+                        productModel.setDescription(jsonObject.getString("description"));
+                        productModel.setPrice(jsonObject.getInt("price"));
+                        productModel.setUnit(jsonObject.getString("unit"));
+                        productModel.setImage(jsonObject.getString("image"));
+                        saleofflist.add(productModel);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
 
         LinearLayoutManager manager2 = new LinearLayoutManager(getActivity());
         manager2.setOrientation(LinearLayoutManager.HORIZONTAL);
@@ -258,7 +296,6 @@ public class HomeFragment extends Fragment {
             public void run() {
                 if (currentPageCunter == images.length){
                     currentPageCunter = 0 ;
-
                 }
 
                 viewPager.setCurrentItem(currentPageCunter++,true);
@@ -274,7 +311,5 @@ public class HomeFragment extends Fragment {
         },2500,2500);
 
     }
-
-
 
 }
