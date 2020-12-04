@@ -9,14 +9,17 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.sefvi.seamarket.Model.ProducModel;
+import com.sefvi.seamarket.Model.ProductModel;
 import com.sefvi.seamarket.R;
+import com.squareup.picasso.Picasso;
+
 import java.util.List;
 
 public class ProducAdapter extends RecyclerView.Adapter<ProducAdapter.MyViewHolder> {
-    private Context context;
-    private List<ProducModel> producModels;
+    private final Context context;
+    private final List<ProductModel> producModels;
 
-    public ProducAdapter(Context context, List<ProducModel> producModels){
+    public ProducAdapter(Context context, List<ProductModel> producModels){
         this.context = context;
         this.producModels = producModels;
     }
@@ -42,12 +45,17 @@ public class ProducAdapter extends RecyclerView.Adapter<ProducAdapter.MyViewHold
 
     @Override
     public void onBindViewHolder(@NonNull ProducAdapter.MyViewHolder holder, int position) {
-        ProducModel producModel = producModels.get(position);
+        ProductModel producModel = producModels.get(position);
 
         holder.mName.setText(producModel.getName());
-        holder.mDescribe.setText(producModel.getDescribe());
+        holder.mDescribe.setText(producModel.getDescription());
         holder.mPrice.setText(producModel.getPrice() + "/kg");
-        holder.mImg.setImageResource(producModel.getImg());
+        String url = "https://api.sefvi.com/SeaMarketApi/V1/uploads/" + producModel.getImage();
+        Picasso.get()
+                .load(url)
+                .placeholder(R.mipmap.ic_launcher_round)
+                .error(R.drawable.home_combo_hot_img_cua)
+                .into(holder.mImg);
 
     }
 
