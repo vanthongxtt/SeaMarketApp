@@ -32,7 +32,7 @@
         <activity android:name=".View.Activity.Personal.OrderActivity" />
         <activity android:name=".View.Activity.PurchaseAreaActivity" />
         <activity android:name=".View.Activity.Personal.SettingActivity" />
-        <activity android:name=".View.Activity.HotActivity" />
+        <activity android:name=".View.Activity.Home.HotActivity" />
         <activity android:name=".View.Activity.Home.SellALotActivity" />
         <activity android:name=".View.Activity.Home.ImportActivity" />
         <activity android:name=".View.Activity.Personal.VersionActivity" />

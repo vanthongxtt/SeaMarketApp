@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -19,9 +20,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
-import android.content.SharedPreferences;
-
-import com.google.gson.JsonObject;
 import com.sefvi.seamarket.Adapter.HomeSuggestionAdapter;
 import com.sefvi.seamarket.Adapter.Home_ComboHot_Adapter;
 import com.sefvi.seamarket.Adapter.Home_Sale_off_Adapter;
@@ -29,13 +27,11 @@ import com.sefvi.seamarket.Adapter.SliderAdapter;
 import com.sefvi.seamarket.Api.GetProductHome.GetProductHomeApiLml;
 import com.sefvi.seamarket.Api.GetProductRandom.GetProductRandomLml;
 import com.sefvi.seamarket.Interface.ProductRandom;
-import com.sefvi.seamarket.Model.Home_ComboHot;
-import com.sefvi.seamarket.Model.Home_SaleOff;
 import com.sefvi.seamarket.Model.ProductModel;
 import com.sefvi.seamarket.R;
 import com.sefvi.seamarket.View.Activity.Home.BuygroupActivity;
 import com.sefvi.seamarket.View.Activity.Home.DiscountActivity;
-import com.sefvi.seamarket.View.Activity.HotActivity;
+import com.sefvi.seamarket.View.Activity.Home.HotActivity;
 import com.sefvi.seamarket.View.Activity.Home.ImportActivity;
 import com.sefvi.seamarket.View.Activity.PurchaseAreaActivity;
 import com.sefvi.seamarket.View.Activity.Home.SellALotActivity;
@@ -54,7 +50,7 @@ import static android.content.Context.MODE_PRIVATE;
 
 public class HomeFragment extends Fragment {
     RecyclerView combohot,saleoff,suggestion;
-    LinearLayout homelnlhot,homelnldiscount,homelnlimport,homelnlsellalot,homelnlbuygroup,home_lnl_search;
+    LinearLayout homelnlhot,homelnldiscount,homelnlimport,homelnlsellalot,homelnlbuygroup,home_lnl_search,hometextcombohot;
     RelativeLayout home_rl_gps;
     List<ProductModel> comboHotList;
     List<ProductModel> saleofflist;
@@ -131,6 +127,7 @@ public class HomeFragment extends Fragment {
         saleoff = v.findViewById(R.id.home_rv_sale_off);
         suggestion= v.findViewById(R.id.home_rv_suggestion);
         homelnlhot = v.findViewById(R.id.home_lnl_hot);
+        hometextcombohot = v.findViewById(R.id.hometextcombohot);
         homelnldiscount = v.findViewById(R.id.home_lnl_discount);
         homelnlimport = v.findViewById(R.id.home_lnl_import);
         homelnlsellalot = v.findViewById(R.id.home_lnl_sellalot);
@@ -192,7 +189,14 @@ public class HomeFragment extends Fragment {
         combohot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), DiscountActivity.class);
+                Intent intent = new Intent(getActivity(), HotActivity.class);
+                startActivity(intent);
+            }
+        });
+        hometextcombohot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), HotActivity.class);
                 startActivity(intent);
             }
         });
