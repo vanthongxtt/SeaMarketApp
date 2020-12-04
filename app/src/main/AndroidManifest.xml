@@ -19,7 +19,7 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
 
-        <activity android:name=".View.Activity.IntroActivity">
+        <activity android:name=".View.Activity.DetailProductActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -42,7 +42,7 @@
         <activity android:name=".View.Activity.Personal.RulesActivity" />
         <activity android:name=".View.Activity.Login_Activity" />
         <activity android:name=".View.Activity.MainActivity" />
-        <activity android:name=".View.Activity.DetailProductActivity"/>
+        <activity android:name=".View.Activity.IntroActivity"/>
 
     </application>
 

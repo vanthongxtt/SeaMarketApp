@@ -17,6 +17,7 @@ public class SellALotActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sell_a_lot);
         ImageView backicon = findViewById(R.id.toolbar_back);
         TextView name = findViewById(R.id.toolbar_name);
+
         backicon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

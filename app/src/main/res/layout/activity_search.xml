@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".View.Activity.Home.SearchActivity">
 
     <LinearLayout
@@ -11,7 +12,7 @@
         android:background="@color/blue_color"
         android:layout_height="50dp">
         <ImageView
-            android:id="@+id/toolbar_back"
+            android:id="@+id/search_toolbar_back"
             android:src="@drawable/arrow_back_24"
             android:layout_width="wrap_content"
             android:padding="10dp"
@@ -50,7 +51,12 @@
                 android:textColor="@color/intro_description_color"
                 android:textSize="16sp"/>
         </LinearLayout>
-
     </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/search_rv_suggestion"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
 </LinearLayout>
