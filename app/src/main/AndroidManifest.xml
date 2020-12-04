@@ -18,7 +18,8 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
-        <activity android:name=".View.Activity.DetailProductActivity">
+
+        <activity android:name=".View.Activity.IntroActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -41,13 +42,8 @@
         <activity android:name=".View.Activity.Personal.RulesActivity" />
         <activity android:name=".View.Activity.Login_Activity" />
         <activity android:name=".View.Activity.MainActivity" />
-        <activity android:name=".View.Activity.IntroActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".View.Activity.DetailProductActivity"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>

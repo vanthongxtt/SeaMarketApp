@@ -42,6 +42,7 @@
                 android:layout_height="match_parent"
                 android:hint="@string/Home_text_timkiemtrenseamarket"
                 android:layout_marginLeft="5dp"
+                android:inputType="text"
                 android:layout_marginRight="5dp"
                 android:imeOptions="actionSearch"
                 android:layout_gravity="center_vertical"
