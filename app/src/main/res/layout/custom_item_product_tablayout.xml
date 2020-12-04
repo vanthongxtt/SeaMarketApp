@@ -49,6 +49,8 @@
                     android:id="@+id/product_tablayout_describe"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
+                    android:ellipsize="end"
+                    android:maxLines="2"
                     android:text="mô tả mô tả mô tả mô tả mô tả mô tả mô tả mô tả mô tả..."
                     android:textSize="14sp" />
                 <RelativeLayout

@@ -1,6 +1,8 @@
 package com.sefvi.seamarket.View.Fragment.TabLayoutProduc;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,17 +13,25 @@ import androidx.recyclerview.widget.RecyclerView;
 
 
 import com.sefvi.seamarket.Adapter.ProducAdapter;
+import com.sefvi.seamarket.Api.GetProducts.GetProductsApiLml;
+import com.sefvi.seamarket.Interface.ProductRandom;
 import com.sefvi.seamarket.Model.ProducModel;
+import com.sefvi.seamarket.Model.ProductModel;
 import com.sefvi.seamarket.R;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.List;
 
+import static android.content.Context.MODE_PRIVATE;
+
 public class ProducShrimpFragment extends Fragment {
     RecyclerView producshrimprcv;
-    List<ProducModel> producModelList;
-    List<String> name;
-    List<Integer> price;
-    List<Integer> img;
+    List<ProductModel> producModelList;
+    String token;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -76,34 +86,54 @@ public class ProducShrimpFragment extends Fragment {
     }
     private void anhxa(View v){
         producshrimprcv = v.findViewById(R.id.product_shrimp_rcv);
+        SharedPreferences prefs = getContext().getSharedPreferences("Sea",MODE_PRIVATE);
+        token = prefs.getString("TOKEN", "");
     }
     private void setProducshrimp (){
         producModelList = new ArrayList<>();
 
-        producModelList.add(new ProducModel("Tôm",600000,"mota mota mota mota mota mota ",R.drawable.tom1));
-        producModelList.add(new ProducModel("Tôm",1222132,"mota mota mota mota mota mota ",R.drawable.tom2));
-        producModelList.add(new ProducModel("Tôm",1222132,"mota mota mota mota mota mota ",R.drawable.tom3));
-        producModelList.add(new ProducModel("Tôm",1222132,"mota mota mota mota mota mota ",R.drawable.tom4));
-        producModelList.add(new ProducModel("Tôm",1222132,"mota mota mota mota mota mota ",R.drawable.tom5));
-        producModelList.add(new ProducModel("Tôm",600000,"mota mota mota mota mota mota ",R.drawable.tom1));
-        producModelList.add(new ProducModel("Tôm",1222132,"mota mota mota mota mota mota ",R.drawable.tom2));
-        producModelList.add(new ProducModel("Tôm",1222132,"mota mota mota mota mota mota ",R.drawable.tom3));
-        producModelList.add(new ProducModel("Tôm",1222132,"mota mota mota mota mota mota ",R.drawable.tom4));
-        producModelList.add(new ProducModel("Tôm",1222132,"mota mota mota mota mota mota ",R.drawable.tom5));
-        producModelList.add(new ProducModel("Tôm",600000,"mota mota mota mota mota mota ",R.drawable.tom1));
-        producModelList.add(new ProducModel("Tôm",1222132,"mota mota mota mota mota mota ",R.drawable.tom2));
-        producModelList.add(new ProducModel("Tôm",1222132,"mota mota mota mota mota mota ",R.drawable.tom3));
-        producModelList.add(new ProducModel("Tôm",1222132,"mota mota mota mota mota mota ",R.drawable.tom4));
-        producModelList.add(new ProducModel("Tôm",1222132,"mota mota mota mota mota mota ",R.drawable.tom5));
+        GetProductsApiLml getProductsApiLml = new GetProductsApiLml();
+        getProductsApiLml.GetProducts(token, 6, new ProductRandom() {
+            @Override
+            public void getDataSuccess(ProductModel productModel) {
+
+            }
+
+            @Override
+            public void getDataError(String err) {
+
+            }
+
+            @Override
+            public void getDataSuccess(JSONArray list) {
+                for (int i = 0; i <= list.length(); i++){
+                    try {
+                        JSONObject jsonObject = new JSONObject(list.get(i).toString());
+                        Log.d("ahihihi-", jsonObject.getString("name"));
+                        ProductModel productModel = new ProductModel();
+                        productModel.setId(jsonObject.getInt("id"));
+                        productModel.setIdType(jsonObject.getInt("idType"));
+                        productModel.setName(jsonObject.getString("name"));
+                        productModel.setDescription(jsonObject.getString("description"));
+                        productModel.setPrice(jsonObject.getInt("price"));
+                        productModel.setUnit(jsonObject.getString("unit"));
+                        productModel.setImage(jsonObject.getString("image"));
+                        producModelList.add(productModel);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+                LinearLayoutManager manager = new LinearLayoutManager(getContext());
+                manager.setOrientation(LinearLayoutManager.VERTICAL);
+                producshrimprcv.setLayoutManager(manager);
+
+                ProducAdapter adapter = new ProducAdapter(getActivity(),producModelList);
+                producshrimprcv.setAdapter(adapter);
+            }
+        });
 
 
-
-        LinearLayoutManager manager = new LinearLayoutManager(getContext());
-        manager.setOrientation(LinearLayoutManager.VERTICAL);
-        producshrimprcv.setLayoutManager(manager);
-
-        ProducAdapter adapter = new ProducAdapter(getActivity(),producModelList);
-        producshrimprcv.setAdapter(adapter);
 
     }
 
