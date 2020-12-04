@@ -5,6 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.sefvi.seamarket.View.Activity.SignUp_Activity">
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -200,4 +203,6 @@
                     tools:ignore="RtlCompat" />
             </LinearLayout>
         </RelativeLayout>
+    </ScrollView>
+
 </RelativeLayout>
