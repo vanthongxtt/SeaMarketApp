@@ -95,6 +95,16 @@
                         android:inputType="textNoSuggestions"
                         android:padding="16dp"
                         app:layout_constraintTop_toBottomOf="@+id/signup_edt_fullname" />
+                    <EditText
+                        android:id="@+id/signup_edt_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:hint="Địa chỉ"
+                        android:drawablePadding="10dp"
+                        android:drawableLeft="@drawable/ic_baseline_near_me_24"
+                        android:inputType="text"
+                        android:padding="16dp" />
                     <RadioGroup
                         android:id="@+id/signup_radio_gr"
                         android:layout_width="match_parent"
