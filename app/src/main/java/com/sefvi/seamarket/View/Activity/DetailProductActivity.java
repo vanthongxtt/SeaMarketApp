@@ -6,6 +6,8 @@ import androidx.viewpager.widget.ViewPager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.sefvi.seamarket.Adapter.SliderAdapter;
 import com.sefvi.seamarket.R;
@@ -19,6 +21,15 @@ public class DetailProductActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_product);
+        ImageView backicon = findViewById(R.id.detail_product_back);
+        TextView title = findViewById(R.id.detail_product_title_product);
+        backicon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+        title.setText(getText(R.string.personal_text_caidat));
 
 
         ViewPager viewPager;
@@ -43,13 +54,6 @@ public class DetailProductActivity extends AppCompatActivity {
             }
         };
 
-        Timer timer = new Timer();
-        timer.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                handler.post(update);
-            }
-        },2500,2500);
     }
 
 

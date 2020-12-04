@@ -189,6 +189,13 @@ public class HomeFragment extends Fragment {
                 startActivity(intent);
             }
         });
+        combohot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), DiscountActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
