@@ -73,7 +73,7 @@ public class IntroActivity extends AppCompatActivity {
 
         final List<ScreenItem> mList = new ArrayList<>();
         mList.add(new ScreenItem("SeaMarket",
-                "SeaMarket là sàn thương mại thủy sản do Sefvi chủ quản, chịu trách nhiệm và thực hiện các giao dịch liên quan mua sắm sản phẩm hàng hoá tiêu dùng thiết yếu. Đối tượng phục vụ là tất cả khách hàng trên 63 tỉnh thành Việt Nam có nhu cầu mua hàng online và nhận hàng hóa tại nhà. Sản phẩm tại SeaMarket cam kết rõ ràng về nguồn gốc và an toàn về sinh thực phẩm.",
+                "SeaMarket là sàn thương mại thủy sản, chịu trách nhiệm và thực hiện các giao dịch liên quan mua sắm sản phẩm hàng hoá tiêu dùng thiết yếu. Đối tượng phục vụ nội thành Hồ Chí Minh có nhu cầu mua hàng online và nhận hàng hóa tại nhà. Sản phẩm tại SeaMarket cam kết rõ ràng về nguồn gốc và an toàn về sinh thực phẩm.",
                 R.drawable.intro_img1));
         mList.add(new ScreenItem("Fast Delivery",
                 "SeaMarket có chính sách giao hàng tận tay trên toàn quốc áp dụng cho khách hàng đặt mua sản phẩm trên App SeaMarket. Đơn hàng sẽ đảm bảo về độ tươi sống và an toàn thực phẩm như mô tả sản phẩm.",
