@@ -16,4 +16,5 @@
     <string name="home_text_thanhtoancod">Pay COD</string>
     <string name="Home_text_timkiemtrenseamarket">Search on SeaMarket</string>
     <string name="personal_text_donhang">Order</string>
+    <string name="setting_text_ngonngu">Language</string>
 </resources>
