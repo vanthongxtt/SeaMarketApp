@@ -1,5 +1,7 @@
 package com.sefvi.seamarket.Model;
 
+import java.util.List;
+
 public class ProductModel {
 
     private Integer id;
@@ -11,6 +13,7 @@ public class ProductModel {
     private String origin;
     private String unit;
     private String image;
+    private List<Object> images;
     private Integer warehouseNumber;
     private Integer sellNumber;
     private Integer isActive;
@@ -128,5 +131,13 @@ public class ProductModel {
 
     public void setIsActive(Integer isActive) {
         this.isActive = isActive;
+    }
+
+    public List<Object> getImages() {
+        return images;
+    }
+
+    public void setImages(List<Object> images) {
+        this.images = images;
     }
 }

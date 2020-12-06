@@ -58,6 +58,7 @@ public class HomeSuggestionAdapter extends RecyclerView.Adapter<HomeSuggestionAd
             public void onClick(View v) {
                 Context context = inflater.getContext();
                 Intent intent = new Intent(context, DetailProductActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 intent.putExtra("idProduct", productModel.getId());
                 context.startActivity(intent);
             }

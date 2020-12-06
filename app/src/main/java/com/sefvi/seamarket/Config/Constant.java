@@ -14,4 +14,6 @@ public class Constant {
     public static final String URL_BASE_GET_PRODUCT_RANDOM = "api/{token}/get-product-random";
     public static final String URL_BASE_GET_PRODUCT_HOME = "api/{token}/get-product-home";
     public static final String URL_BASE_GET_PRODUCTS = "api/{token}/get-products";
+    public static final String URL_BASE_GET_PRODUCT = "api/{token}/get-product";
+    public static final String URL_BASE_GET_SEARCH_PRODUCTS = "api/{token}/get-search-products";
 }

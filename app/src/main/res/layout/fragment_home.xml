@@ -6,17 +6,19 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <ScrollView
+        android:id="@+id/scrollViewDataLoadHome"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:overScrollMode="never"
-        android:scrollbars="none"
+        android:background="#f7f7f7"
         android:fillViewport="true"
-        android:background="#f7f7f7">
+        android:overScrollMode="never"
+        android:scrollbars="none">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -80,65 +82,68 @@
                     android:id="@+id/home_lnl_search"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="16dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginTop="5dp"
+                    android:layout_marginRight="16dp"
                     android:layout_marginBottom="15dp"
-                    android:clickable="true"
                     android:background="@drawable/custom_home_seach"
+                    android:clickable="true"
                     android:orientation="horizontal">
+
                     <ImageView
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_marginLeft="8dp"
                         android:layout_marginTop="5dp"
                         android:layout_marginBottom="5dp"
-                        android:src="@drawable/ic_baseline_search_24"/>
+                        android:src="@drawable/ic_baseline_search_24" />
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/Home_text_timkiemtrenseamarket"
                         android:layout_marginLeft="5dp"
                         android:layout_marginTop="5dp"
                         android:layout_marginBottom="5dp"
+                        android:hint="@string/Home_text_timkiemtrenseamarket"
                         android:textColor="@color/intro_description_color"
-                        android:textSize="20sp"/>
+                        android:textSize="20sp" />
                 </LinearLayout>
 
             </LinearLayout>
 
 
             <androidx.cardview.widget.CardView
-                app:cardCornerRadius="6dp"
-                android:layout_margin="16dp"
                 android:layout_width="match_parent"
-                android:layout_height="150dp">
+                android:layout_height="150dp"
+                android:layout_margin="16dp"
+                app:cardCornerRadius="6dp">
+
                 <androidx.viewpager.widget.ViewPager
                     android:id="@+id/viewpager"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                </androidx.viewpager.widget.ViewPager>
+                    android:layout_height="wrap_content"></androidx.viewpager.widget.ViewPager>
 
             </androidx.cardview.widget.CardView>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:orientation="vertical"
                 android:layout_gravity="center"
-                android:background="#ffffff">
+                android:background="#ffffff"
+                android:orientation="vertical">
                 <!-- textview botom img slidel               -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:orientation="horizontal">
+
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
                         android:layout_weight="1"
                         android:orientation="horizontal"
-                        android:layout_marginTop="5dp"
                         android:paddingLeft="10dp">
 
                         <ImageView
@@ -156,8 +161,8 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_marginTop="5dp"
+                        android:layout_weight="1"
                         android:orientation="horizontal">
 
                         <ImageView
@@ -175,8 +180,8 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_marginTop="5dp"
+                        android:layout_weight="1"
                         android:orientation="horizontal">
 
                         <ImageView
@@ -197,14 +202,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="120dp"
                     android:layout_marginTop="10dp">
+
                     <LinearLayout
                         android:id="@+id/home_lnl_hot"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/custom_click_view"
-                        android:layout_weight="1"
                         android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/custom_click_view"
                         android:orientation="vertical">
+
                         <androidx.cardview.widget.CardView
                             android:layout_width="50dp"
                             android:layout_height="50dp"
@@ -218,39 +225,45 @@
                                 android:layout_height="wrap_content"
                                 android:src="@drawable/home_img_hot" />
                         </androidx.cardview.widget.CardView>
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:textSize="16sp"
-                            android:text="Hot"/>
+                            android:text="Hot"
+                            android:textSize="16sp" />
 
                     </LinearLayout>
+
                     <LinearLayout
                         android:id="@+id/home_lnl_discount"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/custom_click_view"
                         android:layout_weight="1"
+                        android:background="@drawable/custom_click_view"
                         android:orientation="vertical">
+
                         <androidx.cardview.widget.CardView
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_gravity="center"
                             android:layout_marginTop="10dp"
                             app:cardCornerRadius="120dp">
+
                             <ImageView
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
                                 android:src="@drawable/home_img_hagia" />
                         </androidx.cardview.widget.CardView>
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:textSize="16sp"
-                            android:text="Hạ giá"/>
+                            android:text="Hạ giá"
+                            android:textSize="16sp" />
                     </LinearLayout>
+
                     <LinearLayout
                         android:id="@+id/home_lnl_import"
                         android:layout_width="wrap_content"
@@ -258,25 +271,29 @@
                         android:layout_weight="1"
                         android:background="@drawable/custom_click_view"
                         android:orientation="vertical">
+
                         <androidx.cardview.widget.CardView
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_gravity="center"
                             android:layout_marginTop="10dp"
                             app:cardCornerRadius="120dp">
+
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:scaleType="centerCrop"
                                 android:src="@drawable/home_img_nhapkhau" />
                         </androidx.cardview.widget.CardView>
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:textSize="16sp"
-                            android:text="Nhập khẩu"/>
+                            android:text="Nhập khẩu"
+                            android:textSize="16sp" />
                     </LinearLayout>
+
                     <LinearLayout
                         android:id="@+id/home_lnl_sellalot"
                         android:layout_width="wrap_content"
@@ -284,51 +301,58 @@
                         android:layout_weight="1"
                         android:background="@drawable/custom_click_view"
                         android:orientation="vertical">
+
                         <androidx.cardview.widget.CardView
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_gravity="center"
                             android:layout_marginTop="10dp"
                             app:cardCornerRadius="120dp">
+
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:scaleType="centerCrop"
                                 android:src="@drawable/home_img_banchay" />
                         </androidx.cardview.widget.CardView>
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:textSize="16sp"
-                            android:text="bán chạy"/>
+                            android:text="bán chạy"
+                            android:textSize="16sp" />
                     </LinearLayout>
+
                     <LinearLayout
                         android:id="@+id/home_lnl_buygroup"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/custom_click_view"
-                        android:layout_weight="1"
                         android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/custom_click_view"
                         android:orientation="vertical">
+
                         <androidx.cardview.widget.CardView
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_gravity="center"
                             android:layout_marginTop="10dp"
                             app:cardCornerRadius="120dp">
+
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:scaleType="centerCrop"
                                 android:src="@drawable/home_img_muachung" />
                         </androidx.cardview.widget.CardView>
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:textSize="16sp"
-                            android:text="Mua chung"/>
+                            android:text="Mua chung"
+                            android:textSize="16sp" />
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
@@ -336,27 +360,29 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
                 android:layout_marginTop="10dp"
-                android:background="#ffffff">
+                android:background="#ffffff"
+                android:orientation="vertical">
+
                 <LinearLayout
                     android:id="@+id/hometextcombohot"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
                     android:orientation="horizontal">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
+                        android:text="Combo Hot"
                         android:textColor="@android:color/black"
-                        android:textSize="18sp"
-                        android:text="Combo Hot"/>
+                        android:textSize="18sp" />
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:src="@drawable/ic_baseline_chevron_right_24"/>
+                        android:src="@drawable/ic_baseline_chevron_right_24" />
                 </LinearLayout>
 
                 <androidx.recyclerview.widget.RecyclerView
@@ -364,26 +390,29 @@
                     android:layout_width="match_parent"
                     android:layout_height="250dp"
                     android:layout_marginTop="10dp"
-                    android:nestedScrollingEnabled="false"
                     android:isScrollContainer="false"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    android:orientation="horizontal"/>
+                    android:nestedScrollingEnabled="false"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
                     android:orientation="horizontal">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
+                        android:text="Sale off"
                         android:textColor="@android:color/black"
-                        android:textSize="18sp"
-                        android:text="Sale off"/>
+                        android:textSize="18sp" />
+
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:src="@drawable/ic_baseline_chevron_right_24"/>
+                        android:src="@drawable/ic_baseline_chevron_right_24" />
                 </LinearLayout>
 
                 <androidx.recyclerview.widget.RecyclerView
@@ -391,29 +420,30 @@
                     android:layout_width="match_parent"
                     android:layout_height="250dp"
                     android:layout_marginTop="10dp"
-                    android:nestedScrollingEnabled="false"
                     android:isScrollContainer="false"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    android:orientation="horizontal"/>
+                    android:nestedScrollingEnabled="false"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
             </LinearLayout>
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
                 android:text="Có thể bạn sẽ quan tâm"
                 android:textColor="@android:color/black"
-                android:textSize="18dp"/>
+                android:textSize="18dp" />
 
-<!--            2 dòng nay giúp cho recyclerv cuộn mượt hơn trog scrollview-->
+            <!--            2 dòng nay giúp cho recyclerv cuộn mượt hơn trog scrollview-->
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/home_rv_suggestion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:nestedScrollingEnabled="false"
                 android:isScrollContainer="false"
+                android:nestedScrollingEnabled="false"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
         </LinearLayout>

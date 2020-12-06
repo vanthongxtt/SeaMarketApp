@@ -2,6 +2,7 @@ package com.sefvi.seamarket.View.Fragment;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -10,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -51,6 +53,7 @@ import static android.content.Context.MODE_PRIVATE;
 public class HomeFragment extends Fragment {
     RecyclerView combohot,saleoff,suggestion;
     LinearLayout homelnlhot,homelnldiscount,homelnlimport,homelnlsellalot,homelnlbuygroup,home_lnl_search,hometextcombohot;
+    ScrollView scrollViewDataLoadHome;
     RelativeLayout home_rl_gps;
     List<ProductModel> comboHotList;
     List<ProductModel> saleofflist;
@@ -61,6 +64,8 @@ public class HomeFragment extends Fragment {
     //add images from drawable to array
     int[] images = {R.drawable.home_img0,R.drawable.home_img1, R.drawable.home_img2, R.drawable.home_img3, R.drawable.home_img4};
     int currentPageCunter = 0;
+
+    Integer limit = 10;
 
     String token;
     @Nullable
@@ -80,11 +85,10 @@ public class HomeFragment extends Fragment {
         return v;
     }
     private void suggestion(){
-
         homeListProducts = new ArrayList<>();
 
         GetProductHomeApiLml getProductHomeApiLml = new GetProductHomeApiLml();
-        getProductHomeApiLml.GetProductHomeApi(token, 26, new ProductRandom() {
+        getProductHomeApiLml.GetProductHomeApi(token, limit, new ProductRandom() {
             @Override
             public void getDataSuccess(ProductModel productModel) {
 
@@ -134,6 +138,8 @@ public class HomeFragment extends Fragment {
         homelnlbuygroup = v.findViewById(R.id.home_lnl_buygroup);
         home_rl_gps = v.findViewById(R.id.home_rl_gps);
         home_lnl_search = v.findViewById(R.id.home_lnl_search);
+        scrollViewDataLoadHome = v.findViewById(R.id.scrollViewDataLoadHome);
+
 
     }
     private void event (){
@@ -200,6 +206,21 @@ public class HomeFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            scrollViewDataLoadHome.setOnScrollChangeListener(new View.OnScrollChangeListener() {
+                @Override
+                public void onScrollChange(View v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
+                    View view = (View) scrollViewDataLoadHome.getChildAt(scrollViewDataLoadHome.getChildCount() - 1);
+                    int diff = (view.getBottom() - (scrollViewDataLoadHome.getHeight() + scrollViewDataLoadHome.getScrollY()));
+                    if (diff == 0) {
+                        homeListProducts.clear();
+                        limit += 10;
+                        suggestion();
+                    }
+                }
+            });
+        }
 
     }
 
