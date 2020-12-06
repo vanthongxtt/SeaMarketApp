@@ -4,9 +4,11 @@ import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,29 +22,31 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
+import com.sefvi.seamarket.Api.GetUserData.GetUserDataApiLml;
+import com.sefvi.seamarket.Interface.AuthInterface;
+import com.sefvi.seamarket.Model.AccountModell;
 import com.sefvi.seamarket.View.Activity.Personal.OrderActivity;
 import com.sefvi.seamarket.View.Activity.Personal.RulesActivity;
 import com.sefvi.seamarket.R;
 import com.sefvi.seamarket.View.Activity.Personal.SettingActivity;
 import com.sefvi.seamarket.View.Activity.Personal.VersionActivity;
+import com.squareup.picasso.Picasso;
+
+import static android.content.Context.MODE_PRIVATE;
 
 public class PersonalFragmet extends Fragment {
     RelativeLayout  personal_map,personal_order,personal_setting,personal_hotline,
             personal_ruless,personal_version;
     TextView personal_tv_username,personal_tv_phonenumber;
     ImageView personal_img_user;
-
+    String token;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_personal,container,false);
         Anhxa(v);
         event();
-
-
-
-
-
+        GetUserData();
         return v;
     }
     private void Anhxa (View v){
@@ -57,7 +61,8 @@ public class PersonalFragmet extends Fragment {
         personal_tv_phonenumber = v.findViewById(R.id.personal_tv_phonenumber);
         personal_img_user = v.findViewById(R.id.personal_img_user);
 
-
+        SharedPreferences prefs = getActivity().getSharedPreferences("Sea",MODE_PRIVATE);
+         token = prefs.getString("TOKEN", "");
 
     }
     private void event (){
@@ -99,6 +104,25 @@ public class PersonalFragmet extends Fragment {
             }
         });
 
+    }
+    private void GetUserData(){
+        GetUserDataApiLml getUserDataApiLml = new GetUserDataApiLml();
+        getUserDataApiLml.GetUserDataApi(token, new AuthInterface() {
+            @Override
+            public void getDataSuccess(AccountModell accountModell) {
+                personal_tv_username.setText(accountModell.getFullname());
+                Picasso.get()
+                        .load(accountModell.getAvatar())
+                        .placeholder(R.mipmap.ic_launcher_round)
+                        .error(R.drawable.home_combo_hot_img_cua)
+                        .into(personal_img_user);
+            }
+
+            @Override
+            public void getDataError(String err) {
+
+            }
+        });
     }
     // xin quyen call
     private static void xuLyGoiLuon(String sdt, Context context) {
