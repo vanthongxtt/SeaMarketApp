@@ -8,10 +8,15 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.sefvi.seamarket.Adapter.SliderAdapter;
 import com.sefvi.seamarket.Adapter.SliderProductAdapter;
 import com.sefvi.seamarket.Api.DetailProduct.DetailProductApiLml;
@@ -20,11 +25,14 @@ import com.sefvi.seamarket.Interface.ProductRandom;
 import com.sefvi.seamarket.Model.ProductImageModel;
 import com.sefvi.seamarket.Model.ProductModel;
 import com.sefvi.seamarket.R;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Timer;
@@ -37,6 +45,8 @@ public class DetailProductActivity extends AppCompatActivity {
     Integer idProduct;
     List<ProductImageModel> productImageModels;
     ViewPager viewPager;
+    Button detail_product_btn_add_basket;
+    String nameProduct, imgProduct, priceProduct;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,6 +71,9 @@ public class DetailProductActivity extends AppCompatActivity {
         tv_count_image = findViewById(R.id.tv_count_image);
         viewPager = findViewById(R.id.detail_product_viewpager);
 
+        detail_product_btn_add_basket = findViewById(R.id.detail_product_btn_add_basket);
+
+
         productImageModels = new ArrayList<>();
 
         Intent intent = getIntent();
@@ -71,16 +84,92 @@ public class DetailProductActivity extends AppCompatActivity {
     }
 
     private void initControls(){
-
-        title.setText(getText(R.string.personal_text_caidat));
         backicon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();
             }
         });
-    }
+        detail_product_btn_add_basket.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(
+                        DetailProductActivity.this,R.style.BottomSheetDialogTheme
+                );
+                View bottomSheetView = LayoutInflater.from(getApplicationContext())
+                        .inflate(
+                                R.layout.bottom_dialog_detail_product,
+                                (LinearLayout)findViewById(R.id.bottomSheetContainer)
+                        );
+                TextView nameProductDetailItem = bottomSheetView.findViewById(R.id.nameProductDetailItem);
+                ImageView product_tablayout_item_img = bottomSheetView.findViewById(R.id.product_tablayout_item_img);
+                TextView txtViewPriceItemDetail = bottomSheetView.findViewById(R.id.txtViewPriceItemDetail);
+                ImageView imgProductDetailMin = bottomSheetView.findViewById(R.id.imgProductDetailMin);
+                TextView txtProductDetailSum = bottomSheetView.findViewById(R.id.txtProductDetailSum);
+                ImageView imgProductDetailMax = bottomSheetView.findViewById(R.id.imgProductDetailMax);
+                TextView txtViewPriceSumPrice = bottomSheetView.findViewById(R.id.txtViewPriceSumPrice);
+                Button bottomSheet_btn_add_basket = bottomSheetView.findViewById(R.id.bottomSheet_btn_add_basket);
 
+                final Integer[] countNumber = {1};
+
+                txtProductDetailSum.setText(String.valueOf(countNumber[0]));
+
+
+
+                imgProductDetailMax.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (countNumber[0] < 10){
+                            countNumber[0] += 1;
+                            txtProductDetailSum.setText(String.valueOf(countNumber[0]));
+                            txtViewPriceSumPrice.setText(FormatCost(String.valueOf(Integer.parseInt(priceProduct) * countNumber[0])) + "đ");
+                        }
+                    }
+                });
+
+                imgProductDetailMin.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (countNumber[0] > 1){
+                            countNumber[0] -= 1;
+                            txtProductDetailSum.setText(String.valueOf(countNumber[0]));
+                            txtViewPriceSumPrice.setText(FormatCost(String.valueOf(Integer.parseInt(priceProduct) * countNumber[0])) + "đ");
+                        }
+                    }
+                });
+
+                nameProductDetailItem.setText(nameProduct);
+                txtViewPriceItemDetail.setText(FormatCost(priceProduct) + "đ" + "/kg");
+                txtViewPriceSumPrice.setText(FormatCost(String.valueOf(Integer.parseInt(priceProduct) * countNumber[0])) + "đ");
+                String url = "https://api.sefvi.com/SeaMarketApi/V1/uploads/" + productImageModels.get(0).getNameImage();
+                Picasso.get()
+                        .load(url)
+                        .placeholder(R.mipmap.ic_launcher_round)
+                        .error(R.drawable.home_combo_hot_img_cua)
+                        .into(product_tablayout_item_img);
+
+                bottomSheet_btn_add_basket.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Toast.makeText(DetailProductActivity.this, "Chưa thêm vào giỏ hàng được đâu", Toast.LENGTH_SHORT).show();
+
+                    }
+                });
+                bottomSheetDialog.setContentView(bottomSheetView);
+                bottomSheetDialog.show();
+            }
+        });
+    }
+    private String FormatCost(String cost){
+        try {
+            DecimalFormatSymbols symbols = new DecimalFormatSymbols();
+            symbols.setDecimalSeparator(',');
+            DecimalFormat decimalFormat = new DecimalFormat("###,###,###,###", symbols);
+            return decimalFormat.format(Integer.parseInt(cost+""));
+        }catch (Exception e) {
+            return cost + "";
+        }
+    }
     private void GetDetailProduct(){
         DetailProductApiLml detailProductApiLml = new DetailProductApiLml();
         detailProductApiLml.DetailProductApi(token, idProduct, new DetailProduct() {
@@ -103,20 +192,21 @@ public class DetailProductActivity extends AppCompatActivity {
 
                     title.setText(list.getString("name"));
                     detail_product_tv_name_product.setText(list.getString("name"));
-                    item_product_tv_price.setText(list.getInt("price") + "/" + list.getString("unit"));
+                    item_product_tv_price.setText(FormatCost(String.valueOf(list.getInt("price"))) + " " + list.getString("unit") + "/kg");
                     detail_product_tv_dis_product.setText(list.getString("description"));
                     detail_product_tv_origin_product.setText(list.getString("origin"));
                     detail_product_tv_type_product.setText(jsonObjectType.getString("nameType"));
 
+                    nameProduct = list.getString("name");
+                    priceProduct = list.getString("price");
+
                     for (int i = 0; i <= jsonArrayImages.length(); i++){
                         JSONObject jsonObjectImage = new JSONObject(jsonArrayImages.getString(i));
-                        Log.d("j88", jsonObjectImage.toString());
                         productImageModels.add(new ProductImageModel(jsonObjectImage.getInt("id"), jsonObjectImage.getString("image")));
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-                Log.d("j87", String.valueOf(productImageModels.size()));
                 viewPagerUpdate();
 
             }
@@ -135,13 +225,17 @@ public class DetailProductActivity extends AppCompatActivity {
                 if (currentPageCunter[0] == productImageModels.size()){
                     currentPageCunter[0] = 0 ;
                 }
-
-                Log.d("count", String.valueOf(currentPageCunter));
-
                 viewPager.setCurrentItem(currentPageCunter[0]++,true);
 
             }
         };
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                handler.post(update);
+            }
+        },2500,2500);
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
