@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -32,12 +33,19 @@ public class Home_Sale_off_Adapter extends RecyclerView.Adapter<Home_Sale_off_Ad
 
     public static class MyViewHolder extends  RecyclerView.ViewHolder {
         TextView mTen,mGia;
-        ImageView mImage;
+        ImageView mImage,saleoffaddbasket;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             mTen = itemView.findViewById(R.id.home_sale_off_tv_ten);
             mGia = itemView.findViewById(R.id.home_sale_off_tv_gia);
             mImage = itemView.findViewById(R.id.home_sale_off_img);
+            saleoffaddbasket=itemView.findViewById(R.id.home_sale_off_addbasket);
+            saleoffaddbasket.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Toast.makeText(itemView.getContext(), "sale off chưa thêm đc", Toast.LENGTH_SHORT).show();
+                }
+            });
         }
     }
 

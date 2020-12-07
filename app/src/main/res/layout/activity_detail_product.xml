@@ -89,7 +89,8 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginBottom="10dp"
                     android:textSize="18sp"
-                    android:textColor="@color/green"
+                    android:textStyle="bold"
+                    android:textColor="@color/blue_color"
                     android:text="70.000đ/kg"/>
             </LinearLayout>
             <LinearLayout
@@ -146,7 +147,6 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
                             android:textSize="16sp"
-                            android:textColor="@color/intro_title_color"
                             android:text="Công viên phần mềm, Toà nhà Innovation lô 24, Quang Trung, Quận 12, Thành phố Hồ Chí Minh"/>
                     </LinearLayout>
                 </RelativeLayout>
@@ -176,6 +176,7 @@
                         android:layout_width="120dp"
                         android:layout_height="wrap_content"
                         android:textSize="16sp"
+                       android:textStyle="bold"
                         android:text="Loại sản phẩm :"/>
 
                     <TextView
@@ -184,6 +185,7 @@
                         android:layout_height="match_parent"
                         android:layout_marginLeft="10dp"
                         android:text="cá."
+                        android:textColor="@color/intro_title_color"
                         android:textSize="16sp" />
                 </LinearLayout>
                 <LinearLayout
@@ -196,14 +198,17 @@
                     <TextView
                         android:layout_width="120dp"
                         android:textSize="16sp"
+                        android:textStyle="bold"
                         android:layout_height="wrap_content"
                         android:text="Xuất xứ : "/>
+
                     <TextView
                         android:id="@+id/detail_product_tv_origin_product"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/intro_title_color"
                         android:layout_marginLeft="10dp"
-                        android:text="Việt Nam."/>
+                        android:text="Việt Nam." />
                 </LinearLayout>
 
             </LinearLayout>
@@ -243,11 +248,11 @@
         <Button
             android:id="@+id/detail_product_btn_add_basket"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="55dp"
             android:text="Thêm vào giỏ hàng"
             android:textColor="@color/colorWhite"
             android:textSize="24sp"
-            android:background="@color/green"
+            android:background="@drawable/custom_btn_oder"
             android:layout_marginBottom="10dp"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"

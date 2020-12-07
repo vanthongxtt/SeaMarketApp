@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.sefvi.seamarket.Model.ProducModel;
@@ -28,7 +30,7 @@ public class ProducAdapter extends RecyclerView.Adapter<ProducAdapter.MyViewHold
 
     public static  class MyViewHolder extends RecyclerView.ViewHolder{
         TextView mName,mPrice,mDescribe;
-        ImageView mImg;
+        ImageView mImg,producttablayoutaddbasket;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -36,6 +38,13 @@ public class ProducAdapter extends RecyclerView.Adapter<ProducAdapter.MyViewHold
             mPrice = itemView.findViewById(R.id.product_tablayout_item_price);
             mImg = itemView.findViewById(R.id.product_tablayout_item_img);
             mDescribe = itemView.findViewById(R.id.product_tablayout_describe);
+            producttablayoutaddbasket = itemView.findViewById(R.id.product_tablayout_addbasket);
+            producttablayoutaddbasket.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Toast.makeText(itemView.getContext(), "product này chưa thêm đc", Toast.LENGTH_SHORT).show();
+                }
+            });
         }
     }
     @NonNull

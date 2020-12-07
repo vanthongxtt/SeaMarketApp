@@ -66,9 +66,11 @@
                         android:layout_alignParentBottom="true"
                         android:layout_marginBottom="10dp"
                         android:text="80.000đ/kg"
-                        android:textColor="@color/green"
+                        android:textStyle="bold"
+                        android:textColor="@color/blue_color"
                         android:textSize="20sp" />
                     <ImageView
+                        android:id="@+id/product_tablayout_addbasket"
                         android:layout_width="45dp"
                         android:layout_height="45dp"
                         android:layout_alignParentRight="true"

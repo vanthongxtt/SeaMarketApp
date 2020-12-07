@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
@@ -53,6 +54,7 @@ import static android.content.Context.MODE_PRIVATE;
 public class HomeFragment extends Fragment {
     RecyclerView combohot,saleoff,suggestion;
     LinearLayout homelnlhot,homelnldiscount,homelnlimport,homelnlsellalot,homelnlbuygroup,home_lnl_search,hometextcombohot;
+
     ScrollView scrollViewDataLoadHome;
     RelativeLayout home_rl_gps;
     List<ProductModel> comboHotList;
@@ -129,6 +131,8 @@ public class HomeFragment extends Fragment {
     private void Anhxa (View v){
         combohot = v.findViewById(R.id.home_rv_combohot);
         saleoff = v.findViewById(R.id.home_rv_sale_off);
+
+
         suggestion= v.findViewById(R.id.home_rv_suggestion);
         homelnlhot = v.findViewById(R.id.home_lnl_hot);
         hometextcombohot = v.findViewById(R.id.hometextcombohot);
@@ -139,6 +143,7 @@ public class HomeFragment extends Fragment {
         home_rl_gps = v.findViewById(R.id.home_rl_gps);
         home_lnl_search = v.findViewById(R.id.home_lnl_search);
         scrollViewDataLoadHome = v.findViewById(R.id.scrollViewDataLoadHome);
+
 
 
     }
@@ -206,6 +211,7 @@ public class HomeFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             scrollViewDataLoadHome.setOnScrollChangeListener(new View.OnScrollChangeListener() {

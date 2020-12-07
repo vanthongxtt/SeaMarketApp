@@ -15,6 +15,7 @@
             android:layout_width="wrap_content"
             android:layout_marginTop="15dp"
             android:layout_height="wrap_content"
+            android:textColor="@color/ligth_black_color"
             android:textSize="24sp"
             android:text="Chọn số lượng"/>
         <ImageView
@@ -77,7 +78,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="241.213đ"
-            android:textColor="@color/green"
+            android:textColor="@color/blue_color"
             android:textSize="20sp"
             android:textStyle="bold" />
         <LinearLayout
@@ -100,7 +101,7 @@
                 android:textSize="20sp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:textColor="@color/green"
+                android:textColor="@color/blue_color"
                 android:text="1"/>
 
             <ImageView
@@ -139,7 +140,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:textStyle="bold"
-            android:textColor="@color/green"
+            android:textColor="@color/blue_color"
             android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
@@ -149,11 +150,11 @@
         <Button
             android:id="@+id/bottomSheet_btn_add_basket"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="55dp"
             android:text="Thêm vào giỏ hàng"
             android:textColor="@color/colorWhite"
             android:textSize="24sp"
-            android:background="@color/green"
+            android:background="@drawable/custom_btn_oder"
             android:layout_marginBottom="10dp"
             android:layout_marginTop="50dp"
             android:layout_marginLeft="10dp"

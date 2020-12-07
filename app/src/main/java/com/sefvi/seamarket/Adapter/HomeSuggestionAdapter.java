@@ -85,13 +85,21 @@ public class HomeSuggestionAdapter extends RecyclerView.Adapter<HomeSuggestionAd
     public  class ViewHolder extends RecyclerView.ViewHolder{
         TextView name;
         TextView price;
-        ImageView img;
+        ImageView img,suggestionaddbasket;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.home_suggestion_tv_ten);
             price = itemView.findViewById(R.id.home_suggestion_tv_gia);
             img = itemView.findViewById(R.id.home_suggestion_img);
+            suggestionaddbasket=itemView.findViewById(R.id.home_suggestion_addbasket);
+
+            suggestionaddbasket.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Toast.makeText(itemView.getContext(), "suggestion chưa thêm đc", Toast.LENGTH_SHORT).show();
+                }
+            });
         }
     }
 
