@@ -129,7 +129,7 @@ String gender = "Nam";
                         editor.apply();
 
 
-                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                        Intent intent = new Intent(getApplicationContext(), Login_Activity.class);
                         startActivity(intent);
                         finish();
                     }
