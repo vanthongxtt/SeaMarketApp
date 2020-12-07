@@ -91,7 +91,6 @@ public class DetailProductActivity extends AppCompatActivity {
 
             @Override
             public void getDataError(String err) {
-
             }
 
             @Override
