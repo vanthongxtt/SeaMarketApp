@@ -283,6 +283,31 @@
                         android:layout_alignParentRight="true"
                         android:src="@drawable/ic_baseline_chevron_right_24" />
                 </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/personal_menu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:background="@drawable/custom_click_view"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_gravity="center"
+                        android:textColor="#1E1E1E"
+                        android:textSize="20sp"
+                        android:text="Bảng điều khiển"/>
+
+
+                    <ImageView
+                        android:id="@+id/personal_img_iconbackMenu"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="right"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/ic_baseline_chevron_right_24" />
+                </RelativeLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 

@@ -36,7 +36,7 @@ import static android.content.Context.MODE_PRIVATE;
 
 public class PersonalFragmet extends Fragment {
     RelativeLayout  personal_map,personal_order,personal_setting,personal_hotline,
-            personal_ruless,personal_version;
+            personal_ruless,personal_version,personal_menu;
     TextView personal_tv_username,personal_tv_phonenumber;
     ImageView personal_img_user;
     String token;
@@ -56,6 +56,7 @@ public class PersonalFragmet extends Fragment {
         personal_hotline = v.findViewById(R.id.personal_hotline);
         personal_ruless = v.findViewById(R.id.personal_ruless);
         personal_version = v.findViewById(R.id.personal_version);
+        personal_menu = v.findViewById(R.id.personal_menu);
 
         personal_tv_username = v.findViewById(R.id.personal_tv_username);
         personal_tv_phonenumber = v.findViewById(R.id.personal_tv_phonenumber);
