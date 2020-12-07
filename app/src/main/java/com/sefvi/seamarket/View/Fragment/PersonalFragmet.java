@@ -18,6 +18,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
@@ -39,6 +40,7 @@ public class PersonalFragmet extends Fragment {
             personal_ruless,personal_version,personal_menu;
     TextView personal_tv_username,personal_tv_phonenumber;
     ImageView personal_img_user;
+    CardView cardVIsAdmin;
     String token;
     @Nullable
     @Override
@@ -61,6 +63,8 @@ public class PersonalFragmet extends Fragment {
         personal_tv_username = v.findViewById(R.id.personal_tv_username);
         personal_tv_phonenumber = v.findViewById(R.id.personal_tv_phonenumber);
         personal_img_user = v.findViewById(R.id.personal_img_user);
+
+        cardVIsAdmin = v.findViewById(R.id.cardVIsAdmin);
 
         SharedPreferences prefs = getActivity().getSharedPreferences("Sea",MODE_PRIVATE);
          token = prefs.getString("TOKEN", "");
@@ -117,6 +121,11 @@ public class PersonalFragmet extends Fragment {
                         .placeholder(R.mipmap.ic_launcher_round)
                         .error(R.drawable.home_combo_hot_img_cua)
                         .into(personal_img_user);
+                Log.d("-----", String.valueOf(accountModell.getIsAdmin()));
+                if (accountModell.getIsAdmin() == 1){
+                    cardVIsAdmin.setVisibility(View.VISIBLE);
+                }
+
             }
 
             @Override
