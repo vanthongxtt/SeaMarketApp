@@ -20,6 +20,8 @@ import com.sefvi.seamarket.View.Activity.DetailProductActivity;
 import com.squareup.picasso.Picasso;
 
 
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.util.List;
 
 public class HomeSuggestionAdapter extends RecyclerView.Adapter<HomeSuggestionAdapter.ViewHolder> {
@@ -45,7 +47,7 @@ public class HomeSuggestionAdapter extends RecyclerView.Adapter<HomeSuggestionAd
         ProductModel productModel = productModelList.get(position);
 
         holder.name.setText(productModel.getName());
-        holder.price.setText(productModel.getPrice() + "/kg");
+        holder.price.setText(FormatCost(String.valueOf(productModel.getPrice())) + productModel.getUnit() + "/kg");
         String url = "https://api.sefvi.com/SeaMarketApi/V1/uploads/" + productModel.getImage();
         Picasso.get()
                 .load(url)
@@ -63,6 +65,16 @@ public class HomeSuggestionAdapter extends RecyclerView.Adapter<HomeSuggestionAd
                 context.startActivity(intent);
             }
         });
+    }
+    private String FormatCost(String cost){
+        try {
+            DecimalFormatSymbols symbols = new DecimalFormatSymbols();
+            symbols.setDecimalSeparator(',');
+            DecimalFormat decimalFormat = new DecimalFormat("###,###,###,###", symbols);
+            return decimalFormat.format(Integer.parseInt(cost+""));
+        }catch (Exception e) {
+            return cost + "";
+        }
     }
 
     @Override
