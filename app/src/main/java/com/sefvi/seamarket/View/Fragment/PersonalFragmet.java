@@ -26,6 +26,7 @@ import androidx.fragment.app.Fragment;
 import com.sefvi.seamarket.Api.GetUserData.GetUserDataApiLml;
 import com.sefvi.seamarket.Interface.AuthInterface;
 import com.sefvi.seamarket.Model.AccountModell;
+import com.sefvi.seamarket.View.Activity.Personal.AdminActivity;
 import com.sefvi.seamarket.View.Activity.Personal.OrderActivity;
 import com.sefvi.seamarket.View.Activity.Personal.RulesActivity;
 import com.sefvi.seamarket.R;
@@ -106,6 +107,12 @@ public class PersonalFragmet extends Fragment {
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), OrderActivity.class);
                 startActivity(intent);
+            }
+        });
+        personal_menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), AdminActivity.class));
             }
         });
 
