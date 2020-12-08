@@ -44,6 +44,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:text="Cá thu"
+                    android:maxLines="1"
                     android:textSize="24sp" />
                 <TextView
                     android:id="@+id/product_tablayout_describe"

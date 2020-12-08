@@ -119,7 +119,6 @@
 
         </LinearLayout>
     </LinearLayout>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_gravity="center"
@@ -148,8 +147,5 @@
                 android:textSize="24sp"
                 android:text="Đang xử lý"/>
         </LinearLayout>
-
     </LinearLayout>
-
-
 </LinearLayout>
