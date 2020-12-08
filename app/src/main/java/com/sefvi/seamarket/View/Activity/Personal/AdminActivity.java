@@ -35,7 +35,18 @@ Button addProducts, accessBill;
         accessBill = findViewById(R.id.admin_access);
     }
     private void event(){
-
+        addProducts.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),AdminAddProducts.class));
+            }
+        });
+        accessBill.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), AdminAccessBills.class));
+            }
+        });
     }
 
 }
