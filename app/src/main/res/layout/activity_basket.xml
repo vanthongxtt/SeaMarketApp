@@ -4,34 +4,14 @@
     android:layout_height="match_parent"
     android:background="#ffffff"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-
-
-    <androidx.appcompat.widget.Toolbar
+    <include layout="@layout/toolbar"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/basket_recyclerview"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:background="@color/blue_color">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_marginRight="15dp"
-            android:textAlignment="center"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:textColor="@color/colorWhite"
-            android:text="@string/action_basket"/>
-
-
-    </androidx.appcompat.widget.Toolbar>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/basket_recyclerview"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="50dp"
-            android:layout_marginBottom="50dp">
-        </androidx.recyclerview.widget.RecyclerView>
-
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="50dp">
+    </androidx.recyclerview.widget.RecyclerView>
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -54,7 +34,7 @@
                 android:layout_height="wrap_content"
                 android:text="Tổng tiền :"
                 android:layout_centerVertical="true"
-                android:textColor="@color/blue_color"
+                android:textColor="@color/ligth_black_color"
                 android:textSize="24dp" />
             <TextView
                 android:layout_toRightOf="@id/basket_text_tongtien"
@@ -64,7 +44,7 @@
                 android:text="0"
                 android:layout_centerVertical="true"
                 android:layout_gravity="center"
-                android:textColor="@color/green"
+                android:textColor="@color/blue_color"
                 android:textSize="24dp" />
             <Button
                 android:layout_alignParentRight="true"
@@ -77,8 +57,4 @@
                 android:text="đặt hàng"/>
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
-
-
-
-
 </RelativeLayout>

@@ -35,7 +35,7 @@
         <activity android:name=".View.Activity.Home.BuygroupActivity" />
         <activity android:name=".View.Activity.Home.DiscountActivity" />
         <activity android:name=".View.Activity.Home.SearchActivity" />
-        <activity android:name=".View.Activity.Personal.OrderActivity" />
+        <activity android:name=".View.Activity.Personal.BasketActivity" />
         <activity android:name=".View.Activity.PurchaseAreaActivity" />
         <activity android:name=".View.Activity.Personal.SettingActivity" />
         <activity android:name=".View.Activity.Home.HotActivity" />

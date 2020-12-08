@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.sefvi.seamarket.View.Fragment.BasketFragment;
+import com.sefvi.seamarket.View.Fragment.OderFragment;
 import com.sefvi.seamarket.View.Fragment.HomeFragment;
 import com.sefvi.seamarket.View.Fragment.NotificationFragment;
 import com.sefvi.seamarket.View.Fragment.PersonalFragmet;
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                             selcetedFragmet = new NotificationFragment();
                             break;
                         case R.id.action_basket:
-                            selcetedFragmet = new BasketFragment();
+                            selcetedFragmet = new OderFragment();
                             break;
                         case R.id.action_personal:
                             selcetedFragmet = new PersonalFragmet();

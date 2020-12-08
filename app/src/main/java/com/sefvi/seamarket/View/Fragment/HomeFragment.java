@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -36,6 +37,7 @@ import com.sefvi.seamarket.View.Activity.Home.BuygroupActivity;
 import com.sefvi.seamarket.View.Activity.Home.DiscountActivity;
 import com.sefvi.seamarket.View.Activity.Home.HotActivity;
 import com.sefvi.seamarket.View.Activity.Home.ImportActivity;
+import com.sefvi.seamarket.View.Activity.Personal.BasketActivity;
 import com.sefvi.seamarket.View.Activity.PurchaseAreaActivity;
 import com.sefvi.seamarket.View.Activity.Home.SellALotActivity;
 import com.sefvi.seamarket.View.Activity.Home.SearchActivity;
@@ -53,7 +55,9 @@ import static android.content.Context.MODE_PRIVATE;
 
 public class HomeFragment extends Fragment {
     RecyclerView combohot,saleoff,suggestion;
-    LinearLayout homelnlhot,homelnldiscount,homelnlimport,homelnlsellalot,homelnlbuygroup,home_lnl_search,hometextcombohot;
+    LinearLayout homelnlhot,homelnldiscount,homelnlimport,homelnlsellalot,homelnlbuygroup,home_lnl_search,hometextcombohot,
+            home_basket_top;
+    TextView home_number_basket;
 
     ScrollView scrollViewDataLoadHome;
     RelativeLayout home_rl_gps;
@@ -131,7 +135,8 @@ public class HomeFragment extends Fragment {
     private void Anhxa (View v){
         combohot = v.findViewById(R.id.home_rv_combohot);
         saleoff = v.findViewById(R.id.home_rv_sale_off);
-
+        home_basket_top = v.findViewById(R.id.home_basket_top);
+        home_number_basket =v.findViewById(R.id.home_number_basket);
 
         suggestion= v.findViewById(R.id.home_rv_suggestion);
         homelnlhot = v.findViewById(R.id.home_lnl_hot);
@@ -208,6 +213,20 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), HotActivity.class);
+                startActivity(intent);
+            }
+        });
+        hometextcombohot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), HotActivity.class);
+                startActivity(intent);
+            }
+        });
+        home_basket_top.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), BasketActivity.class);
                 startActivity(intent);
             }
         });

@@ -13,8 +13,8 @@
         android:icon="@drawable/ic_baseline_notification_important_24"/>
 
     <item android:id="@+id/action_basket"
-        android:title="@string/action_basket"
-        android:icon="@drawable/basket"/>
+        android:title="@string/personal_text_donhang"
+        android:icon="@drawable/shopping_bag"/>
 
     <item android:id="@+id/action_personal"
     android:title="@string/action_personal"

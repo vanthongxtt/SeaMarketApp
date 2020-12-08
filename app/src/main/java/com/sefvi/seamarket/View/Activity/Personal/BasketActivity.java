@@ -9,12 +9,12 @@ import android.widget.TextView;
 
 import com.sefvi.seamarket.R;
 
-public class OrderActivity extends AppCompatActivity {
+public class BasketActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_order);
+        setContentView(R.layout.activity_basket);
 
         ImageView backicon = findViewById(R.id.toolbar_back);
         TextView name = findViewById(R.id.toolbar_name);
@@ -24,6 +24,6 @@ public class OrderActivity extends AppCompatActivity {
                 finish();
             }
         });
-        name.setText(getText(R.string.personal_text_donhang));
+        name.setText(getText(R.string.action_basket));
     }
 }
