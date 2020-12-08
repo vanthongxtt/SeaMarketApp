@@ -22,5 +22,13 @@
     <string name="Home_text_timkiemtrenseamarket">Tìm kiếm trên Seamarket</string>
     <string name="setting_text_ngonngu">Ngôn ngữ</string>
 
+    <string-array name="idType">
+        <item>Cá</item>
+        <item>Cua</item>
+        <item>Tôm</item>
+        <item>Sò</item>
+        <item>Ốc</item>
+    </string-array>
+
 
 </resources>
