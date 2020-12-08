@@ -111,7 +111,7 @@ public class SearchActivity extends AppCompatActivity {
                         e.printStackTrace();
                     }
                 }
-                adapter = (HomeSuggestionAdapter) new HomeSuggestionAdapter(searchListProducts,getApplicationContext());
+                adapter = new HomeSuggestionAdapter(searchListProducts,SearchActivity.this);
                 GridLayoutManager gridLayoutManager = new GridLayoutManager(getApplicationContext(), 2,GridLayoutManager.VERTICAL,false);
                 suggestion.setLayoutManager(gridLayoutManager);
                 suggestion.setAdapter(adapter);

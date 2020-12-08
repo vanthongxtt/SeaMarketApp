@@ -83,7 +83,7 @@ public class DiscountActivity extends AppCompatActivity {
                     }
                 }
 
-                adapter = (HomeSuggestionAdapter) new HomeSuggestionAdapter(discountList,getApplicationContext());
+                adapter = new HomeSuggestionAdapter(discountList,DiscountActivity.this);
                 GridLayoutManager gridLayoutManager = new GridLayoutManager(getApplicationContext(), 2,GridLayoutManager.VERTICAL,false);
                 discount.setLayoutManager(gridLayoutManager);
                 discount.setAdapter(adapter);
