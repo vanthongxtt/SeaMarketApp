@@ -27,6 +27,7 @@ import com.sefvi.seamarket.Interface.ProductRandom;
 import com.sefvi.seamarket.Model.ProductImageModel;
 import com.sefvi.seamarket.Model.ProductModel;
 import com.sefvi.seamarket.R;
+import com.sefvi.seamarket.View.Activity.Personal.BasketActivity;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
@@ -43,7 +44,9 @@ import java.util.TimerTask;
 
 public class DetailProductActivity extends AppCompatActivity {
     ImageView backicon;
-    TextView title, detail_product_tv_name_product, item_product_tv_price,detail_product_tv_type_product, detail_product_tv_origin_product, detail_product_tv_dis_product, tv_count_image;
+    LinearLayout home_basket_top;
+    TextView title, detail_product_tv_name_product, item_product_tv_price,detail_product_tv_type_product,
+            detail_product_tv_origin_product, detail_product_tv_dis_product, tv_count_image;
     String token;
     Integer idProduct;
     List<ProductImageModel> productImageModels;
@@ -66,6 +69,7 @@ public class DetailProductActivity extends AppCompatActivity {
 
     private void  initEvents(){
         backicon = findViewById(R.id.detail_product_back);
+        home_basket_top = findViewById(R.id.home_basket_top);
         title = findViewById(R.id.detail_product_title_product);
         detail_product_tv_name_product = findViewById(R.id.detail_product_tv_name_product);
         item_product_tv_price = findViewById(R.id.item_product_tv_price);
@@ -93,6 +97,13 @@ public class DetailProductActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 finish();
+            }
+        });
+        home_basket_top.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplication(), BasketActivity.class);
+                startActivity(intent);
             }
         });
         detail_product_btn_add_basket.setOnClickListener(new View.OnClickListener() {

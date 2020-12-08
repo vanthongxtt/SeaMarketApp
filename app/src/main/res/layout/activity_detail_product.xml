@@ -26,6 +26,40 @@
             android:textSize="20sp"
             android:textColor="@color/colorWhite"
             android:text="My App"/>
+        <LinearLayout
+            android:id="@+id/home_basket_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/custom_click_view"
+            android:gravity="center_horizontal"
+            tools:visibility="visible">
+
+            <ImageView
+                android:id="@+id/cartImage"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/ic_outline_shopping_cart_24" />
+
+            <TextView
+                android:id="@+id/home_number_basket"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="bottom|left"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:background="@drawable/custom_number_basket"
+                android:layout_marginLeft="-20dp"
+                android:text="1"
+                android:textColor="@color/colorWhite"
+                tools:ignore="RtlHardcoded" />
+
+        </LinearLayout>
+
     </RelativeLayout>
     <ScrollView
         android:layout_marginTop="45dp"

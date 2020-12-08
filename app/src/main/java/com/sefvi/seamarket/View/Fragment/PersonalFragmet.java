@@ -28,6 +28,7 @@ import com.sefvi.seamarket.Interface.AuthInterface;
 import com.sefvi.seamarket.Model.AccountModell;
 import com.sefvi.seamarket.View.Activity.Personal.AdminActivity;
 import com.sefvi.seamarket.View.Activity.Personal.BasketActivity;
+import com.sefvi.seamarket.View.Activity.Personal.DeliveryAddressActivity;
 import com.sefvi.seamarket.View.Activity.Personal.RulesActivity;
 import com.sefvi.seamarket.R;
 import com.sefvi.seamarket.View.Activity.Personal.SettingActivity;
@@ -60,11 +61,9 @@ public class PersonalFragmet extends Fragment {
         personal_ruless = v.findViewById(R.id.personal_ruless);
         personal_version = v.findViewById(R.id.personal_version);
         personal_menu = v.findViewById(R.id.personal_menu);
-
         personal_tv_username = v.findViewById(R.id.personal_tv_username);
         personal_tv_phonenumber = v.findViewById(R.id.personal_tv_phonenumber);
         personal_img_user = v.findViewById(R.id.personal_img_user);
-
         cardVIsAdmin = v.findViewById(R.id.cardVIsAdmin);
 
         SharedPreferences prefs = getActivity().getSharedPreferences("Sea",MODE_PRIVATE);
@@ -72,14 +71,18 @@ public class PersonalFragmet extends Fragment {
 
     }
     private void event (){
+        personal_map.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               startActivity(new Intent(getActivity(), DeliveryAddressActivity.class));
+            }
+        });
         personal_hotline.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                xuLyGoiLuon(personal_tv_phonenumber.getText().toString(), getActivity());
             }
         });
-
-
         personal_ruless.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -115,6 +118,7 @@ public class PersonalFragmet extends Fragment {
                 startActivity(new Intent(getActivity(), AdminActivity.class));
             }
         });
+
 
     }
     private void GetUserData(){

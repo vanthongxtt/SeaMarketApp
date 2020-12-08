@@ -67,6 +67,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
+                        android:background="@drawable/custom_click_view"
                         android:gravity="center_horizontal"
                         tools:visibility="visible">
 
@@ -189,7 +190,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/home_text_giaohangtrong24h"
+                            android:text="@string/home_text_giaohangtrong6h"
                             android:textSize="12sp" />
                     </LinearLayout>
 
