@@ -85,7 +85,7 @@ public class HotActivity extends AppCompatActivity {
                     }
                 }
 
-                adapter = (HomeSuggestionAdapter) new HomeSuggestionAdapter(comboHotList,getApplicationContext());
+                adapter = new HomeSuggestionAdapter(comboHotList,HotActivity.this);
                 GridLayoutManager gridLayoutManager = new GridLayoutManager(getApplicationContext(), 2,GridLayoutManager.VERTICAL,false);
                 combohot.setLayoutManager(gridLayoutManager);
                 combohot.setAdapter(adapter);

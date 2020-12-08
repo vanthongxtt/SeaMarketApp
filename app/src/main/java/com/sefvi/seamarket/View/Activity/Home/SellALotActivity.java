@@ -84,7 +84,7 @@ public class SellALotActivity extends AppCompatActivity {
                     }
                 }
 
-                adapter = (HomeSuggestionAdapter) new HomeSuggestionAdapter(sellalotList,getApplicationContext());
+                adapter = new HomeSuggestionAdapter(sellalotList,SellALotActivity.this);
                 GridLayoutManager gridLayoutManager = new GridLayoutManager(getApplicationContext(), 2,GridLayoutManager.VERTICAL,false);
                 sellalot.setLayoutManager(gridLayoutManager);
                 sellalot.setAdapter(adapter);

@@ -46,7 +46,7 @@ public class DetailProductActivity extends AppCompatActivity {
     List<ProductImageModel> productImageModels;
     ViewPager viewPager;
     Button detail_product_btn_add_basket;
-    String nameProduct, imgProduct, priceProduct;
+    String nameProduct, priceProduct;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -99,7 +99,7 @@ public class DetailProductActivity extends AppCompatActivity {
                 View bottomSheetView = LayoutInflater.from(getApplicationContext())
                         .inflate(
                                 R.layout.bottom_dialog_detail_product,
-                                (LinearLayout)findViewById(R.id.bottomSheetContainer)
+                                findViewById(R.id.bottomSheetContainer)
                         );
                 TextView nameProductDetailItem = bottomSheetView.findViewById(R.id.nameProductDetailItem);
                 ImageView product_tablayout_item_img = bottomSheetView.findViewById(R.id.product_tablayout_item_img);
@@ -192,7 +192,7 @@ public class DetailProductActivity extends AppCompatActivity {
 
                     title.setText(list.getString("name"));
                     detail_product_tv_name_product.setText(list.getString("name"));
-                    item_product_tv_price.setText(FormatCost(String.valueOf(list.getInt("price"))) + " " + list.getString("unit") + "/kg");
+                    item_product_tv_price.setText(FormatCost(String.valueOf(list.getInt("price"))) + "đ" + "/kg");
                     detail_product_tv_dis_product.setText(list.getString("description"));
                     detail_product_tv_origin_product.setText(list.getString("origin"));
                     detail_product_tv_type_product.setText(jsonObjectType.getString("nameType"));
