@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -15,6 +16,7 @@ import com.sefvi.seamarket.View.Activity.ChangeInforActivity;
 
 public class SettingActivity extends AppCompatActivity {
     RelativeLayout language,changeinformation;
+    LinearLayout settingLogOut;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +37,8 @@ public class SettingActivity extends AppCompatActivity {
     private void  initEvents() {
         language = findViewById(R.id.setting_language);
         changeinformation=findViewById(R.id.setting_change_information);
+        settingLogOut = findViewById(R.id.settingLogOut);
+
 
 
 
@@ -57,8 +61,13 @@ public class SettingActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        settingLogOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
 
+            }
+        });
     }
 
 }
