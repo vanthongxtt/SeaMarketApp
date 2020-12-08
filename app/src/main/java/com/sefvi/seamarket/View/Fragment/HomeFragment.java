@@ -28,8 +28,10 @@ import com.sefvi.seamarket.Adapter.HomeSuggestionAdapter;
 import com.sefvi.seamarket.Adapter.Home_ComboHot_Adapter;
 import com.sefvi.seamarket.Adapter.Home_Sale_off_Adapter;
 import com.sefvi.seamarket.Adapter.SliderAdapter;
+import com.sefvi.seamarket.Api.GetCountNotiCart.GetCountNotiCartApiLml;
 import com.sefvi.seamarket.Api.GetProductHome.GetProductHomeApiLml;
 import com.sefvi.seamarket.Api.GetProductRandom.GetProductRandomLml;
+import com.sefvi.seamarket.Interface.CartInterface;
 import com.sefvi.seamarket.Interface.ProductRandom;
 import com.sefvi.seamarket.Model.ProductModel;
 import com.sefvi.seamarket.R;
@@ -87,7 +89,7 @@ public class HomeFragment extends Fragment {
         setCombohot();
         setSaleoff();
         suggestion();
-
+        getCountNoti();
         return v;
     }
     private void suggestion(){
@@ -124,7 +126,7 @@ public class HomeFragment extends Fragment {
                         e.printStackTrace();
                     }
                 }
-                adapter = (HomeSuggestionAdapter) new HomeSuggestionAdapter(homeListProducts,getActivity());
+                adapter = new HomeSuggestionAdapter(homeListProducts,getActivity());
                 GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(), 2,GridLayoutManager.VERTICAL,false);
                 suggestion.setLayoutManager(gridLayoutManager);
                 suggestion.setAdapter(adapter);
@@ -148,9 +150,6 @@ public class HomeFragment extends Fragment {
         home_rl_gps = v.findViewById(R.id.home_rl_gps);
         home_lnl_search = v.findViewById(R.id.home_lnl_search);
         scrollViewDataLoadHome = v.findViewById(R.id.scrollViewDataLoadHome);
-
-
-
     }
     private void event (){
         homelnlhot.setOnClickListener(new View.OnClickListener() {
@@ -236,7 +235,7 @@ public class HomeFragment extends Fragment {
             scrollViewDataLoadHome.setOnScrollChangeListener(new View.OnScrollChangeListener() {
                 @Override
                 public void onScrollChange(View v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
-                    View view = (View) scrollViewDataLoadHome.getChildAt(scrollViewDataLoadHome.getChildCount() - 1);
+                    View view = scrollViewDataLoadHome.getChildAt(scrollViewDataLoadHome.getChildCount() - 1);
                     int diff = (view.getBottom() - (scrollViewDataLoadHome.getHeight() + scrollViewDataLoadHome.getScrollY()));
                     if (diff == 0) {
                         homeListProducts.clear();
@@ -339,6 +338,30 @@ public class HomeFragment extends Fragment {
 
     }
 
+    private void getCountNoti(){
+        GetCountNotiCartApiLml getCountNotiCartApiLml = new GetCountNotiCartApiLml();
+        getCountNotiCartApiLml.GetCountNotiCartApi(token, new CartInterface() {
+            @Override
+            public void getDataSuccess(String mess) {
+                if (Integer.parseInt(mess) == 0){
+                    home_number_basket.setVisibility(View.INVISIBLE);
+                }else {
+                    home_number_basket.setText(mess);
+                }
+            }
+
+            @Override
+            public void getDataError(String err) {
+
+            }
+
+            @Override
+            public void getDataSuccess(JSONArray list) {
+
+            }
+        });
+    }
+
     private void baner(View v){
 
         viewPager = v.findViewById(R.id.viewpager);
@@ -353,7 +376,7 @@ public class HomeFragment extends Fragment {
                 if (currentPageCunter == images.length){
                     currentPageCunter = 0 ;
                 }
-
+                getCountNoti();
                 viewPager.setCurrentItem(currentPageCunter++,true);
             }
         };

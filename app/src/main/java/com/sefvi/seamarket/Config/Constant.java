@@ -17,4 +17,6 @@ public class Constant {
     public static final String URL_BASE_GET_PRODUCT = "api/{token}/get-product";
     public static final String URL_BASE_GET_SEARCH_PRODUCTS = "api/{token}/get-search-products";
     public static final String URL_BASE_GET_USER_DATA = "api/{token}/get-user-data";
+    public static final String URL_BASE_ADD_CART = "api/{token}/add-cart";
+    public static final String URL_BASE_GET_COUNT_NOTI_CART = "api/{token}/get-count-noti-cart";
 }

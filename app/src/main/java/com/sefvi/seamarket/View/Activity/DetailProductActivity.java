@@ -19,7 +19,9 @@ import android.widget.Toast;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.sefvi.seamarket.Adapter.SliderAdapter;
 import com.sefvi.seamarket.Adapter.SliderProductAdapter;
+import com.sefvi.seamarket.Api.AddCart.AddCartApiLml;
 import com.sefvi.seamarket.Api.DetailProduct.DetailProductApiLml;
+import com.sefvi.seamarket.Interface.CartInterface;
 import com.sefvi.seamarket.Interface.DetailProduct;
 import com.sefvi.seamarket.Interface.ProductRandom;
 import com.sefvi.seamarket.Model.ProductImageModel;
@@ -35,6 +37,7 @@ import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -47,6 +50,7 @@ public class DetailProductActivity extends AppCompatActivity {
     ViewPager viewPager;
     Button detail_product_btn_add_basket;
     String nameProduct, priceProduct;
+    BottomSheetDialog bottomSheetDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,6 +85,7 @@ public class DetailProductActivity extends AppCompatActivity {
 
         SharedPreferences prefs = getApplicationContext().getSharedPreferences("Sea",MODE_PRIVATE);
         token = prefs.getString("TOKEN", "");
+
     }
 
     private void initControls(){
@@ -93,7 +98,7 @@ public class DetailProductActivity extends AppCompatActivity {
         detail_product_btn_add_basket.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(
+                bottomSheetDialog = new BottomSheetDialog(
                         DetailProductActivity.this,R.style.BottomSheetDialogTheme
                 );
                 View bottomSheetView = LayoutInflater.from(getApplicationContext())
@@ -151,12 +156,56 @@ public class DetailProductActivity extends AppCompatActivity {
                 bottomSheet_btn_add_basket.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Toast.makeText(DetailProductActivity.this, "Chưa thêm vào giỏ hàng được đâu", Toast.LENGTH_SHORT).show();
-
+                        addCart(idProduct, countNumber[0]);
                     }
                 });
                 bottomSheetDialog.setContentView(bottomSheetView);
                 bottomSheetDialog.show();
+            }
+        });
+    }
+    private void addCart(Integer idProduct, Integer quantily){
+
+        SharedPreferences prefs = getApplicationContext().getSharedPreferences("Sea",MODE_PRIVATE);
+        String tokenCart = prefs.getString("TOKEN_CART", "");
+
+        if (tokenCart.isEmpty()){
+            SharedPreferences.Editor editor = getSharedPreferences("Sea",MODE_PRIVATE).edit();
+            String rd = random();
+            editor.putString("TOKEN_CART", rd);
+            editor.apply();
+            addCartDetail(rd, idProduct, quantily);
+        }
+        addCartDetail(tokenCart, idProduct, quantily);
+    }
+    public static String random() {
+        Random generator = new Random();
+        StringBuilder randomStringBuilder = new StringBuilder();
+        int randomLength = generator.nextInt(100);
+        char tempChar;
+        for (int i = 0; i < randomLength; i++){
+            tempChar = (char) (generator.nextInt(96) + 32);
+            randomStringBuilder.append(tempChar);
+        }
+        return randomStringBuilder.toString();
+    }
+    private void addCartDetail(String tokenCart, Integer idProduct, Integer quantily){
+        AddCartApiLml addCartApiLml = new AddCartApiLml();
+        addCartApiLml.AddCart(token, tokenCart, idProduct, quantily, new CartInterface() {
+            @Override
+            public void getDataSuccess(String mess) {
+                Toast.makeText(getApplicationContext(), mess, Toast.LENGTH_SHORT).show();
+                bottomSheetDialog.dismiss();
+            }
+
+            @Override
+            public void getDataError(String err) {
+
+            }
+
+            @Override
+            public void getDataSuccess(JSONArray list) {
+
             }
         });
     }

@@ -2,6 +2,7 @@ package com.sefvi.seamarket.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,19 +16,26 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.sefvi.seamarket.Api.AddCart.AddCartApiLml;
+import com.sefvi.seamarket.Interface.CartInterface;
 import com.sefvi.seamarket.Model.ProductModel;
 import com.sefvi.seamarket.R;
 import com.sefvi.seamarket.View.Activity.DetailProductActivity;
 import com.squareup.picasso.Picasso;
 
+import org.json.JSONArray;
+
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.List;
+import java.util.Random;
+
+import static android.content.Context.MODE_PRIVATE;
 
 public class Home_ComboHot_Adapter extends RecyclerView.Adapter<Home_ComboHot_Adapter.MyViewHolder> {
     private final Context context;
     private final List<ProductModel> homecomboHots;
-
+    BottomSheetDialog bottomSheetDialog;
     public Home_ComboHot_Adapter(Context context, List<ProductModel> homecomboHots) {
         this.context = context;
         this.homecomboHots = homecomboHots;
@@ -96,7 +104,7 @@ public class Home_ComboHot_Adapter extends RecyclerView.Adapter<Home_ComboHot_Ad
 
 
     private void showDialogAddCart(View view, ProductModel productModel){
-        BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(
+         bottomSheetDialog = new BottomSheetDialog(
                 view.getContext(),R.style.BottomSheetDialogTheme
         );
         View bottomSheetView = LayoutInflater.from(view.getContext())
@@ -154,14 +162,58 @@ public class Home_ComboHot_Adapter extends RecyclerView.Adapter<Home_ComboHot_Ad
         bottomSheet_btn_add_basket.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(view.getContext(), "Chưa thêm vào giỏ hàng được đâu", Toast.LENGTH_SHORT).show();
-
+                addCart(productModel.getId(), countNumber[0]);
             }
         });
         bottomSheetDialog.setContentView(bottomSheetView);
         bottomSheetDialog.show();
     }
+    private void addCart(Integer idProduct, Integer quantily){
 
+        SharedPreferences prefs = context.getSharedPreferences("Sea",MODE_PRIVATE);
+        String tokenCart = prefs.getString("TOKEN_CART", "");
+        if (tokenCart.isEmpty()){
+            SharedPreferences.Editor editor = context.getSharedPreferences("Sea",MODE_PRIVATE).edit();
+            String rd = random();
+            editor.putString("TOKEN_CART", rd);
+            editor.apply();
+            addCartDetail(rd, idProduct, quantily);
+        }
+        addCartDetail(tokenCart, idProduct, quantily);
+    }
+    public static String random() {
+        Random generator = new Random();
+        StringBuilder randomStringBuilder = new StringBuilder();
+        int randomLength = generator.nextInt(100);
+        char tempChar;
+        for (int i = 0; i < randomLength; i++){
+            tempChar = (char) (generator.nextInt(96) + 32);
+            randomStringBuilder.append(tempChar);
+        }
+        return randomStringBuilder.toString();
+    }
+    private void addCartDetail(String tokenCart, Integer idProduct, Integer quantily){
+        SharedPreferences prefs = context.getSharedPreferences("Sea",MODE_PRIVATE);
+        String token = prefs.getString("TOKEN", "");
+        AddCartApiLml addCartApiLml = new AddCartApiLml();
+        addCartApiLml.AddCart(token, tokenCart, idProduct, quantily, new CartInterface() {
+            @Override
+            public void getDataSuccess(String mess) {
+                Toast.makeText(context, mess, Toast.LENGTH_SHORT).show();
+                bottomSheetDialog.dismiss();
+            }
+
+            @Override
+            public void getDataError(String err) {
+
+            }
+
+            @Override
+            public void getDataSuccess(JSONArray list) {
+
+            }
+        });
+    }
     @Override
     public int getItemCount() {
         return homecomboHots.size();
