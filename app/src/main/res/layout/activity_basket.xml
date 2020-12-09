@@ -34,9 +34,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:text="Tổng tiền :"
+                android:text="Tổng tiền:"
                 android:textColor="@color/ligth_black_color"
-                android:textSize="24dp" />
+                android:textSize="22dp" />
 
             <TextView
                 android:id="@+id/txtSumCartBasket"
@@ -48,7 +48,7 @@
                 android:layout_toRightOf="@id/basket_text_tongtien"
                 android:text="0"
                 android:textColor="@color/blue_color"
-                android:textSize="24dp" />
+                android:textSize="22dp" />
 
             <Button
                 android:layout_width="120dp"
