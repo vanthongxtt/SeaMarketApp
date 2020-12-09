@@ -68,7 +68,9 @@ dependencies {
 
     // rounded dialog botom view
     implementation 'com.makeramen:roundedimageview:2.3.0'
-
+    //TedPermission mở bottom album chon nhiu
+    implementation 'gun0912.ted:tedpermission:2.2.3'
+    implementation 'gun0912.ted:tedbottompicker:1.2.6'
 
 
 }

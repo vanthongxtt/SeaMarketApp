@@ -1,6 +1,9 @@
 package com.sefvi.seamarket.View.Activity.Personal;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.View;
@@ -9,6 +12,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.GridLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -16,19 +20,23 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.sefvi.seamarket.Adapter.PhotoAdapter;
 import com.sefvi.seamarket.R;
 import com.sefvi.seamarket.Utils.Checks;
 
 public class AdminAddProducts extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 Spinner spinner;
 EditText nameProduct, priceProduct, moTaProduct, originProduct, soLuongProduct;
+RecyclerView adminAddRcvPhoto;
 LinearLayout btnAddFolder;
 Button addProduct;
+private PhotoAdapter photoAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_add_products);
         anhxa();
+        event();
         ImageView backicon = findViewById(R.id.toolbar_back);
         TextView name = findViewById(R.id.toolbar_name);
         backicon.setOnClickListener(new View.OnClickListener() {
@@ -49,6 +57,10 @@ Button addProduct;
                 lavigate(nameProduct.getText().toString(), priceProduct.getText().toString(), moTaProduct.getText().toString(), originProduct.getText().toString(),soLuongProduct.getText().toString());
             }
         });
+
+        photoAdapter = new PhotoAdapter(this);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(this,1, LinearLayoutManager.HORIZONTAL,false);
+
     }
 
     private void anhxa() {
@@ -60,6 +72,10 @@ Button addProduct;
         soLuongProduct = findViewById(R.id.admin_add_soLuongProduct);
         btnAddFolder = findViewById(R.id.admin_add_folder);
         addProduct = findViewById(R.id.admin_button_addProduct);
+        adminAddRcvPhoto = findViewById(R.id.admin_add_rcv_photo);
+    }
+    private void event(){
+        
     }
 private void lavigate(String nameProduct, String priceProduct, String moTa, String origin, String soLuong){
     if(nameProduct.isEmpty()) {

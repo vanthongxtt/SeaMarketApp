@@ -90,6 +90,12 @@
                 android:drawablePadding="10dp"
                 android:hint="Số lượng sản phẩm"
                 android:padding="16dp" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/admin_add_rcv_photo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </androidx.recyclerview.widget.RecyclerView>
             <LinearLayout
                 android:id="@+id/admin_add_folder"
                 android:layout_width="wrap_content"
