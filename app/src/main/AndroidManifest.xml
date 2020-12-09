@@ -4,11 +4,13 @@
     package="com.sefvi.seamarket">
 
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
 
     <application
         android:allowBackup="true"
@@ -52,7 +54,6 @@
         <activity android:name=".View.Activity.Personal.RulesActivity" />
         <activity android:name=".View.Activity.Login_Activity" />
         <activity android:name=".View.Activity.MainActivity" />
-        <activity android:name=".View.Activity.DetailProductActivity" />
     </application>
 
 </manifest>

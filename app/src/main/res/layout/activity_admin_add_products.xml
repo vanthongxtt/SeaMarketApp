@@ -93,14 +93,15 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/admin_add_rcv_photo"
                 android:layout_width="match_parent"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
                 android:layout_height="wrap_content">
 
             </androidx.recyclerview.widget.RecyclerView>
-            <LinearLayout
+            <RelativeLayout
                 android:id="@+id/admin_add_folder"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
+                android:layout_height="60dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="10dp">
@@ -112,13 +113,18 @@
                     android:src="@drawable/add_folder_40"
                     android:layout_marginRight="20dp"
                     android:background="@color/colorWhite"
+                    android:clickable="false"
+                    android:focusable="false"
                     android:layout_gravity="center"/>
                 <TextView
+                    android:layout_alignParentBottom="true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:focusable="false"
                     android:textSize="16sp"
                     android:text="  Thêm ảnh"/>
-            </LinearLayout>
+            </RelativeLayout>
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
@@ -136,9 +142,5 @@
         android:textSize="24dp"
         android:textColor="@color/colorWhite" />
 </LinearLayout>
-
-
     </ScrollView>
-
-
 </LinearLayout>

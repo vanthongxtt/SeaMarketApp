@@ -62,12 +62,8 @@
                         android:textColor="@color/blue_color"
                         android:textSize="20sp"
                         android:textStyle="bold" />
-
                 </RelativeLayout>
             </LinearLayout>
-
         </LinearLayout>
-
     </androidx.cardview.widget.CardView>
-
 </LinearLayout>

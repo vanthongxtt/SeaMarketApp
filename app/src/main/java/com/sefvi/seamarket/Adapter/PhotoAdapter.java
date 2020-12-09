@@ -33,10 +33,9 @@ private ArrayList<Uri> mListPhotos;
     @NonNull
     @Override
     public PhotoViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.admin_add_photo_product,parent ,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.admin_add_photo,parent ,false);
         return new PhotoViewHolder(view);
     }
-
     @Override
     public void onBindViewHolder(@NonNull PhotoViewHolder holder, int position) {
     Uri uri = mListPhotos.get(position);
@@ -47,7 +46,6 @@ private ArrayList<Uri> mListPhotos;
             e.printStackTrace();
         }
     }
-
     @Override
     public int getItemCount() {
         if (mListPhotos == null) {
