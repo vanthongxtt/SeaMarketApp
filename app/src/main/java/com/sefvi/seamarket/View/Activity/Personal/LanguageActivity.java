@@ -2,17 +2,16 @@ package com.sefvi.seamarket.View.Activity.Personal;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.sefvi.seamarket.R;
-import com.sefvi.seamarket.View.Activity.ChangeInforActivity;
-import com.sefvi.seamarket.View.Fragment.HomeFragment;
-
+import com.sefvi.seamarket.View.Activity.MainActivity;
 import java.util.Locale;
 
 public class LanguageActivity extends AppCompatActivity {
@@ -38,11 +37,7 @@ public class LanguageActivity extends AppCompatActivity {
     private void  initEvents() {
        languageen = findViewById(R.id.language_en);
        languagevi = findViewById(R.id.language_vi);
-
-
-
     }
-
 
     public void changelanguage( String language){
         Locale locale = new Locale(language);
@@ -52,16 +47,29 @@ public class LanguageActivity extends AppCompatActivity {
                 config,
                 getBaseContext().getResources().getDisplayMetrics()
         );
-        Intent intent = new Intent(LanguageActivity.this,LanguageActivity.class);
-        startActivity(intent);
+        startActivity(new Intent(getApplicationContext(), MainActivity.class));
 
     }
     private void initControls(){
         languageen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                changelanguage("en");
-
+                AlertDialog.Builder builder = new AlertDialog.Builder(LanguageActivity.this);
+                builder.setMessage("You want change language to English?");
+                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        changelanguage("en");
+                    }
+                });
+                builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                    }
+                });
+                AlertDialog alertDialog = builder.create();
+               alertDialog.show();
 
             }
         });
@@ -69,13 +77,25 @@ public class LanguageActivity extends AppCompatActivity {
         languagevi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                changelanguage("vi");
-                 
+                AlertDialog.Builder builder = new AlertDialog.Builder(LanguageActivity.this);
+                builder.setMessage("Bạn muốn thay đổi ngôn ngữ về tiếng Việt?");
+                builder.setPositiveButton("Có", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        changelanguage("vi");
+                    }
+                });
+                builder.setNegativeButton("Không", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                    }
+                });
+                AlertDialog alertDialog = builder.create();
+                alertDialog.show();
 
             }
         });
-
-
 
     }
 }
