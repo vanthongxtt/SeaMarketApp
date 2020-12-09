@@ -21,6 +21,7 @@ import com.sefvi.seamarket.Adapter.SliderAdapter;
 import com.sefvi.seamarket.Adapter.SliderProductAdapter;
 import com.sefvi.seamarket.Api.AddCart.AddCartApiLml;
 import com.sefvi.seamarket.Api.DetailProduct.DetailProductApiLml;
+import com.sefvi.seamarket.Api.GetCountNotiCart.GetCountNotiCartApiLml;
 import com.sefvi.seamarket.Interface.CartInterface;
 import com.sefvi.seamarket.Interface.DetailProduct;
 import com.sefvi.seamarket.Interface.ProductRandom;
@@ -46,7 +47,7 @@ public class DetailProductActivity extends AppCompatActivity {
     ImageView backicon;
     LinearLayout home_basket_top;
     TextView title, detail_product_tv_name_product, item_product_tv_price,detail_product_tv_type_product,
-            detail_product_tv_origin_product, detail_product_tv_dis_product, tv_count_image;
+            detail_product_tv_origin_product, detail_product_tv_dis_product, tv_count_image, home_number_basket;
     String token;
     Integer idProduct;
     List<ProductImageModel> productImageModels;
@@ -62,7 +63,7 @@ public class DetailProductActivity extends AppCompatActivity {
         initEvents();
 
         initControls();
-
+        getCountNoti();
         GetDetailProduct();
 
     }
@@ -78,6 +79,7 @@ public class DetailProductActivity extends AppCompatActivity {
         detail_product_tv_dis_product = findViewById(R.id.detail_product_tv_dis_product);
         tv_count_image = findViewById(R.id.tv_count_image);
         viewPager = findViewById(R.id.detail_product_viewpager);
+        home_number_basket = findViewById(R.id.home_number_basket);
 
         detail_product_btn_add_basket = findViewById(R.id.detail_product_btn_add_basket);
 
@@ -272,6 +274,33 @@ public class DetailProductActivity extends AppCompatActivity {
             }
         });
     }
+    private void getCountNoti(){
+        GetCountNotiCartApiLml getCountNotiCartApiLml = new GetCountNotiCartApiLml();
+        getCountNotiCartApiLml.GetCountNotiCartApi(token, new CartInterface() {
+            @Override
+            public void getDataSuccess(String mess) {
+                try {
+                    if (Integer.parseInt(mess) == 0){
+                        home_number_basket.setVisibility(View.INVISIBLE);
+                    }else {
+                        home_number_basket.setText(mess);
+                    }
+                }catch (Exception ignored){
+                    home_number_basket.setVisibility(View.INVISIBLE);
+                }
+            }
+
+            @Override
+            public void getDataError(String err) {
+
+            }
+
+            @Override
+            public void getDataSuccess(JSONArray list) {
+
+            }
+        });
+    }
 
     private  void viewPagerUpdate(){
         final int[] currentPageCunter = {0};
@@ -286,7 +315,7 @@ public class DetailProductActivity extends AppCompatActivity {
                     currentPageCunter[0] = 0 ;
                 }
                 viewPager.setCurrentItem(currentPageCunter[0]++,true);
-
+                getCountNoti();
             }
         };
         Timer timer = new Timer();

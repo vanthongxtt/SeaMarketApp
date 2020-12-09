@@ -3,6 +3,7 @@ package com.sefvi.seamarket.Adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -174,11 +175,12 @@ public class Home_ComboHot_Adapter extends RecyclerView.Adapter<Home_ComboHot_Ad
         String tokenCart = prefs.getString("TOKEN_CART", "");
         if (tokenCart.isEmpty()){
             SharedPreferences.Editor editor = context.getSharedPreferences("Sea",MODE_PRIVATE).edit();
-            String rd = random();
+            String rd = String.valueOf(getRandomNumber(100000, 9999999));
             editor.putString("TOKEN_CART", rd);
             editor.apply();
             addCartDetail(rd, idProduct, quantily);
         }
+        Log.d("token_Cart", tokenCart);
         addCartDetail(tokenCart, idProduct, quantily);
     }
     public static String random() {
@@ -191,6 +193,9 @@ public class Home_ComboHot_Adapter extends RecyclerView.Adapter<Home_ComboHot_Ad
             randomStringBuilder.append(tempChar);
         }
         return randomStringBuilder.toString();
+    }
+    private int getRandomNumber(int min,int max) {
+        return (new Random()).nextInt((max - min) + 1) + min;
     }
     private void addCartDetail(String tokenCart, Integer idProduct, Integer quantily){
         SharedPreferences prefs = context.getSharedPreferences("Sea",MODE_PRIVATE);
@@ -205,7 +210,7 @@ public class Home_ComboHot_Adapter extends RecyclerView.Adapter<Home_ComboHot_Ad
 
             @Override
             public void getDataError(String err) {
-
+                Toast.makeText(context, err, Toast.LENGTH_SHORT).show();
             }
 
             @Override

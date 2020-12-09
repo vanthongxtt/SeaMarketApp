@@ -1,12 +1,8 @@
-package com.sefvi.seamarket.Api.AddCart;
-
-import android.util.Log;
-import android.widget.Toast;
+package com.sefvi.seamarket.Api.GetCart;
 
 import com.sefvi.seamarket.Api.BaseRetrofitIml;
 import com.sefvi.seamarket.Interface.CartInterface;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -18,12 +14,12 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 
-public class AddCartApiLml extends BaseRetrofitIml {
-    AddCartApi addCartApi;
+public class GetCartApiLml extends BaseRetrofitIml {
+    GetCartApi getCartApi;
     Retrofit retrofit = getRetrofit();
-    public void AddCart(String token,String tokenCart, Integer idProduct, Integer quantily, final CartInterface cartInterface){
-        addCartApi = retrofit.create(AddCartApi.class);
-        Call<ResponseBody> call = addCartApi.AddCart(token,tokenCart, idProduct, quantily);
+    public void GetCartList(String token, final CartInterface cartInterface){
+        getCartApi = retrofit.create(GetCartApi.class);
+        Call<ResponseBody> call = getCartApi.GetCartList(token);
         call.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
@@ -32,9 +28,7 @@ public class AddCartApiLml extends BaseRetrofitIml {
                         JSONObject jsonObject = new JSONObject(response.body().string());
                         int status = jsonObject.getInt("api_status");
                         if (status == 200) {
-                            cartInterface.getDataSuccess(jsonObject.getString("message"));
-                        }else {
-                            Log.d("sssss", jsonObject.getString("message"));
+                            cartInterface.getDataSuccess(jsonObject.getJSONArray("data"));
                         }
                     } catch (JSONException e) {
                         e.printStackTrace();

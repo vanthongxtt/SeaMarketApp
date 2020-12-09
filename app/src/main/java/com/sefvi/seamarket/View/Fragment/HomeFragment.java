@@ -343,10 +343,14 @@ public class HomeFragment extends Fragment {
         getCountNotiCartApiLml.GetCountNotiCartApi(token, new CartInterface() {
             @Override
             public void getDataSuccess(String mess) {
-                if (Integer.parseInt(mess) == 0){
+                try {
+                    if (Integer.parseInt(mess) == 0){
+                        home_number_basket.setVisibility(View.INVISIBLE);
+                    }else {
+                        home_number_basket.setText(mess);
+                    }
+                }catch (Exception ignored){
                     home_number_basket.setVisibility(View.INVISIBLE);
-                }else {
-                    home_number_basket.setText(mess);
                 }
             }
 
