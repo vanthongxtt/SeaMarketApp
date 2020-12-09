@@ -3,6 +3,7 @@ package com.sefvi.seamarket.Adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,11 +17,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.sefvi.seamarket.Api.AddCart.AddCartApiLml;
+import com.sefvi.seamarket.Api.DeteteCartDetail.DeleteCartDetailApiLml;
 import com.sefvi.seamarket.Interface.CartInterface;
 import com.sefvi.seamarket.Model.CartModel;
 import com.sefvi.seamarket.Model.ProductModel;
 import com.sefvi.seamarket.R;
 import com.sefvi.seamarket.View.Activity.DetailProductActivity;
+import com.sefvi.seamarket.View.Activity.Personal.BasketActivity;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
@@ -35,6 +38,7 @@ import static android.content.Context.MODE_PRIVATE;
 public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.MyViewHolder> {
     private final Context context;
     private final List<CartModel> cartModels;
+
     public CartListAdapter(Context context, List<CartModel> cartModels){
         this.context = context;
         this.cartModels = cartModels;
@@ -73,6 +77,13 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.MyView
                 .error(R.drawable.home_combo_hot_img_cua)
                 .into(holder.itemBasketImg);
 
+        holder.itemBasketImgClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                deleteCartDetail(cartModel.getIdCartDetail());
+            }
+        });
+
 
     }
     private String FormatCost(String cost){
@@ -86,6 +97,30 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.MyView
         }
     }
 
+    private void deleteCartDetail(Integer id){
+
+        SharedPreferences prefs = context.getSharedPreferences("Sea",MODE_PRIVATE);
+        String token = prefs.getString("TOKEN", "");
+
+        DeleteCartDetailApiLml deleteCartDetailApiLml = new DeleteCartDetailApiLml();
+        deleteCartDetailApiLml.DeleteCartDetailApi(token, id, new CartInterface() {
+            @Override
+            public void getDataSuccess(String mess) {
+                Log.d("Ssssss", mess);
+                BasketActivity.callBackBasket(context);
+            }
+
+            @Override
+            public void getDataError(String err) {
+
+            }
+
+            @Override
+            public void getDataSuccess(JSONArray list) {
+
+            }
+        });
+    }
 
 
     @Override

@@ -20,4 +20,5 @@ public class Constant {
     public static final String URL_BASE_ADD_CART = "api/{token}/add-cart";
     public static final String URL_BASE_GET_COUNT_NOTI_CART = "api/{token}/get-count-noti-cart";
     public static final String URL_BASE_GET_CART = "api/{token}/get-cart";
+    public static final String URL_BASE_DELETE_CART_DETAIL = "api/{token}/delete-cart-detail";
 }

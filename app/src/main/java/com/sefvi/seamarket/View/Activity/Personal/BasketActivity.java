@@ -5,12 +5,14 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.sefvi.seamarket.Adapter.CartListAdapter;
 import com.sefvi.seamarket.Adapter.HomeSuggestionAdapter;
@@ -25,17 +27,19 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.security.Policy;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.ArrayList;
 import java.util.List;
 
 public class BasketActivity extends AppCompatActivity {
-    ImageView backicon;
-    TextView name, txtSumCart;
-    String token;
-    RecyclerView basket_recyclerview;
-    List<CartModel> cartModelList;
+     ImageView backicon;
+     static TextView name, txtSumCart;
+     static String token;
+     static RecyclerView basket_recyclerview;
+     static   List<CartModel> cartModelList;
+    static CartListAdapter cartListAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +47,7 @@ public class BasketActivity extends AppCompatActivity {
 
         initEvents();
         initControls();
-        GetDataCartList();
+        GetDataCartList(getApplicationContext());
     }
 
     private void initEvents(){
@@ -55,7 +59,6 @@ public class BasketActivity extends AppCompatActivity {
         SharedPreferences prefs = getSharedPreferences("Sea",MODE_PRIVATE);
         token = prefs.getString("TOKEN", "");
 
-        cartModelList = new ArrayList<>();
     }
 
     private void initControls(){
@@ -69,7 +72,8 @@ public class BasketActivity extends AppCompatActivity {
         name.setText(getText(R.string.action_basket));
     }
 
-    private void GetDataCartList(){
+    private static void GetDataCartList(final  Context context){
+        cartModelList = new ArrayList<>();
         GetCartApiLml getCartApiLml = new GetCartApiLml();
         getCartApiLml.GetCartList(token, new CartInterface() {
             @Override
@@ -78,7 +82,13 @@ public class BasketActivity extends AppCompatActivity {
 
             @Override
             public void getDataError(String err) {
-
+                cartModelList = new ArrayList<>();
+                txtSumCart.setText(0 + " đ");
+                cartListAdapter = new CartListAdapter(context, cartModelList);
+                GridLayoutManager gridLayoutManager = new GridLayoutManager(context, 1,GridLayoutManager.VERTICAL,false);
+                basket_recyclerview.setLayoutManager(gridLayoutManager);
+                basket_recyclerview.setAdapter(cartListAdapter);
+                cartListAdapter.notifyDataSetChanged();
             }
 
             @Override
@@ -93,6 +103,7 @@ public class BasketActivity extends AppCompatActivity {
                         cartModel.setPrice(jsonObject.getInt("price"));
                         cartModel.setImage(jsonObject.getJSONObject("image").getString("image"));
                         cartModel.setSumPrice(sumPrice);
+                        cartModel.setIdCartDetail(jsonObject.getInt("idCartDetail"));
                         cartModel.setQuantily(jsonObject.getInt("quantily"));
                         cartModelList.add(cartModel);
                         sum += sumPrice;
@@ -102,16 +113,20 @@ public class BasketActivity extends AppCompatActivity {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-                Log.d("=====", " - " + FormatCost(String.valueOf(sum)));
+
                 txtSumCart.setText(FormatCost(String.valueOf(sum)) + "đ");
-                CartListAdapter cartListAdapter = new CartListAdapter(getApplicationContext(), cartModelList);
-                GridLayoutManager gridLayoutManager = new GridLayoutManager(getApplicationContext(), 1,GridLayoutManager.VERTICAL,false);
+                cartListAdapter = new CartListAdapter(context, cartModelList);
+                GridLayoutManager gridLayoutManager = new GridLayoutManager(context, 1,GridLayoutManager.VERTICAL,false);
                 basket_recyclerview.setLayoutManager(gridLayoutManager);
                 basket_recyclerview.setAdapter(cartListAdapter);
+                cartListAdapter.notifyDataSetChanged();
             }
         });
     }
-    private String FormatCost(String cost){
+    public static void callBackBasket(final Context context){
+        GetDataCartList(context);
+    }
+    private static String FormatCost(String cost){
         try {
             DecimalFormatSymbols symbols = new DecimalFormatSymbols();
             symbols.setDecimalSeparator(',');
