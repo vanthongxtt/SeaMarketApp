@@ -90,7 +90,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:id="@+id/imgProductDetailMin"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:background="@drawable/custom_add_bottom_dialog"
                 android:src="@drawable/ic_white_rule_24" />
             <TextView
