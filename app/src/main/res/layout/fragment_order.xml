@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff"
+    android:background="#f7f7f7"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
@@ -20,10 +20,14 @@
             android:textStyle="bold"
             android:textColor="@color/colorWhite"
             android:text="@string/personal_text_donhang"/>
-
-
     </androidx.appcompat.widget.Toolbar>
 
-
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/order_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="0dp">
+    </androidx.recyclerview.widget.RecyclerView>
 
 </RelativeLayout>

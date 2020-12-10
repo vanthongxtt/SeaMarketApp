@@ -2,6 +2,9 @@ package com.sefvi.seamarket.View.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -11,9 +14,11 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.sefvi.seamarket.Api.ConfrimBillOrderCart.ConfrimBillOrderCartApiLml;
 import com.sefvi.seamarket.Api.GetBillOrder.GetBillOrderApiLml;
 import com.sefvi.seamarket.Interface.CartInterface;
 import com.sefvi.seamarket.R;
+import com.sefvi.seamarket.View.Activity.Personal.LanguageActivity;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -28,6 +33,7 @@ public class ConfirmActivity extends AppCompatActivity {
     Button btnBillOrderConfirm;
     String token;
     Integer idCart;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,7 +77,39 @@ public class ConfirmActivity extends AppCompatActivity {
         btnBillOrderConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ConfrimBillOrderCartApiLml confrimBillOrderCartApiLml = new ConfrimBillOrderCartApiLml();
+                confrimBillOrderCartApiLml.ConfrimBillOrderCartApi(token, idCart, 1, new CartInterface() {
+                    @Override
+                    public void getDataSuccess(String mess) {
+                        AlertDialog.Builder builder = new AlertDialog.Builder(ConfirmActivity.this);
+                        builder.setMessage("Đặt hàng thành công! Mời bạn mua hải sản mới nào :))");
+                        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                startActivity(new Intent(ConfirmActivity.this, MainActivity.class));
+                                finish();
+                            }
+                        });
+                        builder.setCancelable(false);
+                        AlertDialog alertDialog = builder.create();
+                        alertDialog.show();
+                    }
 
+                    @Override
+                    public void getDataError(String err) {
+
+                    }
+
+                    @Override
+                    public void getDataSuccess(JSONArray list) {
+
+                    }
+
+                    @Override
+                    public void getDataSuccess(JSONObject jsonObject) {
+
+                    }
+                });
             }
         });
     }

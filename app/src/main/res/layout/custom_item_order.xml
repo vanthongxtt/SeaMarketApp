@@ -3,149 +3,186 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical">
-    <LinearLayout
+    android:orientation="vertical"
+    android:padding="10dp">
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <androidx.cardview.widget.CardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            app:cardCornerRadius="10dp">
-
-            <ImageView
-                android:id="@+id/itemBasketImg"
-                android:layout_width="130dp"
-                android:layout_height="140dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/home_img_combo_hot_tom" />
-        </androidx.cardview.widget.CardView>
+        android:elevation="2dp"
+        android:layout_height="wrap_content">
         <LinearLayout
             android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_marginTop="10dp"
-                android:orientation="vertical"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp">
                 <TextView
-                    android:id="@+id/itemBasketName"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:maxLines="1"
+                    android:textStyle="bold"
                     android:textColor="@color/ligth_black_color"
-                    android:textSize="24sp"
-                    android:text="Tên sản phẩm"/>
+                    android:textSize="20sp"
+                    android:text="Đơn hàng: "/>
+                <TextView
+                    android:id="@+id/txtItemOrderId"
+                    android:layout_gravity="right"
+                    android:gravity="right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:textStyle="italic|bold"
+                    android:layout_marginRight="10dp"
+                    android:textSize="20sp"
+                    android:textColor="@color/ligth_black_color"
+                    android:text="1"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    app:cardCornerRadius="10dp">
+
+                    <ImageView
+                        android:id="@+id/imgItemOrderImage"
+                        android:layout_width="130dp"
+                        android:layout_height="140dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/home_img_combo_hot_tom" />
+                </androidx.cardview.widget.CardView>
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:orientation="horizontal"
-                    android:layout_height="match_parent">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:maxLines="1"
-                        android:textSize="20sp"
-                        android:text="Giá :"/>
-                    <TextView
-                        android:layout_gravity="right"
-                        android:gravity="right"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:maxLines="1"
-                        android:layout_marginRight="10dp"
-                        android:textSize="20sp"
-                        android:text="1.455.000đ"/>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:orientation="horizontal"
-                    android:layout_height="match_parent">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:maxLines="1"
-                        android:textSize="20sp"
-                        android:text="Sô lượng :"/>
-                    <TextView
-                        android:layout_gravity="right"
-                        android:gravity="right"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:id="@+id/txtItemOrderName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:maxLines="1"
+                            android:textColor="@color/ligth_black_color"
+                            android:textSize="24sp"
+                            android:text="Tên sản phẩm"/>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_height="match_parent">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:maxLines="1"
+                                android:textSize="20sp"
+                                android:text="Giá :"/>
+                            <TextView
+                                android:id="@+id/txtItemOrderPrice"
+                                android:layout_gravity="right"
+                                android:gravity="right"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:maxLines="1"
+                                android:layout_marginRight="10dp"
+                                android:textSize="20sp"
+                                android:text="1.455.000đ"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_height="match_parent">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:maxLines="1"
+                                android:textSize="20sp"
+                                android:text="Sô lượng :"/>
+                            <TextView
+                                android:id="@+id/txtItemOrderNumber"
+                                android:layout_gravity="right"
+                                android:gravity="right"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:maxLines="1"
+                                android:layout_marginRight="10dp"
+                                android:textSize="20sp"
+                                android:text="10"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal"
+                            android:layout_height="match_parent">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:maxLines="1"
+                                android:textSize="24sp"
+                                android:textColor="@color/ligth_black_color"
+                                android:text="Tổng tiền :"/>
+                            <TextView
+                                android:id="@+id/txtItemOrderSumPrice"
+                                android:layout_gravity="right"
+                                android:gravity="right"
+                                android:layout_width="match_parent"
+                                android:textColor="@color/blue_color"
+                                android:layout_height="wrap_content"
+                                android:maxLines="1"
+                                android:layout_marginRight="10dp"
+                                android:textSize="20sp"
+                                android:text="1.555.900đ"/>
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                    <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:maxLines="1"
-                        android:layout_marginRight="10dp"
-                        android:textSize="20sp"
-                        android:text="10"/>
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="wrap_content">
+                    </RelativeLayout>
+
                 </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_gravity="bottom"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:padding="10dp">
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:layout_height="match_parent">
+                    android:layout_gravity="center">
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/ligth_black_color"
                         android:maxLines="1"
                         android:textSize="24sp"
-                        android:textColor="@color/ligth_black_color"
-                        android:text="Tổng tiền :"/>
+                        android:text="Trạng thái :"/>
                     <TextView
-                        android:layout_gravity="right"
-                        android:gravity="right"
-                        android:layout_width="match_parent"
+                        android:id="@+id/txtItemOrderStatus"
+                        android:layout_gravity="center"
                         android:textColor="@color/blue_color"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
                         android:maxLines="1"
-                        android:layout_marginRight="10dp"
-                        android:textSize="20sp"
-                        android:text="1.555.900đ"/>
+                        android:layout_marginRight="30dp"
+                        android:textSize="24sp"
+                        android:text="Đang xử lý"/>
                 </LinearLayout>
-
-
             </LinearLayout>
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_height="wrap_content">
-
-
-
-
-
-            </RelativeLayout>
-
         </LinearLayout>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:layout_height="match_parent">
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="center">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/ligth_black_color"
-                android:maxLines="1"
-                android:textSize="24sp"
-                android:text="Trạng thái :"/>
-            <TextView
-                android:layout_gravity="center"
-                android:textColor="@color/blue_color"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:maxLines="1"
-                android:layout_marginRight="30dp"
-                android:textSize="24sp"
-                android:text="Đang xử lý"/>
-        </LinearLayout>
-    </LinearLayout>
+    </androidx.cardview.widget.CardView>
 </LinearLayout>
