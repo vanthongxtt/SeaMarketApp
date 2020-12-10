@@ -363,6 +363,11 @@ public class HomeFragment extends Fragment {
             public void getDataSuccess(JSONArray list) {
 
             }
+
+            @Override
+            public void getDataSuccess(JSONObject jsonObject) {
+
+            }
         });
     }
 

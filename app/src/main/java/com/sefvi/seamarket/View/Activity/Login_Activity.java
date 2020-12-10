@@ -5,9 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
+import android.os.Build;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -19,8 +21,8 @@ import com.sefvi.seamarket.Api.Auth.Login.LoginApiLml;
 import com.sefvi.seamarket.Interface.AuthInterface;
 import com.sefvi.seamarket.Model.AccountModell;
 import com.sefvi.seamarket.R;
+import com.sefvi.seamarket.Receive.NetworkChanceReceive;
 import com.sefvi.seamarket.Utils.Checks;
-import com.sefvi.seamarket.Utils.ShPref;
 
 
 public class Login_Activity extends AppCompatActivity {
@@ -31,6 +33,8 @@ public class Login_Activity extends AppCompatActivity {
      ProgressDialog progressDialog;
     Activity activity;
 
+    NetworkChanceReceive networkChangeReceive;
+
     private void Anhxa(){
         login_btn_login = findViewById(R.id.Login_btn_login);
         signup = findViewById(R.id.login_tv_dangki);
@@ -38,8 +42,28 @@ public class Login_Activity extends AppCompatActivity {
         password = findViewById(R.id.login_edt_password);
         forgotpassword = findViewById(R.id.Login_tv_forgot_password);
 
+        networkChangeReceive = new NetworkChanceReceive();
+        registerNetworkBroadcastForNougat();
+
+
         loginApiLml = new LoginApiLml();
 
+    }
+    private void registerNetworkBroadcastForNougat() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            registerReceiver(networkChangeReceive, new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            registerReceiver(networkChangeReceive, new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
+        }
+    }
+
+    protected void unregisterNetworkChanges() {
+        try {
+            unregisterReceiver(networkChangeReceive);
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+        }
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -113,8 +137,10 @@ public class Login_Activity extends AppCompatActivity {
                 }
             });
         }
-
-
-
+    }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unregisterNetworkChanges();
     }
 }

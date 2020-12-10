@@ -1,7 +1,4 @@
-package com.sefvi.seamarket.Api.AddCart;
-
-import android.util.Log;
-import android.widget.Toast;
+package com.sefvi.seamarket.Api.GetBillOrder;
 
 import com.sefvi.seamarket.Api.BaseRetrofitIml;
 import com.sefvi.seamarket.Interface.CartInterface;
@@ -18,12 +15,12 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 
-public class AddCartApiLml extends BaseRetrofitIml {
-    AddCartApi addCartApi;
+public class GetBillOrderApiLml extends BaseRetrofitIml {
+    GetBillOrderApi getBillOrderApi;
     Retrofit retrofit = getRetrofit();
-    public void AddCart(String token,String tokenCart, Integer idProduct, Integer quantily, final CartInterface cartInterface){
-        addCartApi = retrofit.create(AddCartApi.class);
-        Call<ResponseBody> call = addCartApi.AddCart(token,tokenCart, idProduct, quantily);
+    public void GetBillOrderApi(String token, Integer id, final CartInterface cartInterface){
+        getBillOrderApi = retrofit.create(GetBillOrderApi.class);
+        Call<ResponseBody> call = getBillOrderApi.GetBillOrder(token, id);
         call.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
@@ -32,9 +29,8 @@ public class AddCartApiLml extends BaseRetrofitIml {
                         JSONObject jsonObject = new JSONObject(response.body().string());
                         int status = jsonObject.getInt("api_status");
                         if (status == 200) {
-                            cartInterface.getDataSuccess(jsonObject.getString("message"));
-                        }else {
-                            Log.d("sssss", jsonObject.getString("message") + " -- " + tokenCart);
+//                            JSONArray jsonArray = new JSONArray(jsonObject.getString("data"));
+                            cartInterface.getDataSuccess(jsonObject.getJSONObject("data"));
                         }
                     } catch (JSONException e) {
                         e.printStackTrace();

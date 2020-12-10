@@ -54,6 +54,12 @@
         <activity android:name=".View.Activity.Personal.RulesActivity" />
         <activity android:name=".View.Activity.Login_Activity" />
         <activity android:name=".View.Activity.MainActivity" />
+
+        <receiver android:name=".Receive.NetworkChanceReceive">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

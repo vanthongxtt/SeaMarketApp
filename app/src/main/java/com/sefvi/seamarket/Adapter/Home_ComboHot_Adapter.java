@@ -25,6 +25,7 @@ import com.sefvi.seamarket.View.Activity.DetailProductActivity;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
@@ -183,17 +184,7 @@ public class Home_ComboHot_Adapter extends RecyclerView.Adapter<Home_ComboHot_Ad
         Log.d("token_Cart", tokenCart);
         addCartDetail(tokenCart, idProduct, quantily);
     }
-    public static String random() {
-        Random generator = new Random();
-        StringBuilder randomStringBuilder = new StringBuilder();
-        int randomLength = generator.nextInt(100);
-        char tempChar;
-        for (int i = 0; i < randomLength; i++){
-            tempChar = (char) (generator.nextInt(96) + 32);
-            randomStringBuilder.append(tempChar);
-        }
-        return randomStringBuilder.toString();
-    }
+
     private int getRandomNumber(int min,int max) {
         return (new Random()).nextInt((max - min) + 1) + min;
     }
@@ -215,6 +206,11 @@ public class Home_ComboHot_Adapter extends RecyclerView.Adapter<Home_ComboHot_Ad
 
             @Override
             public void getDataSuccess(JSONArray list) {
+
+            }
+
+            @Override
+            public void getDataSuccess(JSONObject jsonObject) {
 
             }
         });

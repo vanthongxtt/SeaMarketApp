@@ -54,7 +54,7 @@ public class PersonalFragmet extends Fragment {
         return v;
     }
     private void Anhxa (View v){
-        personal_map = v.findViewById(R.id.personal_map);
+//        personal_map = v.findViewById(R.id.personal_map);
         personal_order = v.findViewById(R.id.personal_order);
         personal_setting = v.findViewById(R.id.personal_setting);
         personal_hotline = v.findViewById(R.id.personal_hotline);
@@ -71,12 +71,12 @@ public class PersonalFragmet extends Fragment {
 
     }
     private void event (){
-        personal_map.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-               startActivity(new Intent(getActivity(), DeliveryAddressActivity.class));
-            }
-        });
+//        personal_map.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//               startActivity(new Intent(getActivity(), DeliveryAddressActivity.class));
+//            }
+//        });
         personal_hotline.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -27,6 +27,7 @@ import com.squareup.picasso.Picasso;
 
 
 import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
@@ -222,6 +223,11 @@ public class HomeSuggestionAdapter extends RecyclerView.Adapter<HomeSuggestionAd
 
             @Override
             public void getDataSuccess(JSONArray list) {
+
+            }
+
+            @Override
+            public void getDataSuccess(JSONObject jsonObject) {
 
             }
         });

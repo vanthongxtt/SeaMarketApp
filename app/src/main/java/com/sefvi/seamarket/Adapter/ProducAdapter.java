@@ -25,6 +25,7 @@ import com.sefvi.seamarket.View.Activity.DetailProductActivity;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
@@ -176,23 +177,15 @@ public class ProducAdapter extends RecyclerView.Adapter<ProducAdapter.MyViewHold
         String tokenCart = prefs.getString("TOKEN_CART", "");
         if (tokenCart.isEmpty()){
             SharedPreferences.Editor editor = context.getSharedPreferences("Sea",MODE_PRIVATE).edit();
-            String rd = random();
+            String rd = String.valueOf(getRandomNumber(100000, 9999999));
             editor.putString("TOKEN_CART", rd);
             editor.apply();
             addCartDetail(rd, idProduct, quantily);
         }
         addCartDetail(tokenCart, idProduct, quantily);
     }
-    public static String random() {
-        Random generator = new Random();
-        StringBuilder randomStringBuilder = new StringBuilder();
-        int randomLength = generator.nextInt(100);
-        char tempChar;
-        for (int i = 0; i < randomLength; i++){
-            tempChar = (char) (generator.nextInt(96) + 32);
-            randomStringBuilder.append(tempChar);
-        }
-        return randomStringBuilder.toString();
+    private int getRandomNumber(int min,int max) {
+        return (new Random()).nextInt((max - min) + 1) + min;
     }
     private void addCartDetail(String tokenCart, Integer idProduct, Integer quantily){
         SharedPreferences prefs = context.getSharedPreferences("Sea",MODE_PRIVATE);
@@ -212,6 +205,11 @@ public class ProducAdapter extends RecyclerView.Adapter<ProducAdapter.MyViewHold
 
             @Override
             public void getDataSuccess(JSONArray list) {
+
+            }
+
+            @Override
+            public void getDataSuccess(JSONObject jsonObject) {
 
             }
         });

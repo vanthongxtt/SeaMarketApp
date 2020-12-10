@@ -27,6 +27,7 @@ import com.sefvi.seamarket.View.Activity.Personal.BasketActivity;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
@@ -117,6 +118,11 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.MyView
 
             @Override
             public void getDataSuccess(JSONArray list) {
+
+            }
+
+            @Override
+            public void getDataSuccess(JSONObject jsonObject) {
 
             }
         });

@@ -34,16 +34,6 @@
                     android:layout_centerVertical="true"
                     android:textColor="@color/ligth_black_color"
                     android:textSize="24sp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="5dp"
-                    android:layout_centerVertical="true"
-                    android:text="Thay đổi"
-                    android:textColor="@color/blue_color"
-                    android:textSize="18sp"/>
-
             </RelativeLayout>
 
 
@@ -55,17 +45,20 @@
                 android:layout_height="1dp"
                 android:background="@color/grey"/>
             <TextView
+                android:id="@+id/txtNameConfirm"
                 android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
                 android:text="Tên người nhận"/>
             <TextView
+                android:id="@+id/txtPhoneConfirm"
                 android:layout_marginTop="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="0983753033"/>
             <TextView
+                android:id="@+id/txtAddressConfirm"
                 android:layout_marginTop="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -150,6 +143,7 @@
                         android:layout_height="wrap_content"
                         android:text="Tổng sản phẩm"/>
                     <TextView
+                        android:id="@+id/txtSumProductConfirm"
                         android:layout_alignParentRight="true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -163,11 +157,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Tổng tiền sản phẩm"/>
+
                     <TextView
-                        android:layout_alignParentRight="true"
+                        android:id="@+id/txtSumPriceProductConfirm"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="1,444,000đ"/>
+                        android:layout_alignParentRight="true"
+                        android:text="1,444,000đ" />
                 </RelativeLayout>
                 <RelativeLayout
                     android:layout_marginTop="5dp"
@@ -178,6 +174,7 @@
                         android:layout_height="wrap_content"
                         android:text="Phí giao hàng"/>
                     <TextView
+                        android:id="@+id/txtDeliverychargesConfirm"
                         android:layout_alignParentRight="true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -194,6 +191,7 @@
                         android:textSize="18sp"
                         android:text="Tổng tiền"/>
                     <TextView
+                        android:id="@+id/txtSumPriceConfirm"
                         android:layout_alignParentRight="true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -252,11 +250,12 @@
                 android:id="@+id/basket_text_tongtien"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tổng tiền :"
+                android:text="Tổng tiền:"
                 android:layout_centerVertical="true"
                 android:textColor="@color/ligth_black_color"
                 android:textSize="24dp" />
             <TextView
+                android:id="@+id/txtSumPriceConfirmFooter"
                 android:layout_toRightOf="@id/basket_text_tongtien"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -267,6 +266,7 @@
                 android:textColor="@color/blue_color"
                 android:textSize="24dp" />
             <Button
+                android:id="@+id/btnBillOrderConfirm"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:background="@drawable/custom_btn_oder"

@@ -6,10 +6,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,6 +24,7 @@ import com.sefvi.seamarket.Interface.CartInterface;
 import com.sefvi.seamarket.Model.CartModel;
 import com.sefvi.seamarket.Model.ProductModel;
 import com.sefvi.seamarket.R;
+import com.sefvi.seamarket.View.Activity.ConfirmActivity;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -35,11 +38,13 @@ import java.util.List;
 
 public class BasketActivity extends AppCompatActivity {
      ImageView backicon;
+     static Button btnBasketOrder;
      static TextView name, txtSumCart;
      static String token;
      static RecyclerView basket_recyclerview;
-     static   List<CartModel> cartModelList;
+     static List<CartModel> cartModelList;
     static CartListAdapter cartListAdapter;
+    static Integer idCart;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +60,7 @@ public class BasketActivity extends AppCompatActivity {
          name = findViewById(R.id.toolbar_name);
         basket_recyclerview = findViewById(R.id.basket_recyclerview);
         txtSumCart = findViewById(R.id.txtSumCartBasket);
+        btnBasketOrder = findViewById(R.id.btnBasketOrder);
 
         SharedPreferences prefs = getSharedPreferences("Sea",MODE_PRIVATE);
         token = prefs.getString("TOKEN", "");
@@ -70,6 +76,15 @@ public class BasketActivity extends AppCompatActivity {
             }
         });
         name.setText(getText(R.string.action_basket));
+
+        btnBasketOrder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), ConfirmActivity.class);
+                i.putExtra("idCart", idCart);
+                startActivity(i);
+            }
+        });
     }
 
     private static void GetDataCartList(final  Context context){
@@ -84,6 +99,7 @@ public class BasketActivity extends AppCompatActivity {
             public void getDataError(String err) {
                 cartModelList = new ArrayList<>();
                 txtSumCart.setText(0 + " đ");
+                btnBasketOrder.setEnabled(false);
                 cartListAdapter = new CartListAdapter(context, cartModelList);
                 GridLayoutManager gridLayoutManager = new GridLayoutManager(context, 1,GridLayoutManager.VERTICAL,false);
                 basket_recyclerview.setLayoutManager(gridLayoutManager);
@@ -105,21 +121,26 @@ public class BasketActivity extends AppCompatActivity {
                         cartModel.setSumPrice(sumPrice);
                         cartModel.setIdCartDetail(jsonObject.getInt("idCartDetail"));
                         cartModel.setQuantily(jsonObject.getInt("quantily"));
+                        idCart = jsonObject.getInt("id");
                         cartModelList.add(cartModel);
                         sum += sumPrice;
-                        Log.d("====", sumPrice + " - " + sum);
                     }
 
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-
+                btnBasketOrder.setEnabled(true);
                 txtSumCart.setText(FormatCost(String.valueOf(sum)) + "đ");
                 cartListAdapter = new CartListAdapter(context, cartModelList);
                 GridLayoutManager gridLayoutManager = new GridLayoutManager(context, 1,GridLayoutManager.VERTICAL,false);
                 basket_recyclerview.setLayoutManager(gridLayoutManager);
                 basket_recyclerview.setAdapter(cartListAdapter);
                 cartListAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void getDataSuccess(JSONObject jsonObject) {
+
             }
         });
     }
