@@ -141,7 +141,7 @@
                     android:layout_marginLeft="10dp"
                     android:textSize="22sp"
                     android:textColor="@color/intro_title_color"
-                    android:text="Nhà cung cấp"/>
+                    android:text="@string/product_text_nhacungcap"/>
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_marginLeft="10dp"
@@ -199,7 +199,7 @@
                     android:layout_marginLeft="10dp"
                     android:textSize="22sp"
                     android:textColor="@color/intro_title_color"
-                    android:text="Thông tin sản phẩm"/>
+                    android:text="@string/product_text_thongtinsanpham"/>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -211,7 +211,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="16sp"
                        android:textStyle="bold"
-                        android:text="Loại sản phẩm :"/>
+                        android:text="@string/product_text_loaisanpham"/>
 
                     <TextView
                         android:id="@+id/detail_product_tv_type_product"
@@ -260,7 +260,7 @@
                     android:layout_marginLeft="10dp"
                     android:textSize="22sp"
                     android:textColor="@color/intro_title_color"
-                    android:text="Mô tả sản phẩm"/>
+                    android:text="@string/product_text_motasanpham"/>
                 <TextView
                     android:id="@+id/detail_product_tv_dis_product"
                     android:layout_width="match_parent"
@@ -283,7 +283,7 @@
             android:id="@+id/detail_product_btn_add_basket"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:text="Thêm vào giỏ hàng"
+            android:text="@string/product_text_btn_themvaogiohang"
             android:textColor="@color/colorWhite"
             android:textSize="24sp"
             android:background="@drawable/custom_btn_oder"

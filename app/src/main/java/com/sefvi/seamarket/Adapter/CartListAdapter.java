@@ -1,6 +1,8 @@
 package com.sefvi.seamarket.Adapter;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.util.Log;
@@ -24,6 +26,7 @@ import com.sefvi.seamarket.Model.ProductModel;
 import com.sefvi.seamarket.R;
 import com.sefvi.seamarket.View.Activity.DetailProductActivity;
 import com.sefvi.seamarket.View.Activity.Personal.BasketActivity;
+import com.sefvi.seamarket.View.Activity.Personal.LanguageActivity;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
@@ -81,7 +84,23 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.MyView
         holder.itemBasketImgClose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                deleteCartDetail(cartModel.getIdCartDetail());
+                AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                builder.setMessage("Delete product?");
+                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        deleteCartDetail(cartModel.getIdCartDetail());
+                    }
+                });
+                builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+                AlertDialog alertDialog = builder.create();
+                alertDialog.show();
+
             }
         });
 

@@ -99,15 +99,15 @@ public class ProductFragment extends Fragment {
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
-                    return "Cá";
+                    return getText(R.string.text_product_ca);
                 case 1:
-                    return "Cua";
+                    return getText(R.string.text_product_cua);
                 case 2:
-                    return "Tôm";
+                    return getText(R.string.text_product_tom);
                 case 3:
-                    return "Sò";
+                    return getText(R.string.text_product_so);
                 case 4:
-                    return "Ốc";
+                    return getText(R.string.text_product_oc);
                 default:
                     return null;
             }

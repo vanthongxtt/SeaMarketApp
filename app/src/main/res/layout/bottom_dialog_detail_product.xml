@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:textColor="@color/ligth_black_color"
             android:textSize="24sp"
-            android:text="Chọn số lượng"/>
+            android:text="@string/text_chonsoluong"/>
 <!--        <ImageView-->
 <!--            android:layout_width="wrap_content"-->
 <!--            android:layout_centerVertical="true"-->
@@ -133,7 +133,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:textSize="20sp"
-            android:text="Tạm tính"/>
+            android:text="@string/text_tamtinh"/>
         <TextView
             android:id="@+id/txtViewPriceSumPrice"
             android:layout_width="wrap_content"
@@ -151,7 +151,7 @@
             android:id="@+id/bottomSheet_btn_add_basket"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:text="Thêm vào giỏ hàng"
+            android:text="@string/product_text_btn_themvaogiohang"
             android:textColor="@color/colorWhite"
             android:textSize="24sp"
             android:background="@drawable/custom_btn_oder"

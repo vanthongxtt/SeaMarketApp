@@ -24,13 +24,14 @@
             android:layout_gravity="center"
             android:layout_height="30dp"
             android:src="@drawable/ic_baseline_add_24"/>
+
         <TextView
             android:layout_width="match_parent"
-            android:layout_gravity="center"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/text_themdiachimoi"
             android:textColor="@color/blue_color"
-            android:textSize="18sp"
-            android:text="Thêm địa chỉ mới"/>
+            android:textSize="18sp" />
     </LinearLayout>
 
 </LinearLayout>

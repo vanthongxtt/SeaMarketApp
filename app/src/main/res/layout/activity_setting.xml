@@ -63,7 +63,7 @@
                     android:layout_gravity="center_vertical"
                     android:textColor="#1E1E1E"
                     android:textSize="24sp"
-                    android:text="Thay đổi thông tin"/>
+                    android:text="@string/setting_text_thaydoithongtin"/>
 
                 <ImageView
                     android:layout_width="30dp"
@@ -91,7 +91,7 @@
             android:textColor="@color/blue_color"
             android:textSize="24sp"
             android:layout_gravity="center_vertical"
-            android:text="Đăng xuất"/>
+            android:text="@string/setting_logout"/>
     </LinearLayout>
 
 </RelativeLayout>

@@ -29,6 +29,39 @@
         <item>Sò</item>
         <item>Ốc</item>
     </string-array>
+    <string name="text_sale_off">Hạ giá</string>
+    <string name="text_import">Nhập Khẩu</string>
+    <string name="text_selling">Bán Chạy</string>
+    <string name="text_muaChung">Mua Chung</string>
+    <string name="text_cothebanquantam">Có thể bạn quan tâm</string>
+    <string name="text_product_ca">Cá</string>
+    <string name="text_product_cua">Cua</string>
+    <string name="text_product_tom">Tôm</string>
+    <string name="text_product_so">Sò</string>
+    <string name="text_product_oc">Ốc</string>
+    <string name="text_control">Bảng điều khiển</string>
+    <string name="product_text_nhacungcap">Nhà cung cấp</string>
+    <string name="product_text_thongtinsanpham">Thông tin sản phẩm</string>
+    <string name="product_text_loaisanpham">Loại sản phẩm:</string>
+    <string name="product_text_xuatxu">"Xuất xứ: "</string>
+    <string name="product_text_motasanpham">Mô tả sản phẩm</string>
+    <string name="product_text_btn_themvaogiohang">Thêm vào giỏ hàng</string>
+    <string name="basket_text_tongtien">Tổng tiền</string>
+    <string name="basket_text_btn_dat_hang">Đặt hàng</string>
+    <string name="setting_text_language">Ngôn ngữ</string>
+    <string name="setting_text_thaydoithongtin">Thay đổi thông tin</string>
+    <string name="setting_logout">Đăng xuất</string>
+    <string name="text_chonsoluong">Chọn số lượng</string>
+    <string name="text_tamtinh">Tạm tính</string>
+    <string name="text_tennguoinhan">Tên người nhận</string>
+    <string name="text_tongsanpham">Tổng sản phẩm</string>
+    <string name="text_phigiaohang">Phí giao hàng</string>
+    <string name="text_tientamtinh">Tạm tính</string>
+    <string name="text_phuongthucthanhtoan">Phương thức thanh toán</string>
+    <string name="text_thanhtoankhinhanhang">Thanh toán khi nhận hàng (COD)</string>
+    <string name="text_btn_xacnhan">Xác nhận</string>
+    <string name="text_thaydoi">Thay đổi</string>
+    <string name="text_themdiachimoi">Thêm địa chỉ mới</string>
 
 
 </resources>

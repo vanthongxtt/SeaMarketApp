@@ -277,7 +277,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:text="Hạ giá"
+                            android:text="@string/text_sale_off"
                             android:textSize="16sp" />
                     </LinearLayout>
 
@@ -307,7 +307,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:text="Nhập khẩu"
+                            android:text="@string/text_import"
                             android:textSize="16sp" />
                     </LinearLayout>
 
@@ -337,7 +337,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:text="bán chạy"
+                            android:text="@string/text_selling"
                             android:textSize="16sp" />
                     </LinearLayout>
 
@@ -368,7 +368,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:text="Mua chung"
+                            android:text="@string/text_muaChung"
                             android:textSize="16sp" />
                     </LinearLayout>
                 </LinearLayout>
@@ -423,7 +423,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:text="Sale off"
+                        android:text="@string/text_sale_off"
                         android:textColor="@android:color/black"
                         android:textSize="18sp" />
 
@@ -449,7 +449,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:text="Có thể bạn sẽ quan tâm"
+                android:text="@string/text_cothebanquantam"
                 android:textColor="@android:color/black"
                 android:textSize="18dp" />
 

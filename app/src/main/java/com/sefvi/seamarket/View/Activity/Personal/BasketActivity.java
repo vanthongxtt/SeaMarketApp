@@ -52,7 +52,7 @@ public class BasketActivity extends AppCompatActivity {
 
         initEvents();
         initControls();
-        GetDataCartList(getApplicationContext());
+        GetDataCartList(BasketActivity.this );
     }
 
     private void initEvents(){
