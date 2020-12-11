@@ -6,8 +6,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.Manifest;
+import android.app.ProgressDialog;
+import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.widget.Adapter;
 import android.widget.AdapterView;
@@ -26,13 +31,24 @@ import android.widget.Toast;
 import com.gun0912.tedpermission.PermissionListener;
 import com.gun0912.tedpermission.TedPermission;
 import com.sefvi.seamarket.Adapter.PhotoAdapter;
+import com.sefvi.seamarket.Api.AddProduct.AddProductApiLml;
+import com.sefvi.seamarket.Interface.ProductRandom;
+import com.sefvi.seamarket.Model.ProductModel;
 import com.sefvi.seamarket.R;
 import com.sefvi.seamarket.Utils.Checks;
 
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+
+import org.json.JSONArray;
+
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
 import gun0912.tedbottompicker.TedBottomPicker;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
 
 public class AdminAddProducts extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 Spinner spinner;
@@ -41,6 +57,10 @@ RecyclerView adminAddRcvPhoto;
 RelativeLayout btnAddFolder;
 Button addProduct;
 private PhotoAdapter photoAdapter;
+String token;
+Integer idType;
+ArrayList<Uri> listImage;
+    private ProgressDialog mProgressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,6 +109,11 @@ private PhotoAdapter photoAdapter;
         adminAddRcvPhoto = findViewById(R.id.admin_add_rcv_photo);
         addProduct = findViewById(R.id.admin_button_addProduct);
 
+        listImage = new ArrayList<>();
+
+        SharedPreferences prefs = getSharedPreferences("Sea",MODE_PRIVATE);
+        token = prefs.getString("TOKEN", "");
+
     }
     private void event(){
         btnAddFolder.setOnClickListener(new View.OnClickListener() {
@@ -120,7 +145,11 @@ private PhotoAdapter photoAdapter;
         TedBottomPicker.OnMultiImageSelectedListener listener = new TedBottomPicker.OnMultiImageSelectedListener() {
             @Override
             public void onImagesSelected(ArrayList<Uri> uriList) {
-               photoAdapter.setData(uriList);
+                photoAdapter.setData(uriList);
+                for (int i = 0; i < uriList.size(); i++){
+                    listImage.add(uriList.get(i));
+                }
+
             }
         };
         TedBottomPicker tedBottomPicker = new TedBottomPicker.Builder(AdminAddProducts.this).setOnMultiImageSelectedListener(listener)
@@ -143,17 +172,88 @@ private void lavigate(String nameProduct, String priceProduct, String moTa, Stri
     }else if(soLuong.isEmpty()){
         Toast.makeText(this, "Không được để trống Số lượng!", Toast.LENGTH_SHORT).show();
     }else{
-        Toast.makeText(this, "oke", Toast.LENGTH_SHORT).show();
+        showProgress();
+        MultipartBody.Builder builder = new MultipartBody.Builder();
+        builder.setType(MultipartBody.FORM);
+        for (int i = 0; i < listImage.size(); i++) {
+            Uri uri = listImage.get(i);
+            File file = new File(getRealPathFromURI(uri));
+            RequestBody requestBody = RequestBody.create(MediaType.parse("image/*"),file);
+            builder.addFormDataPart("images[]", file.getName(), requestBody);
+        }
+        builder.addFormDataPart("idType", String.valueOf(idType));
+        builder.addFormDataPart("name", nameProduct);
+        builder.addFormDataPart("price", priceProduct);
+        builder.addFormDataPart("description", moTa);
+        builder.addFormDataPart("unit", "VND");
+        builder.addFormDataPart("origin", origin);
+        builder.addFormDataPart("warehouseNumber", soLuong);
+
+        MultipartBody body = builder.build();
+        AddProductApiLml addProductApiLml = new AddProductApiLml();
+        addProductApiLml.AddProductApi(token,body, new ProductRandom() {
+            @Override
+            public void getDataSuccess(ProductModel productModel) {
+
+            }
+
+            @Override
+            public void getDataError(String err) {
+                Toast.makeText(getApplicationContext(), err, Toast.LENGTH_SHORT).show();
+                dissmissDialog();
+            }
+
+            @Override
+            public void getDataSuccess(JSONArray list) {
+
+            }
+        });
+
     }
+
 }
+    private String getRealPathFromURI(Uri contentURI) {
+        String result;
+        Cursor cursor = getContentResolver().query(contentURI, null, null, null, null);
+        if (cursor == null) {
+            result = contentURI.getPath();
+        } else {
+            cursor.moveToFirst();
+            int idx = cursor.getColumnIndex(MediaStore.Images.ImageColumns.DATA);
+            result = cursor.getString(idx);
+            cursor.close();
+        }
+        return result;
+    }
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-String text = parent.getItemAtPosition(position).toString();
-        Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
+        String text = parent.getItemAtPosition(position).toString();
+        if ("Cá".equals(text)) {
+            idType = 4;
+        }else if ("Cua".equals(text)){
+            idType = 5;
+        }else if ("Tôm".equals(text)){
+            idType = 6;
+        }else  if ("Sò".equals(text)){
+            idType = 7;
+        }else if("Ốc".equals(text)){
+            idType = 8;
+        }
     }
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
 
+    }
+    private void dissmissDialog() {
+        mProgressDialog.dismiss();
+    }
+
+    private void showProgress() {
+        if (mProgressDialog == null) {
+            mProgressDialog = new ProgressDialog(this);
+            mProgressDialog.setMessage("Đang thêm sản phẩm...");
+        }
+        mProgressDialog.show();
     }
 }

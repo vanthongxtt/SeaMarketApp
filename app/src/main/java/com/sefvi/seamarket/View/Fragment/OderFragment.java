@@ -79,6 +79,7 @@ public class OderFragment extends Fragment {
                         cartModel.setSumPrice(sumPrice);
                         cartModel.setQuantily(jsonObject.getInt("quantily"));
                         cartModel.setStatus(jsonObject.getInt("status"));
+                        cartModel.setProductId(jsonObject.getInt("idProduct"));
                         cartModelList.add(cartModel);
                     }
 

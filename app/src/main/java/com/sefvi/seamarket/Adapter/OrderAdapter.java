@@ -1,6 +1,7 @@
 package com.sefvi.seamarket.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -16,6 +17,7 @@ import com.sefvi.seamarket.Api.DeteteCartDetail.DeleteCartDetailApiLml;
 import com.sefvi.seamarket.Interface.CartInterface;
 import com.sefvi.seamarket.Model.CartModel;
 import com.sefvi.seamarket.R;
+import com.sefvi.seamarket.View.Activity.DetailProductActivity;
 import com.sefvi.seamarket.View.Activity.Personal.BasketActivity;
 import com.squareup.picasso.Picasso;
 
@@ -90,6 +92,15 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.MyViewHolder
                 .error(R.drawable.home_combo_hot_img_cua)
                 .into(holder.imgItemOrderImage);
 
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(context, DetailProductActivity.class);
+                i.putExtra("idProduct", cartModel.getProductId());
+                context.startActivity(i);
+            }
+        });
+
     }
     private String FormatCost(String cost){
         try {
@@ -101,8 +112,6 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.MyViewHolder
             return cost + "";
         }
     }
-
-
 
 
     @Override

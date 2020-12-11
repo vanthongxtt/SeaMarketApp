@@ -65,6 +65,7 @@
                 android:layout_marginTop="10dp"
                 android:drawablePadding="10dp"
                 android:hint="@string/admin_add_gia"
+                android:inputType="number"
                 android:padding="16dp" />
             <EditText
                 android:id="@+id/admin_add_moTaProduct"
@@ -88,6 +89,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:drawablePadding="10dp"
+                android:inputType="number"
                 android:hint="@string/text_soluong"
                 android:padding="16dp" />
             <androidx.recyclerview.widget.RecyclerView
