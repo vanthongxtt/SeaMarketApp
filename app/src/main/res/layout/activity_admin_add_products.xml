@@ -36,7 +36,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:text="Loại: "
+                android:text="@string/admin_add_loai"
                 android:textSize="16sp" />
 
             <Spinner
@@ -56,7 +56,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:drawablePadding="10dp"
-                android:hint="Tên sản phẩm"
+                android:hint="@string/admin_add_tensanpham"
                 android:padding="16dp" />
             <EditText
                 android:id="@+id/admin_add_priceProduct"
@@ -64,7 +64,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:drawablePadding="10dp"
-                android:hint="Giá sản phẩm"
+                android:hint="@string/admin_add_gia"
                 android:padding="16dp" />
             <EditText
                 android:id="@+id/admin_add_moTaProduct"
@@ -72,7 +72,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:drawablePadding="10dp"
-                android:hint="Mô tả sản phẩm"
+                android:hint="@string/product_text_motasanpham"
                 android:padding="16dp" />
             <EditText
                 android:id="@+id/admin_add_originProduct"
@@ -80,7 +80,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:drawablePadding="10dp"
-                android:hint="Xuất xứ"
+                android:hint="@string/product_text_xuatxu"
                 android:padding="16dp" />
             <EditText
                 android:id="@+id/admin_add_soLuongProduct"
@@ -88,7 +88,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:drawablePadding="10dp"
-                android:hint="Số lượng sản phẩm"
+                android:hint="@string/text_soluong"
                 android:padding="16dp" />
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/admin_add_rcv_photo"
@@ -123,7 +123,8 @@
                     android:clickable="false"
                     android:focusable="false"
                     android:textSize="16sp"
-                    android:text="  Thêm ảnh"/>
+                    android:gravity="center"
+                    android:text="@string/admin_themanh"/>
             </RelativeLayout>
 
         </LinearLayout>
@@ -137,7 +138,7 @@
         android:layout_marginRight="10dp"
         android:padding="10dp"
         android:background="@drawable/custom_btn_login_signup"
-        android:text="Thêm"
+        android:text="@string/add"
         android:textAllCaps="false"
         android:textSize="24dp"
         android:textColor="@color/colorWhite" />

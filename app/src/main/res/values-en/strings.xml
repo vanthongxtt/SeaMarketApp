@@ -50,4 +50,20 @@
     <string name="text_btn_xacnhan">Access</string>
     <string name="text_thaydoi">Changes</string>
     <string name="text_themdiachimoi">Add a new address</string>
+    <string name="text_donhang">"Bill number: "</string>
+    <string name="text_price">"Price: "</string>
+    <string name="text_soluong">"Amount: "</string>
+    <string name="text_trangthai">"Status: "</string>
+    <string name="text_trangthai_dangxuli">Processing</string>
+    <string name="thongtinlienhe">Contact information</string>
+    <string name="hovaten">Full name</string>
+    <string name="sodienthoai">Phone number</string>
+    <string name="nhapdiachi">Address</string>
+    <string name="admin_themsanpham">Add product</string>
+    <string name="admin_duyetdonhang">Order confirmation</string>
+    <string name="admin_add_loai">"Type: "</string>
+    <string name="admin_add_tensanpham">Product name</string>
+    <string name="admin_add_gia">Price</string>
+    <string name="admin_themanh">"  _Add Image"</string>
+    <string name="add">Add</string>
 </resources>

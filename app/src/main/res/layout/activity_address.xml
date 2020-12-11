@@ -15,7 +15,7 @@
         android:textSize="24sp"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
-        android:text="Thông tin liên hệ"/>
+        android:text="@string/thongtinlienhe"/>
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -35,7 +35,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/ligth_black_color"
-                android:hint="Họ Và Tên"/>
+                android:hint="@string/hovaten"/>
             <EditText
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp"
@@ -45,7 +45,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/ligth_black_color"
                 android:inputType="phone"
-                android:hint="Số điện thoai"/>
+                android:hint="@string/sodienthoai"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
     <TextView
@@ -55,7 +55,7 @@
         android:layout_marginTop="10dp"
         android:textColor="@color/ligth_black_color"
         android:layout_marginLeft="10dp"
-        android:text="Địa chỉ"/>
+        android:text="@string/personal_text_diachinhanhang"/>
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -76,7 +76,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/ligth_black_color"
                 android:maxLines="1"
-                android:hint="Nhập địa chỉ"/>
+                android:hint="@string/nhapdiachi"/>
             <EditText
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp"
@@ -86,7 +86,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/ligth_black_color"
                 android:maxLines="1"
-                android:hint="Số điện thoai"/>
+                android:hint="@string/sodienthoai"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 

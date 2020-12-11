@@ -25,7 +25,7 @@
                     android:textStyle="bold"
                     android:textColor="@color/ligth_black_color"
                     android:textSize="20sp"
-                    android:text="Đơn hàng: "/>
+                    android:text="@string/text_donhang"/>
                 <TextView
                     android:id="@+id/txtItemOrderId"
                     android:layout_gravity="right"
@@ -83,7 +83,7 @@
                                 android:layout_height="wrap_content"
                                 android:maxLines="1"
                                 android:textSize="20sp"
-                                android:text="Giá :"/>
+                                android:text="@string/text_price"/>
                             <TextView
                                 android:id="@+id/txtItemOrderPrice"
                                 android:layout_gravity="right"
@@ -104,7 +104,7 @@
                                 android:layout_height="wrap_content"
                                 android:maxLines="1"
                                 android:textSize="20sp"
-                                android:text="Sô lượng :"/>
+                                android:text="@string/text_soluong"/>
                             <TextView
                                 android:id="@+id/txtItemOrderNumber"
                                 android:layout_gravity="right"
@@ -127,7 +127,7 @@
                                 android:maxLines="1"
                                 android:textSize="24sp"
                                 android:textColor="@color/ligth_black_color"
-                                android:text="Tổng tiền :"/>
+                                android:text="@string/basket_text_tongtien"/>
                             <TextView
                                 android:id="@+id/txtItemOrderSumPrice"
                                 android:layout_gravity="right"
@@ -169,7 +169,7 @@
                         android:textColor="@color/ligth_black_color"
                         android:maxLines="1"
                         android:textSize="24sp"
-                        android:text="Trạng thái :"/>
+                        android:text="@string/text_trangthai"/>
                     <TextView
                         android:id="@+id/txtItemOrderStatus"
                         android:layout_gravity="center"
@@ -180,7 +180,7 @@
                         android:maxLines="1"
                         android:layout_marginRight="30dp"
                         android:textSize="24sp"
-                        android:text="Đang xử lý"/>
+                        android:text="@string/text_trangthai_dangxuli"/>
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>

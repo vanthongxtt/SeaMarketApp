@@ -62,6 +62,22 @@
     <string name="text_btn_xacnhan">Xác nhận</string>
     <string name="text_thaydoi">Thay đổi</string>
     <string name="text_themdiachimoi">Thêm địa chỉ mới</string>
+    <string name="text_donhang">Đơn hàng:</string>
+    <string name="text_price">Giá:</string>
+    <string name="text_soluong">Số lượng:</string>
+    <string name="text_trangthai">Trạng thái:</string>
+    <string name="text_trangthai_dangxuli">Đang xử lý</string>
+    <string name="thongtinlienhe">Thông tin liên hệ</string>
+    <string name="hovaten">Họ và tên</string>
+    <string name="sodienthoai">Số điện thoại</string>
+    <string name="nhapdiachi">Nhập địa chỉ</string>
+    <string name="admin_themsanpham">Thêm sản phẩm</string>
+    <string name="admin_duyetdonhang">Duyệt đơn hàng</string>
+    <string name="admin_add_loai">Loại:</string>
+    <string name="admin_add_tensanpham">Tên sản phẩm</string>
+    <string name="admin_add_gia">Giá sản phẩm</string>
+    <string name="admin_themanh">_Thêm ảnh</string>
+    <string name="add">Thêm</string>
 
 
 </resources>

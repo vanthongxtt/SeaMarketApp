@@ -318,7 +318,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginLeft="10dp"
-                        android:text="Bảng điều khiển"
+                        android:text="@string/text_control"
                         android:textColor="#1E1E1E"
                         android:textSize="20sp" />
 

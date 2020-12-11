@@ -30,7 +30,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Địa chỉ nhận hàng"
+                    android:text="@string/personal_text_diachinhanhang"
                     android:layout_centerVertical="true"
                     android:textColor="@color/ligth_black_color"
                     android:textSize="24sp"/>
@@ -50,7 +50,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
-                android:text="Tên người nhận"/>
+                android:text="@string/text_tennguoinhan"/>
             <TextView
                 android:id="@+id/txtPhoneConfirm"
                 android:layout_marginTop="5dp"
@@ -141,7 +141,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Tổng sản phẩm"/>
+                        android:text="@string/text_tongsanpham"/>
                     <TextView
                         android:id="@+id/txtSumProductConfirm"
                         android:layout_alignParentRight="true"
@@ -156,7 +156,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Tổng tiền sản phẩm"/>
+                        android:text="@string/text_tamtinh"/>
 
                     <TextView
                         android:id="@+id/txtSumPriceProductConfirm"
@@ -172,7 +172,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Phí giao hàng"/>
+                        android:text="@string/text_phigiaohang"/>
                     <TextView
                         android:id="@+id/txtDeliverychargesConfirm"
                         android:layout_alignParentRight="true"
@@ -189,7 +189,7 @@
                         android:layout_height="wrap_content"
                         android:textColor="@color/ligth_black_color"
                         android:textSize="18sp"
-                        android:text="Tổng tiền"/>
+                        android:text="@string/basket_text_tongtien"/>
                     <TextView
                         android:id="@+id/txtSumPriceConfirm"
                         android:layout_alignParentRight="true"
@@ -220,14 +220,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/ligth_black_color"
-                android:text="Phương thức thanh toán"
+                android:text="@string/text_phuongthucthanhtoan"
                 android:textSize="18sp"/>
             <TextView
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Thanh toán khi nhận hàng (COD)" />
+                android:text="@string/text_thanhtoankhinhanhang" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
     <androidx.cardview.widget.CardView
@@ -250,7 +250,7 @@
                 android:id="@+id/basket_text_tongtien"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tổng tiền:"
+                android:text="@string/basket_text_tongtien"
                 android:layout_centerVertical="true"
                 android:textColor="@color/ligth_black_color"
                 android:textSize="24dp" />
@@ -274,7 +274,7 @@
                 android:textStyle="bold"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
-                android:text="Xác nhận"/>
+                android:text="@string/text_btn_xacnhan"/>
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 

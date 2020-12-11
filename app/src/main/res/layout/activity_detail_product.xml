@@ -234,7 +234,7 @@
                         android:textSize="16sp"
                         android:textStyle="bold"
                         android:layout_height="wrap_content"
-                        android:text="Xuất xứ : "/>
+                        android:text="@string/product_text_xuatxu"/>
 
                     <TextView
                         android:id="@+id/detail_product_tv_origin_product"

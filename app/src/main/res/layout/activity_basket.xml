@@ -34,7 +34,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:text="Tổng tiền:"
+                android:text="@string/basket_text_tongtien"
                 android:textColor="@color/ligth_black_color"
                 android:textSize="22dp" />
 

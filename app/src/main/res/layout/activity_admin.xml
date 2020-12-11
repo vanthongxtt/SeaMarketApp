@@ -19,7 +19,7 @@
         android:layout_marginRight="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="thêm sản phẩm"/>
+        android:text="@string/admin_themsanpham"/>
     <Button
         android:id="@+id/admin_access"
         android:background="@drawable/custom_btn_oder"
@@ -31,6 +31,6 @@
         android:layout_marginRight="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Duyệt đơn hàng"/>
+        android:text="@string/admin_duyetdonhang"/>
 
 </LinearLayout>

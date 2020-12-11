@@ -34,7 +34,7 @@
                     android:layout_gravity="center_vertical"
                     android:textColor="#1E1E1E"
                     android:textSize="24sp"
-                    android:text="Ngôn ngữ"/>
+                    android:text="@string/setting_text_ngonngu"/>
 
                 <ImageView
                     android:layout_width="30dp"
