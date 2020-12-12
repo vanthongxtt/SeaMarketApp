@@ -123,10 +123,10 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
         <Button
-            android:id="@+id/detail_product_btn_add_basket"
+            android:id="@+id/btnChangeInforUpdate"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:text="Câp nhập"
+            android:text="Cập nhật"
             android:textColor="@color/colorWhite"
             android:textSize="24sp"
             android:background="@drawable/custom_btn_oder"

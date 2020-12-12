@@ -62,7 +62,7 @@
     <string name="text_btn_xacnhan">Xác nhận</string>
     <string name="text_thaydoi">Thay đổi</string>
     <string name="text_themdiachimoi">Thêm địa chỉ mới</string>
-    <string name="text_donhang">Đơn hàng:</string>
+    <string name="text_donhang">Đơn hàng: </string>
     <string name="text_price">Giá:</string>
     <string name="text_soluong">Số lượng:</string>
     <string name="text_trangthai">Trạng thái:</string>
