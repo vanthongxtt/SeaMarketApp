@@ -46,7 +46,7 @@
     <string name="product_text_xuatxu">"Xuất xứ: "</string>
     <string name="product_text_motasanpham">Mô tả sản phẩm</string>
     <string name="product_text_btn_themvaogiohang">Thêm vào giỏ hàng</string>
-    <string name="basket_text_tongtien">Tổng tiền</string>
+    <string name="basket_text_tongtien">Tổng tiền:</string>
     <string name="basket_text_btn_dat_hang">Đặt hàng</string>
     <string name="setting_text_language">Ngôn ngữ</string>
     <string name="setting_text_thaydoithongtin">Thay đổi thông tin</string>

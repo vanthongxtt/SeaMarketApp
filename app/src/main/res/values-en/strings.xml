@@ -34,7 +34,7 @@
     <string name="product_text_xuatxu">"Origin: "</string>
     <string name="product_text_motasanpham">Description</string>
     <string name="product_text_btn_themvaogiohang">Add to Basket</string>
-    <string name="basket_text_tongtien">Total</string>
+    <string name="basket_text_tongtien">Total:</string>
     <string name="basket_text_btn_dat_hang">Order</string>
     <string name="setting_text_language">Language</string>
     <string name="setting_text_thaydoithongtin">Personal infomation</string>
