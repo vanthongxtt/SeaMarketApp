@@ -72,7 +72,6 @@
         android:padding="10dp"
         android:layout_marginLeft="10dp"
         android:layout_height="wrap_content">
-
         <TextView
             android:id="@+id/txtViewPriceItemDetail"
             android:layout_width="wrap_content"
@@ -86,7 +85,6 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="15dp"
             android:layout_alignParentRight="true">
-
             <ImageView
                 android:layout_width="wrap_content"
                 android:id="@+id/imgProductDetailMin"
@@ -94,7 +92,6 @@
                 android:background="@drawable/custom_add_bottom_dialog"
                 android:src="@drawable/ic_white_rule_24" />
             <TextView
-
                 android:id="@+id/txtProductDetailSum"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
