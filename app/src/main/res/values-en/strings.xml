@@ -40,11 +40,11 @@
     <string name="setting_text_thaydoithongtin">Personal infomation</string>
     <string name="setting_logout">Log out</string>
     <string name="text_chonsoluong">Choose quantity</string>
-    <string name="text_tamtinh">Price</string>
-    <string name="text_tennguoinhan">Recipient\'s name</string>
-    <string name="text_tongsanpham">Gross product</string>
-    <string name="text_phigiaohang">Delivery charges</string>
-    <string name="text_tientamtinh">Temporary price</string>
+    <string name="text_tamtinh">Price:</string>
+    <string name="text_tennguoinhan">Recipient\'s name:</string>
+    <string name="text_tongsanpham">Gross product:</string>
+    <string name="text_phigiaohang">Delivery charges:</string>
+    <string name="text_tientamtinh">Temporary price:</string>
     <string name="text_phuongthucthanhtoan">Payment methods</string>
     <string name="text_thanhtoankhinhanhang">Payment on delivery (COD)</string>
     <string name="text_btn_xacnhan">Access</string>

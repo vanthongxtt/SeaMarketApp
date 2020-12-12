@@ -52,11 +52,11 @@
     <string name="setting_text_thaydoithongtin">Thay đổi thông tin</string>
     <string name="setting_logout">Đăng xuất</string>
     <string name="text_chonsoluong">Chọn số lượng</string>
-    <string name="text_tamtinh">Tạm tính</string>
-    <string name="text_tennguoinhan">Tên người nhận</string>
-    <string name="text_tongsanpham">Tổng sản phẩm</string>
-    <string name="text_phigiaohang">Phí giao hàng</string>
-    <string name="text_tientamtinh">Tạm tính</string>
+    <string name="text_tamtinh">"Tạm tính: "</string>
+    <string name="text_tennguoinhan">Tên người nhận:</string>
+    <string name="text_tongsanpham">Tổng sản phẩm:</string>
+    <string name="text_phigiaohang">Phí giao hàng:</string>
+    <string name="text_tientamtinh">Tạm tính:</string>
     <string name="text_phuongthucthanhtoan">Phương thức thanh toán</string>
     <string name="text_thanhtoankhinhanhang">Thanh toán khi nhận hàng (COD)</string>
     <string name="text_btn_xacnhan">Xác nhận</string>
