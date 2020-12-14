@@ -1,5 +1,6 @@
 package com.sefvi.seamarket.Model;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.List;
@@ -14,11 +15,16 @@ public class CartModel {
     private Integer price;
     private Integer sumPrice;
     private String image;
+    private JSONArray jsonArray;
+    private String nameUser;
+    private Integer phoneUser;
+    private String addressUser;
 
     public CartModel() {
     }
 
-    public CartModel(Integer id, Integer idCartDetail, Integer productId, Integer quantily, Integer status, String name, Integer price, Integer sumPrice, String image) {
+
+    public CartModel(Integer id, Integer idCartDetail, Integer productId, Integer quantily, Integer status, String name, Integer price, Integer sumPrice, String image, JSONArray jsonArray, String nameUser, Integer phoneUser, String addressUser) {
         this.id = id;
         this.idCartDetail = idCartDetail;
         this.productId = productId;
@@ -28,6 +34,10 @@ public class CartModel {
         this.price = price;
         this.sumPrice = sumPrice;
         this.image = image;
+        this.jsonArray = jsonArray;
+        this.nameUser = nameUser;
+        this.phoneUser = phoneUser;
+        this.addressUser = addressUser;
     }
 
     public Integer getId() {
@@ -100,5 +110,37 @@ public class CartModel {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public JSONArray getJsonArray() {
+        return jsonArray;
+    }
+
+    public void setJsonArray(JSONArray jsonArray) {
+        this.jsonArray = jsonArray;
+    }
+
+    public String getNameUser() {
+        return nameUser;
+    }
+
+    public void setNameUser(String nameUser) {
+        this.nameUser = nameUser;
+    }
+
+    public Integer getPhoneUser() {
+        return phoneUser;
+    }
+
+    public void setPhoneUser(Integer phoneUser) {
+        this.phoneUser = phoneUser;
+    }
+
+    public String getAddressUser() {
+        return addressUser;
+    }
+
+    public void setAddressUser(String addressUser) {
+        this.addressUser = addressUser;
     }
 }

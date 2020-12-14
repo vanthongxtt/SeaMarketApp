@@ -26,4 +26,5 @@ public class Constant {
     public static final String URL_BASE_GET_ORDER = "api/{token}/get-order";
     public static final String URL_BASE_ADD_PRODUCT = "api/{token}/add-product";
     public static final String URL_BASE_UPDATE_USER = "api/{token}/update-user";
+    public static final String URL_BASE_GET_ORDER_LIST_ADMIN = "api/{token}/get-order-list-admin";
 }
