@@ -50,7 +50,7 @@
                     android:maxLines="1"
                     android:textColor="@color/ligth_black_color"
                     android:textSize="20sp"
-                    android:text="Tên khách hàng: "/>
+                    android:text="@string/tenkhachhang"/>
                 <TextView
                     android:id="@+id/txtItemOrderNameUser"
                     android:layout_gravity="right"
@@ -75,7 +75,7 @@
                     android:maxLines="1"
                     android:textColor="@color/ligth_black_color"
                     android:textSize="20sp"
-                    android:text="Số điện thoại: "/>
+                    android:text="@string/sodienthoai"/>
                 <TextView
                     android:id="@+id/txtItemOrderPhoneUser"
                     android:layout_gravity="right"
@@ -100,7 +100,7 @@
                     android:maxLines="1"
                     android:textColor="@color/ligth_black_color"
                     android:textSize="20sp"
-                    android:text="Địa chỉ: "/>
+                    android:text="@string/personal_text_diachinhanhang"/>
                 <TextView
                     android:id="@+id/txtItemOrderAddressUser"
                     android:layout_gravity="right"
@@ -158,7 +158,7 @@
                     android:background="@drawable/custom_add_bottom_dialog"
                     android:textColor="@color/colorWhite"
                     android:padding="15dp"
-                    android:text="Đã giao hàng"/>
+                    android:text="@string/dagiaohang"/>
             </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>

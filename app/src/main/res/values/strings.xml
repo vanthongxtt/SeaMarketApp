@@ -8,7 +8,7 @@
     <!-- activity đăng kí-->
     <string name="text_sodienthoai">Số điện thoại</string>
     <!--    activity người dùng-->
-    <string name="personal_text_diachinhanhang">Địa chỉ nhận hàng</string>
+    <string name="personal_text_diachinhanhang">"Địa chỉ nhận hàng: "</string>
     <string name="personal_text_caidat">Cài đặt</string>
     <string name="personal_text_dieukhoanvachinhsach">Điều khoản &#xFF06; Chính sách</string>
     <string name="personal_text_phienbanungdung">Phiên bản ứng dụng</string>
@@ -69,7 +69,7 @@
     <string name="text_trangthai_dangxuli">Đang xử lý</string>
     <string name="thongtinlienhe">Thông tin liên hệ</string>
     <string name="hovaten">Họ và tên</string>
-    <string name="sodienthoai">Số điện thoại</string>
+    <string name="sodienthoai">"Số điện thoại: "</string>
     <string name="nhapdiachi">Nhập địa chỉ</string>
     <string name="admin_themsanpham">Thêm sản phẩm</string>
     <string name="admin_duyetdonhang">Duyệt đơn hàng</string>
@@ -78,6 +78,8 @@
     <string name="admin_add_gia">Giá sản phẩm</string>
     <string name="admin_themanh">_Thêm ảnh</string>
     <string name="add">Thêm</string>
+    <string name="tenkhachhang">Tên khách hàng:</string>
+    <string name="dagiaohang">Đã giao hàng</string>
 
 
 </resources>
